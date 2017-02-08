@@ -4,7 +4,7 @@ import Landing from './Landing'
 import Dashboard from './Dashboard'
 
 const Home = () => {
-  const login = true
+  const login = false
   return (
     <div>
       {login ? <Dashboard /> : <Landing />}
