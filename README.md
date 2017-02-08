@@ -12,7 +12,7 @@ A flatmate management app
   - housework
   - maintainence
   
-3. Calender
+3. Calendar
   - events
   - inspections
   - bills due
@@ -30,9 +30,34 @@ A flatmate management app
 7. WebRTC
   - flat meetings
   
-# Components
-
+# MVP
 - Home
 - Join
-- User
-- Flat
+- User 
+  - Settings
+- Flat (Component inside home?)
+
+- Facebook authentication w/ sessions
+
+# Secondary goals
+- Documents
+- Notes
+- Calendar
+
+# Stretch goals
+- Special admin priviledges (Head Tennant)
+
+
+# Technologies
+- React
+- Redux
+- React-router
+- React-router-redux
+- Webpack2
+- Jest
+- React-redux-forms
+- Express
+- SQLite3/Postgres
+- Knex
+- React-bootstrap
+- Axios
