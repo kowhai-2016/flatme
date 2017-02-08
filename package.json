@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "A flatmate management app",
   "scripts": {
-    "dev": "webpack --progress --watch & nodemon src/server",
+    "dev": "webpack --progress --watch | nodemon src/server",
     "start": "node src/server",
     "test": "standard && jest --coverage",
     "webpack": "webpack --progress"
