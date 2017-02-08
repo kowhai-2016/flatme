@@ -1,13 +1,13 @@
 import React from 'react'
 
-import BannerHeader from './BannerHeader'
-import BannerRules from './BannerRules'
+import Landing from './Landing'
+import Dashboard from './Dashboard'
 
 const Home = () => {
+  const login = false
   return (
     <div>
-      <BannerHeader />
-      <BannerRules />
+      {login ? Dashboard : Landing}
     </div>
   )
 }
