@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "webpack --progress --watch & nodemon src/server",
     "start": "node src/server",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "standard && jest --coverage",
     "webpack": "webpack"
   },
   "repository": {
@@ -30,12 +30,20 @@
     "webpack": "^2.2.1"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "jest": "^18.1.0",
+    "nodemon": "^1.11.0",
+    "standard": "^8.6.0",
+    "supertest": "^3.0.0"
   },
   "babel": {
     "presets": [
       "es2015",
       "react"
+    ]
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.js"
     ]
   }
 }
