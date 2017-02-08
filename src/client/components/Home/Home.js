@@ -7,7 +7,7 @@ const Home = () => {
   const login = false
   return (
     <div>
-      {login ? Dashboard : Landing}
+      {login ? <Dashboard /> : <Landing />}
     </div>
   )
 }
