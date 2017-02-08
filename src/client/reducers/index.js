@@ -1,6 +1,6 @@
-export default (state = {}, action) => {
-  switch (action.type) {
-    default:
-      return state
-  }
-}
+import { routerReducer } from 'react-router-redux'
+import { combineReducers } from 'redux'
+
+export default combineReducers({
+  routing: routerReducer
+})
