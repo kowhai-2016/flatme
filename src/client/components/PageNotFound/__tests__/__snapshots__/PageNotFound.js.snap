@@ -1,0 +1,7 @@
+exports[`test PageNotFound renders correctly 1`] = `
+<div>
+  <h1>
+    PageNotFound
+  </h1>
+</div>
+`;
