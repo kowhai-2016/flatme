@@ -1,7 +1,6 @@
 exports[`test Home renders correctly 1`] = `
 <div>
-  <h1>
-    Home
-  </h1>
+  <BannerHeader />
+  <BannerRules />
 </div>
 `;
