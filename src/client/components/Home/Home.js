@@ -1,9 +1,13 @@
 import React from 'react'
 
+import BannerHeader from './BannerHeader'
+import BannerRules from './BannerRules'
+
 const Home = () => {
   return (
     <div>
-      <h1>Home</h1>
+      <BannerHeader />
+      <BannerRules />
     </div>
   )
 }
