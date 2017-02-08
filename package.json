@@ -1,0 +1,27 @@
+{
+  "name": "flatme",
+  "version": "1.0.0",
+  "description": "A flatmate management app",
+  "scripts": {
+    "watch": "nodemon src/server",
+    "start": "node src/server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kowhai-2016/flatme.git"
+  },
+  "keywords": [],
+  "author": "Kowhai 2016",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kowhai-2016/flatme/issues"
+  },
+  "homepage": "https://github.com/kowhai-2016/flatme#readme",
+  "dependencies": {
+    "express": "^4.14.1"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
