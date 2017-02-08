@@ -5,7 +5,7 @@ import CreateANewFlat from './CreateANewFlatButton'
 import JoinAFlat from './JoinAFlatButton'
 import FlatCard from './FlatCard'
 
-const DashboardLayout = () => {
+const Dashboard = () => {
   return (
     <div className='container'>
       <CreateANewFlat />
@@ -15,3 +15,5 @@ const DashboardLayout = () => {
     </div>
   )
 }
+
+export default Dashboard
