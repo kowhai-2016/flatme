@@ -1,9 +1,11 @@
 import React from 'react'
 
+import Navigation from './Navigation'
+
 const App = props => {
   return (
     <div>
-      <h1>App</h1>
+      <Navigation />
       {props.children}
     </div>
   )
