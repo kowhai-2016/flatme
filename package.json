@@ -38,8 +38,11 @@
     "webpack": "^2.2.1"
   },
   "devDependencies": {
+    "enzyme": "^2.7.1",
+    "enzyme-to-json": "^1.4.5",
     "jest": "^18.1.0",
     "nodemon": "^1.11.0",
+    "react-addons-test-utils": "^15.4.2",
     "standard": "^8.6.0",
     "supertest": "^3.0.0"
   },
@@ -52,6 +55,10 @@
   "jest": {
     "collectCoverageFrom": [
       "src/**/*.js"
-    ]
+    ],
+    "moduleNameMapper": {
+      "\\.(ico|svg)$": "<rootDir>/src/client/__mocks__/file.js",
+      "\\.css$": "<rootDir>/src/client/__mocks__/style.js"
+    }
   }
 }

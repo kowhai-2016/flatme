@@ -1,0 +1,7 @@
+exports[`test User renders correctly 1`] = `
+<div>
+  <h1>
+    User
+  </h1>
+</div>
+`;
