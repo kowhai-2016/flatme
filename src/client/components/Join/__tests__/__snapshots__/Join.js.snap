@@ -1,0 +1,7 @@
+exports[`test Join renders correctly 1`] = `
+<div>
+  <h1>
+    Join
+  </h1>
+</div>
+`;

@@ -1,0 +1,6 @@
+exports[`test Home renders correctly 1`] = `
+<div>
+  <BannerHeader />
+  <BannerRules />
+</div>
+`;
