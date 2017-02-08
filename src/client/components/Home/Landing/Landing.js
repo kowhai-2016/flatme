@@ -5,7 +5,6 @@ import BannerDream from './BannerDream'
 import BannerHeader from './BannerHeader'
 import BannerRules from './BannerRules'
 
-
 const Landing = () => {
   return (
     <div>
