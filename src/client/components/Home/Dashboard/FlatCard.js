@@ -7,7 +7,7 @@ const FlatCard = () => {
         <div className='panel-heading'>MyFlat 1</div>
         <div className='panel-body'>
           <ul>
-            <li>Landlord Name</li>
+            <li>Landlord1 Name</li>
             <li>Flatmate1 Name</li>
           </ul>
         </div>
@@ -16,7 +16,7 @@ const FlatCard = () => {
         <div className='panel-heading'>MyFlat 2</div>
         <div className='panel-body'>
           <ul>
-            <li>Landlord Name</li>
+            <li>Landlord1 Name</li>
             <li>Flatmate1 Name</li>
           </ul>
         </div>
