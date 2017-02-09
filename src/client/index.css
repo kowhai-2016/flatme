@@ -1,18 +1,23 @@
+.description h1 {
+  color: black;
+  font-weight: bold;
+}
+
+.description {
+  padding: 3%;
+  background-color: white;
+  opacity: 0.6;
+}
+
 .header {
   background-image: url(http://2.design-milk.com/images/2015/02/Homepolish-Benni-Benedetta-Amadi-SF-1.jpg);
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  min-height: 800px;
 }
 
-.description {
-  /*margin-top: 15%;*/
-  background-color: white;
-  opacity: 0.6;
-}
-
-.description h1 {
-  color: black;
-  font-weight: bold;
+.height{
+  min-height: 400px;
 }

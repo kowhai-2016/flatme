@@ -1,7 +1,7 @@
 
 import { connect } from 'react-redux'
 
-import Joins from './Join'
+import Joins from '../components/Join'
 
 const mapStateToProps = ({ account }) => {
   return {

@@ -11,7 +11,10 @@ const initialAccountState = {
   confirmPassword: ''
 }
 
+import account from './account'
+
 export default combineReducers({
+  forms: combineForms({ initialAccountState }, 'forms'),
   routing: routerReducer,
-  forms: combineForms({ initialAccountState }, 'forms')
+  account
 })
