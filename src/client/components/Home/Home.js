@@ -4,7 +4,6 @@ import Landing from './Landing'
 import Dashboard from './Dashboard'
 
 const Home = props => {
-  const login = true
   return (
     <div>
       {props.account.user ? <Dashboard /> : <Landing />}

@@ -6,7 +6,9 @@ import React from 'react'
 
 import Home from '..'
 
+const account = {}
+
 test('Home renders correctly', () => {
-  const wrapper = shallow(<Home />)
+  const wrapper = shallow(<Home account={account} />)
   expect(toJSON(wrapper)).toMatchSnapshot()
 })
