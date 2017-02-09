@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Navigation from './NavContainer'
+import Navigation from '../../containers/Navigation'
 
 const App = props => {
   return (

@@ -1,11 +1,11 @@
 import {connect} from 'react-redux'
 
-import { login, logout } from '../../actions'
-import Navigation from '../Components/Navigation'
+import { login, logout } from '../actions'
+import Navigation from '../components/App/Navigation'
 
-const mapStateToProps = ({isLoggedIn}) => {
+const mapStateToProps = ({account}) => {
   return {
-    isLoggedIn
+    account
   }
 }
 
