@@ -35,9 +35,9 @@ router.post('/flats', (request, response) => {
     })
 })
 
-router.get('/flats/:userid', (request, response) => {
-  const id = request.params.id
-  db.getFlatByUserId(id)
+router.get('/flats', (request, response) => {
+  const id = request.query.id
+  db.getFlatById(id)
     .then(flat => {
       response.json(flat)
     })
