@@ -129,8 +129,7 @@ const Join = React.createClass({
             show='touched'
             messages={{
               required: 'Required',
-              maxLength: ' Must be 15 characters or less',
-              passwordMatch: 'Must match'
+              maxLength: ' Must be 15 characters or less'
             }}
           />
         </div>
