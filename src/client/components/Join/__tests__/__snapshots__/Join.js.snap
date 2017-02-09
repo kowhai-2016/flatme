@@ -83,6 +83,7 @@ exports[`test Join renders correctly 1`] = `
       model=".phoneNumber"
       validators={
         Object {
+          "isNumber": [Function],
           "maxLength": [Function],
           "required": [Function],
         }
@@ -91,7 +92,7 @@ exports[`test Join renders correctly 1`] = `
       className="errors"
       messages={
         Object {
-          "maxLength": " Must be 15 characters or less",
+          "isNumber": "Must be a phont Number",
           "required": "Required",
         }
       }
