@@ -1,25 +1,39 @@
 const knex = require('./knex')
 
-
-exports.addUser = user => {
+function addUser (user) {
   return knex('users')
     .insert({
       first_name: user.firstName,
       last_name: user.lastName,
-      email: user.name,
+      email: user.email,
       phone_number: user.phoneNumber
     })
     .then(inserted => {
       const id = inserted[0]
       return id
     })
+    .then(getUserById)
 }
 
-exports.getUserById = id => {
+function getUserById (id) {
   return knex('users')
     .select('id', 'first_name', 'last_name', 'email', 'phone_number')
     .where('id', id)
     .first()
+    .then(user => {
+      return {
+        id: user.id,
+        firstName: user.first_name,
+        lastName: user.last_name,
+        email: user.email,
+        phoneNumber: user.phone_number
+      }
+    })
+}
+
+module.exports = {
+  addUser,
+  getUserById
 }
 
 exports.addFlat = flat => {
