@@ -25,6 +25,16 @@ router.post('/users', (request, response) => {
     })
 })
 
+router.post('/flats', (request, response) => {
+  db.addFlat(request.body)
+    .then(flat => {
+      response.json(flat)
+    })
+    .catch(error => {
+      response.status(500).send(error.message)
+    })
+})
+
 router.get('*', (request, response) => response.status(404).send('API endpoint not found.'))
 
 module.exports = router

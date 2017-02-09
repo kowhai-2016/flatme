@@ -31,18 +31,19 @@ function getUserById (id) {
     })
 }
 
-module.exports = {
-  addUser,
-  getUserById
-}
-
-exports.addFlat = flat => {
+function addFlat (flat) {
   return knex('flats')
     .insert({
-      flat_name: flat.name
+      flat_name: flat.flatName
     })
     .then(inserted => {
       const id = inserted[0]
       return id
     })
+}
+
+module.exports = {
+  addUser,
+  getUserById,
+  addFlat
 }
