@@ -1,5 +1,7 @@
 import React from 'react'
 import { Navbar, Nav, NavItem, Modal, Button } from 'react-bootstrap'
+import { Form, Control } from 'react-redux-form'
+import { LinkContainer } from 'react-router-bootstrap'
 
 export default React.createClass({
   getInitialState () {
@@ -29,9 +31,33 @@ export default React.createClass({
     )
     const loggedOutButtons = (
       <Nav pullRight bsStyle='pills'>
-        <NavItem eventKey={1} href='/join'>Sign up</NavItem>
+        <LinkContainer to='/join'><NavItem eventKey={1}>Sign Up</NavItem></LinkContainer>
         <NavItem eventKey={2} onClick={this.open}>Log in</NavItem>
       </Nav>
+    )
+    const loginModal = (
+      <Modal show={this.state.show} onHide={this.close}>
+        <Modal.Header closeButton>
+          <Modal.Title>Log in</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Form model='forms.loginCredentials'>
+            <div className='loginForm'>
+              <div>
+                <label>Email:</label>
+                <Control.text className='loginEmailField' model='.email' />
+              </div>
+              <div>
+                <label>Password:</label>
+                <Control model='.password' type='password' />
+              </div>
+            </div>
+          </Form>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button onClick={this.close}>Send</Button>
+        </Modal.Footer>
+      </Modal>
     )
     return (
       <div>
@@ -46,18 +72,7 @@ export default React.createClass({
             {user ? loggedInButtons : loggedOutButtons}
           </Navbar.Collapse>
         </Navbar>
-
-        <Modal show={this.state.show} onHide={this.close}>
-          <Modal.Header closeButton>
-            <Modal.Title>Log in</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <h4>Enter your log in credentials</h4>
-          </Modal.Body>
-          <Modal.Footer>
-            <Button onClick={this.close}>Log in</Button>
-          </Modal.Footer>
-        </Modal>
+        {loginModal}
       </div>
     )
   }
