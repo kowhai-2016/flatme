@@ -7,6 +7,7 @@ import React from 'react'
 import Flat from '..'
 
 test('Flat renders correctly', () => {
-  const wrapper = shallow(<Flat />)
+  const fetchFlat = () => {}
+  const wrapper = shallow(<Flat fetchFlat={fetchFlat} />)
   expect(toJSON(wrapper)).toMatchSnapshot()
 })

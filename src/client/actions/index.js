@@ -1,5 +1,29 @@
 import axios from 'axios'
 
+export const fetchFlat = id => {
+  return dispatch => {
+    dispatch({
+      id,
+      type: 'FETCH_FLAT_PENDING'
+    })
+    return axios.get(`/v1/flats?id=${id}`)
+      .then(response => {
+        const flat = response.data
+        return dispatch({
+          type: 'FETCH_FLAT_SUCCESS',
+          flat
+        })
+      })
+      .catch(error => {
+        return dispatch({
+          id,
+          message: error.message,
+          type: 'FETCH_FLAT_FAILURE'
+        })
+      })
+  }
+}
+
 export const fetchUser = id => {
   return dispatch => {
     dispatch({
