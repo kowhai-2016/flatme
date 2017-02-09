@@ -2,7 +2,7 @@ import React from 'react'
 import { IndexRoute, Route } from 'react-router'
 
 import App from './components/App'
-import Flat from './components/Flat'
+import Flat from './containers/Flat'
 import Home from './containers/Home'
 import Join from './containers/Join'
 import PageNotFound from './components/PageNotFound'
@@ -13,7 +13,7 @@ export default (
     <IndexRoute component={Home} />
     <Route path='join' component={Join} />
     <Route path='user/:id' component={User} />
-    <Route path='flat' component={Flat} />
+    <Route path='flat/:id' component={Flat} />
     <Route path='*' component={PageNotFound} />
   </Route>
 )
