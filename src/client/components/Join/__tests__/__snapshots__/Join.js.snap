@@ -19,7 +19,7 @@ exports[`test Join renders correctly 1`] = `
       className="errors"
       messages={
         Object {
-          "maxLength": "Must be 15 characters or less",
+          "maxLength": " Must be 15 characters or less",
           "required": "Required",
         }
       }
@@ -43,7 +43,7 @@ exports[`test Join renders correctly 1`] = `
       className="errors"
       messages={
         Object {
-          "maxLength": "Must be 15 characters or less",
+          "maxLength": " Must be 15 characters or less",
           "required": "Required",
         }
       }
@@ -59,16 +59,16 @@ exports[`test Join renders correctly 1`] = `
       model=".email"
       validators={
         Object {
-          "maxLength": [Function],
           "required": [Function],
+          "validEmail": [Function],
         }
       } />
     <Modeled(Connect(Errors))
       className="errors"
       messages={
         Object {
-          "maxLength": "Must be 15 characters or less",
           "required": "Required",
+          "validEmail": " Invalid email address",
         }
       }
       model="forms.join.email"
@@ -91,7 +91,7 @@ exports[`test Join renders correctly 1`] = `
       className="errors"
       messages={
         Object {
-          "maxLength": "Must be 15 characters or less",
+          "maxLength": " Must be 15 characters or less",
           "required": "Required",
         }
       }
@@ -116,7 +116,7 @@ exports[`test Join renders correctly 1`] = `
       className="errors"
       messages={
         Object {
-          "maxLength": "Must be 15 characters or less",
+          "maxLength": " Must be 15 characters or less",
           "required": "Required",
         }
       }
@@ -141,7 +141,7 @@ exports[`test Join renders correctly 1`] = `
       className="errors"
       messages={
         Object {
-          "maxLength": "Must be 15 characters or less",
+          "maxLength": " Must be 15 characters or less",
           "required": "Required",
         }
       }
