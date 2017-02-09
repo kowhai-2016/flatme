@@ -4,9 +4,9 @@ import { shallow } from 'enzyme'
 import toJSON from 'enzyme-to-json'
 import React from 'react'
 
-import PageNotFound from '..'
+import App from '../../../../src/client/components/App'
 
-test('PageNotFound renders correctly', () => {
-  const wrapper = shallow(<PageNotFound />)
+test('App renders correctly', () => {
+  const wrapper = shallow(<App />)
   expect(toJSON(wrapper)).toMatchSnapshot()
 })

@@ -4,7 +4,7 @@ import { shallow } from 'enzyme'
 import toJSON from 'enzyme-to-json'
 import React from 'react'
 
-import Flat from '..'
+import Flat from '../../../../src/client/components/Flat'
 
 test('Flat renders correctly', () => {
   const fetchFlat = () => {}

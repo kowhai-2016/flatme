@@ -72,8 +72,8 @@
       "src/**/*.js"
     ],
     "moduleNameMapper": {
-      "\\.(ico|svg)$": "<rootDir>/src/client/__mocks__/file.js",
-      "\\.css$": "<rootDir>/src/client/__mocks__/style.js"
+      "\\.(ico|svg)$": "<rootDir>/test/__mocks__/file.js",
+      "\\.css$": "<rootDir>/test/__mocks__/style.js"
     }
   }
 }

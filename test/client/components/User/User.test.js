@@ -4,7 +4,7 @@ import { shallow } from 'enzyme'
 import toJSON from 'enzyme-to-json'
 import React from 'react'
 
-import User from '..'
+import User from '../../../../src/client/components/User'
 
 test('User renders correctly', () => {
   const fetchUser = () => {}

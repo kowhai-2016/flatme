@@ -1,5 +1,5 @@
 /* eslint-env jest */
 
-import '../routes'
+import '../../src/client/routes'
 
 test('create routes', () => {})
