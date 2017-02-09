@@ -1,6 +1,10 @@
 const express = require('express')
 
+const v1 = require('./v1')
+
 const router = express.Router()
+
+router.use('/v1', v1)
 
 router.get('*', (request, response) => {
   return response.send(`
