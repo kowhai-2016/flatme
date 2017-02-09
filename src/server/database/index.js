@@ -31,7 +31,56 @@ function getUserById (id) {
     })
 }
 
+function addFlat (flat) {
+  return knex('flats')
+    .insert({
+      flat_name: flat.flatName
+    })
+    .then(inserted => {
+      const id = inserted[0]
+      return id
+    })
+}
+
+function getFlatById (id) {
+  return knex('flats')
+    .where('flats.id', id)
+    .first()
+    .then(record => {
+      return {
+        id: record.id,
+        flatName: record.flat_name
+      }
+    })
+    .then(flat => {
+      return getFlatmates(flat.id)
+      .then(flatmates => {
+        flat.flatmates = flatmates
+        return flat
+      })
+    })
+}
+
+function getFlatmates (flatId) {
+  return knex('tenancies')
+    .join('users', 'tenancies.user_id', '=', 'users.id')
+    .join('flats', 'tenancies.flat_id', '=', 'flats.id')
+    .select('flats.id as flatId', 'users.first_name as firstName', 'users.last_name as lastName', 'users.id as userId')
+    .where('flatId', flatId)
+    .then(flatmates => {
+      return flatmates.map(flatmate => {
+        return {
+          id: flatmate.userId,
+          firstName: flatmate.firstName,
+          lastName: flatmate.lastName
+        }
+      })
+    })
+}
+
 module.exports = {
+  addFlat,
   addUser,
+  getFlatById,
   getUserById
 }
