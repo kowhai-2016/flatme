@@ -42,6 +42,21 @@ function addFlat (flat) {
     })
 }
 
+function getFlatByUserId(id) {
+  return knex('tenancies')
+    .select()
+    .where('id', id)
+    .then(user => {
+      return {
+        id: user.id,
+        firstName: user.first_name,
+        lastName: user.last_name,
+        email: user.email,
+        phoneNumber: user.phone_number
+      }
+    })
+}
+
 module.exports = {
   addUser,
   getUserById,

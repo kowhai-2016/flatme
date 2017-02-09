@@ -35,6 +35,17 @@ router.post('/flats', (request, response) => {
     })
 })
 
+router.get('/flats/:userid', (request, response) => {
+  const id = request.params.id
+  db.getFlatByUserId(id)
+    .then(flat => {
+      response.json(flat)
+    })
+    .catch(error => {
+      response.status(500).send(error.message)
+    })
+})
+
 router.get('*', (request, response) => response.status(404).send('API endpoint not found.'))
 
 module.exports = router
