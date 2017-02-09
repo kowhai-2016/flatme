@@ -31,6 +31,7 @@
     "knex": "^0.12.6",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
+    "react-bootstrap-validation": "^0.1.11",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
     "react-redux-form": "^1.5.4",
