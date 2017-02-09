@@ -3,6 +3,7 @@ import { Control, Errors, Form } from 'react-redux-form'
 
 const required = val => val && val.length
 const maxLength = length => val => val && val.length <= length
+const isNumber = val => !isNaN(Number(val))
 
 const Join = React.createClass({
   handleSubmit (values) {
@@ -75,6 +76,7 @@ const Join = React.createClass({
           <Control.text model='.phoneNumber'
             validators={{
               required,
+              isNumber,
               maxLength: maxLength(15)
             }}
           />
@@ -84,7 +86,7 @@ const Join = React.createClass({
             show='touched'
             messages={{
               required: 'Required',
-              maxLength: ' Must be 15 characters or less'
+              isNumber: 'Must be a phont Number'
             }}
           />
         </div>
