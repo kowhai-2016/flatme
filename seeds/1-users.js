@@ -66,6 +66,46 @@ exports.seed = knex => {
           email: 'foo@bar.com',
           phone_number: '000 000 0000',
           hash: 'xxxx'
+        }),
+        knex('users').insert({
+          id: 9,
+          first_name: 'Rich',
+          last_name: 'C',
+          email: 'foo@bar.com',
+          phone_number: '000 000 0000',
+          hash: 'xxxx'
+        }),
+        knex('users').insert({
+          id: 10,
+          first_name: 'Daisy',
+          last_name: 'R',
+          email: 'foo@bar.com',
+          phone_number: '000 000 0000',
+          hash: 'xxxx'
+        }),
+        knex('users').insert({
+          id: 11,
+          first_name: 'Don',
+          last_name: 'S',
+          email: 'foo@bar.com',
+          phone_number: '000 000 0000',
+          hash: 'xxxx'
+        }),
+        knex('users').insert({
+          id: 12,
+          first_name: 'Esther',
+          last_name: 'P',
+          email: 'foo@bar.com',
+          phone_number: '000 000 0000',
+          hash: 'xxxx'
+        }),
+        knex('users').insert({
+          id: 13,
+          first_name: 'Christy',
+          last_name: 'J',
+          email: 'foo@bar.com',
+          phone_number: '000 000 0000',
+          hash: 'xxxx'
         })
       ])
     })
