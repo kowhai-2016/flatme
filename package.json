@@ -5,9 +5,11 @@
   "scripts": {
     "dev": "webpack --progress --watch | nodemon src/server",
     "knex": "knex",
+    "migrate": "knex migrate:latest",
     "start": "node src/server",
     "test": "standard && jest --coverage",
-    "webpack": "webpack --progress"
+    "webpack": "webpack --progress",
+    "postinstall": "webpack && npm run migrate"
   },
   "repository": {
     "type": "git",
@@ -29,6 +31,7 @@
     "css-loader": "^0.26.1",
     "express": "^4.14.1",
     "knex": "^0.12.6",
+    "pg": "^6.1.2",
     "react": "^15.4.2",
     "react-bootstrap": "^0.30.7",
     "react-bootstrap-validation": "^0.1.11",

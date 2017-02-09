@@ -6,7 +6,7 @@ const BannerHeader = () => {
       <br />
       <br />
       <div className='description1'>
-        <h1>FlatMe</h1>
+        <h1>goFlat</h1>
         <h3>resolves all your flatting issues</h3>
       </div>
       <br />
