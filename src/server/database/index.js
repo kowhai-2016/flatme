@@ -1,5 +1,6 @@
 const knex = require('./knex')
 
+
 exports.addUser = user => {
   return knex('users')
     .insert({
@@ -19,4 +20,15 @@ exports.getUserById = id => {
     .select('id', 'first_name', 'last_name', 'email', 'phone_number')
     .where('id', id)
     .first()
+}
+
+exports.addFlat = flat => {
+  return knex('flats')
+    .insert({
+      flat_name: flat.name
+    })
+    .then(inserted => {
+      const id = inserted[0]
+      return id
+    })
 }
