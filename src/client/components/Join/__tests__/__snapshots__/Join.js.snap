@@ -1,7 +1,14 @@
 exports[`test Join renders correctly 1`] = `
 <Connect(Form)
   model="forms.join"
-  onSubmit={[Function]}>
+  onSubmit={[Function]}
+  validators={
+    Object {
+      "": Object {
+        "passwordMatch": [Function],
+      },
+    }
+  }>
   <div
     className="four columns">
     <label>
@@ -149,6 +156,13 @@ exports[`test Join renders correctly 1`] = `
       model="forms.join.confirmPassword"
       show="touched" />
   </div>
+  <Modeled(Connect(Errors))
+    messages={
+      Object {
+        "passwordMatch": "Password need to match",
+      }
+    }
+    model="forms.join" />
   <button
     type="submit">
     Add

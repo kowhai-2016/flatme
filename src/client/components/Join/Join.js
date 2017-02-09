@@ -3,6 +3,7 @@ import { Control, Errors, Form } from 'react-redux-form'
 
 const isNumber = val => !isNaN(Number(val))
 const maxLength = length => val => val && val.length <= length
+const passwordMatch = vals => vals.confirmPassword === vals.password
 const required = val => val && val.length
 
 const Join = React.createClass({
@@ -12,7 +13,13 @@ const Join = React.createClass({
   render () {
     return (
       <Form model='forms.join'
-        onSubmit={values => this.handleSubmit(values)}>
+        onSubmit={values => this.handleSubmit(values)}
+        validators={{
+          '': {
+            passwordMatch
+          }
+        }}
+        >
         <div className='four columns'>
           <label>First name:</label>
           <Control.text
@@ -128,7 +135,10 @@ const Join = React.createClass({
             }}
           />
         </div>
-
+        <Errors model='forms.join'
+          messages={{
+            passwordMatch: 'Password need to match'
+          }} />
         <button type='submit'>Add</button>
       </Form>
     )
