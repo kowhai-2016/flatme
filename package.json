@@ -3,11 +3,12 @@
   "version": "1.0.0",
   "description": "A flatmate management app",
   "scripts": {
+    "coverage": "jest --coverage",
     "dev": "webpack --progress --watch | nodemon src/server",
     "knex": "knex",
     "migrate": "knex migrate:latest",
     "start": "node src/server",
-    "test": "standard && jest --coverage",
+    "test": "standard && jest",
     "webpack": "webpack --progress",
     "postinstall": "webpack && npm run migrate"
   },
