@@ -32,12 +32,13 @@
     "react-bootstrap": "^0.30.7",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.2",
+    "react-redux-form": "^1.5.4",
     "react-router": "^3.0.2",
     "react-router-redux": "^4.0.7",
     "redux": "^3.6.0",
     "redux-thunk": "^2.2.0",
-    "style-loader": "^0.13.1",
     "sqlite3": "^3.1.8",
+    "style-loader": "^0.13.1",
     "webpack": "^2.2.1"
   },
   "devDependencies": {
