@@ -2,7 +2,7 @@ import { routerReducer } from 'react-router-redux'
 import { combineReducers } from 'redux'
 import { combineForms } from 'react-redux-form'
 
-const initialAccountState = {
+const join = {
   firstName: '',
   lastName: '',
   phone: '',
@@ -14,7 +14,9 @@ const initialAccountState = {
 import account from './account'
 
 export default combineReducers({
-  forms: combineForms({ initialAccountState }, 'forms'),
-  routing: routerReducer,
-  account
+  account,
+  forms: combineForms({
+    join
+  }, 'forms'),
+  routing: routerReducer
 })
