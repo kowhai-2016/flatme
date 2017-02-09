@@ -1,9 +1,9 @@
 import React from 'react'
 import { Control, Errors, Form } from 'react-redux-form'
 
-const required = val => val && val.length
-const maxLength = length => val => val && val.length <= length
 const isNumber = val => !isNaN(Number(val))
+const maxLength = length => val => val && val.length <= length
+const required = val => val && val.length
 
 const Join = React.createClass({
   handleSubmit (values) {
@@ -86,7 +86,7 @@ const Join = React.createClass({
             show='touched'
             messages={{
               required: 'Required',
-              isNumber: 'Must be a phont Number'
+              isNumber: 'Must be a phone number'
             }}
           />
         </div>

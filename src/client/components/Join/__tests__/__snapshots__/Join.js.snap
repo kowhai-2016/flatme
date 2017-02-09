@@ -92,7 +92,7 @@ exports[`test Join renders correctly 1`] = `
       className="errors"
       messages={
         Object {
-          "isNumber": "Must be a phont Number",
+          "isNumber": "Must be a phone number",
           "required": "Required",
         }
       }
