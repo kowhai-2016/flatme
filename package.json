@@ -47,7 +47,8 @@
     "nodemon": "^1.11.0",
     "react-addons-test-utils": "^15.4.2",
     "standard": "^8.6.0",
-    "supertest": "^3.0.0"
+    "supertest": "^3.0.0",
+    "webpack-dev-server": "^2.3.0"
   },
   "babel": {
     "presets": [

@@ -1,36 +1,64 @@
 import React from 'react'
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem } from 'react-bootstrap'
+import { Navbar, Nav, NavItem, Modal, Button } from 'react-bootstrap'
 
-const Navigation = () => {
-  return (
-    <div>
-      <Navbar inverse collapseOnSelect>
-        <Navbar.Header>
-          <Navbar.Brand>
-            <a href='#'>React-Bootstrap</a>
-          </Navbar.Brand>
-          <Navbar.Toggle />
-        </Navbar.Header>
-        <Navbar.Collapse>
-          <Nav>
-            <NavItem eventKey={1} href='#'>Link</NavItem>
-            <NavItem eventKey={2} href='#'>Link</NavItem>
-            <NavDropdown eventKey={3} title='Dropdown' id='basic-nav-dropdown'>
-              <MenuItem eventKey={3.1}>Action</MenuItem>
-              <MenuItem eventKey={3.2}>Another action</MenuItem>
-              <MenuItem eventKey={3.3}>Something else here</MenuItem>
-              <MenuItem divider />
-              <MenuItem eventKey={3.3}>Separated link</MenuItem>
-            </NavDropdown>
-          </Nav>
-          <Nav pullRight>
-            <NavItem eventKey={1} href='#'>Link Right</NavItem>
-            <NavItem eventKey={2} href='#'>Link Right</NavItem>
-          </Nav>
-        </Navbar.Collapse>
-      </Navbar>
-    </div>
-  )
-}
+export default React.createClass({
+  getInitialState () {
+    return {show: false}
+  },
 
-export default Navigation
+  open () {
+    this.setState({show: true})
+  },
+
+  close () {
+    this.setState({show: false})
+    this.props.login()
+  },
+
+  handleLogout () {
+    this.props.logout()
+  },
+
+  render () {
+    const user = this.props.account.user
+    const loggedInButtons = (
+      <Nav pullRight bsStyle='pills'>
+        <NavItem eventKey={1} href='/user/{user.id}'>{user ? user.firstName : null}</NavItem>
+        <NavItem eventKey={2} onClick={this.handleLogout}>Log out</NavItem>
+      </Nav>
+    )
+    const loggedOutButtons = (
+      <Nav pullRight bsStyle='pills'>
+        <NavItem eventKey={1} href='/join'>Sign up</NavItem>
+        <NavItem eventKey={2} onClick={this.open}>Log in</NavItem>
+      </Nav>
+    )
+    return (
+      <div>
+        <Navbar inverse collapseOnSelect>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <a href='/'>GoFlat</a>
+            </Navbar.Brand>
+            <Navbar.Toggle />
+          </Navbar.Header>
+          <Navbar.Collapse>
+            {user ? loggedInButtons : loggedOutButtons}
+          </Navbar.Collapse>
+        </Navbar>
+
+        <Modal show={this.state.show} onHide={this.close}>
+          <Modal.Header closeButton>
+            <Modal.Title>Log in</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            <h4>Enter your log in credentials</h4>
+          </Modal.Body>
+          <Modal.Footer>
+            <Button onClick={this.close}>Log in</Button>
+          </Modal.Footer>
+        </Modal>
+      </div>
+    )
+  }
+})
