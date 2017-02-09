@@ -3,7 +3,6 @@ import { Control, Errors, Form } from 'react-redux-form'
 
 const required = val => val && val.length
 const maxLength = length => val => val && val.length <= length
-const isNumber = val => !isNaN(Number(val))
 
 const Join = React.createClass({
   handleSubmit (values) {
