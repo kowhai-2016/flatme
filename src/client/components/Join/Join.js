@@ -27,7 +27,7 @@ const Join = React.createClass({
             show='touched'
             messages={{
               required: 'Required',
-              maxLength: 'Must be 15 characters or less'
+              maxLength: ' Must be 15 characters or less'
             }}
           />
         </div>
@@ -46,7 +46,7 @@ const Join = React.createClass({
             show='touched'
             messages={{
               required: 'Required',
-              maxLength: 'Must be 15 characters or less'
+              maxLength: ' Must be 15 characters or less'
             }}
           />
         </div>
@@ -56,7 +56,7 @@ const Join = React.createClass({
           <Control.text model='.email'
             validators={{
               required,
-              maxLength: maxLength(15)
+              validEmail: (val) => /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(val)
             }}
           />
           <Errors
@@ -65,7 +65,7 @@ const Join = React.createClass({
             show='touched'
             messages={{
               required: 'Required',
-              maxLength: 'Must be 15 characters or less'
+              validEmail: ' Invalid email address'
             }}
           />
         </div>
@@ -84,7 +84,7 @@ const Join = React.createClass({
             show='touched'
             messages={{
               required: 'Required',
-              maxLength: 'Must be 15 characters or less'
+              maxLength: ' Must be 15 characters or less'
             }}
           />
         </div>
@@ -103,7 +103,7 @@ const Join = React.createClass({
             show='touched'
             messages={{
               required: 'Required',
-              maxLength: 'Must be 15 characters or less'
+              maxLength: ' Must be 15 characters or less'
             }}
           />
         </div>
@@ -122,7 +122,7 @@ const Join = React.createClass({
             show='touched'
             messages={{
               required: 'Required',
-              maxLength: 'Must be 15 characters or less'
+              maxLength: ' Must be 15 characters or less'
             }}
           />
         </div>
