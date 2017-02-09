@@ -3,7 +3,7 @@ import { IndexRoute, Route } from 'react-router'
 
 import App from './components/App'
 import Flat from './components/Flat'
-import Home from './components/Home'
+import Home from './containers/Home'
 import Join from './components/Join'
 import PageNotFound from './components/PageNotFound'
 import User from './components/User'
