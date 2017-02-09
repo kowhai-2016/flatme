@@ -32,3 +32,12 @@
 .height{
   min-height: 400px;
 }
+
+.loginForm{
+  display: flex;
+  justify-content: space-between;
+}
+
+.loginForm label {
+  padding-right: 10px;
+}

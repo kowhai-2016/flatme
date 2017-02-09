@@ -2,6 +2,8 @@ import { routerReducer } from 'react-router-redux'
 import { combineReducers } from 'redux'
 import { combineForms } from 'react-redux-form'
 
+import account from './account'
+
 const join = {
   firstName: '',
   lastName: '',
@@ -11,12 +13,13 @@ const join = {
   confirmPassword: ''
 }
 
-import account from './account'
+const loginCredentials = {
+  email: '',
+  password: ''
+}
 
 export default combineReducers({
+  forms: combineForms({ loginCredentials, join }, 'forms'),
   account,
-  forms: combineForms({
-    join
-  }, 'forms'),
   routing: routerReducer
 })
