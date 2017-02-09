@@ -17,8 +17,23 @@ const Join = () => {
       </div>
 
       <div className="four columns">
-        <label>Mobile:</label>
-        <Control.text model=".mobile" />
+        <label>Email:</label>
+        <Control.text model=".lastName" />
+      </div>
+
+      <div className="four columns">
+        <label>Phone Number:</label>
+        <Control.text model=".phone" />
+      </div>
+
+      <div className="four columns">
+        <label>Password:</label>
+        <Control.text model=".password" />
+      </div>
+
+      <div className="four columns">
+        <label>Confirm Password:</label>
+        <Control.text model=".confirmPassword" />
       </div>
 
       <button type="submit">Add</button>
