@@ -39,7 +39,7 @@ const Join = React.createClass({
               required,
               maxLength: maxLength(15)
             }}
-            />
+          />
           <Errors
             className='errors'
             model='forms.join.lastName'
@@ -58,7 +58,7 @@ const Join = React.createClass({
               required,
               maxLength: maxLength(15)
             }}
-            />
+          />
           <Errors
             className='errors'
             model='forms.join.email'
@@ -67,7 +67,7 @@ const Join = React.createClass({
               required: 'Required',
               maxLength: 'Must be 15 characters or less'
             }}
-            />
+          />
         </div>
 
         <div className='four columns'>
@@ -77,7 +77,7 @@ const Join = React.createClass({
               required,
               maxLength: maxLength(15)
             }}
-            />
+          />
           <Errors
             className='errors'
             model='forms.join.phoneNumber'
@@ -96,7 +96,7 @@ const Join = React.createClass({
               required,
               maxLength: maxLength(15)
             }}
-            />
+          />
           <Errors
             className='errors'
             model='forms.join.password'
@@ -115,7 +115,7 @@ const Join = React.createClass({
               required,
               maxLength: maxLength(15)
             }}
-            />
+          />
           <Errors
             className='errors'
             model='forms.join.confirmPassword'
