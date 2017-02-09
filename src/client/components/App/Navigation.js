@@ -1,6 +1,7 @@
 import React from 'react'
 import { Navbar, Nav, NavItem, Modal, Button } from 'react-bootstrap'
 import { Form, Control } from 'react-redux-form'
+import { LinkContainer } from 'react-router-bootstrap'
 
 export default React.createClass({
   getInitialState () {
@@ -30,7 +31,7 @@ export default React.createClass({
     )
     const loggedOutButtons = (
       <Nav pullRight bsStyle='pills'>
-        <NavItem eventKey={1} href='/join'>Sign up</NavItem>
+        <LinkContainer to='/join'><NavItem eventKey={1}>Sign Up</NavItem></LinkContainer>
         <NavItem eventKey={2} onClick={this.open}>Log in</NavItem>
       </Nav>
     )
