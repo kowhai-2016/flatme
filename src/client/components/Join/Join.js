@@ -1,79 +1,29 @@
 import React from 'react'
-import { Button, ControlLabel, Col, Checkbox, Form, FormGroup, FormControl } from 'react-bootstrap'
+import { Button, ControlLabel, Col, Checkbox, FormGroup, FormControl } from 'react-bootstrap'
+import { Form, Control } from 'react-redux-form'
 
 const Join = () => {
   return (
-    <div>
-      <Form horizontal>
-      <FormGroup controlId='formHorizontalSurname'>
-        <Col componentClass={ControlLabel} sm={2}>
-          Surname
-        </Col>
-        <Col sm={10}>
-          <FormControl type='surname' placeholder='Surname' />
-        </Col>
-      </FormGroup>
+    <Form model="forms.account"
+      onSubmit={account => this.handleSubmit(account)}>
+      <div className="four columns">
+        <label>First name:</label>
+        <Control.text model=".firstName" />
+      </div>
 
-      <FormGroup controlId='formHorizontalName'>
-        <Col componentClass={ControlLabel} sm={2}>
-          Name
-        </Col>
-        <Col sm={10}>
-          <FormControl type='name' placeholder='Name' />
-        </Col>
-      </FormGroup>
+      <div className="four columns">
+        <label>Last name:</label>
+        <Control.text model=".lastName" />
+      </div>
 
-      <FormGroup controlId='formHorizontalEmail'>
-        <Col componentClass={ControlLabel} sm={2}>
-          Email
-        </Col>
-        <Col sm={10}>
-          <FormControl type='email' placeholder='Email' />
-        </Col>
-      </FormGroup>
+      <div className="four columns">
+        <label>Mobile:</label>
+        <Control.text model=".mobile" />
+      </div>
 
-      <FormGroup controlId='formHorizontalPassword'>
-        <Col componentClass={ControlLabel} sm={2}>
-          Password
-        </Col>
-        <Col sm={10}>
-          <FormControl type='password' placeholder='Password' />
-        </Col>
-      </FormGroup>
-
-      <FormGroup controlId='formHorizontalConfirmPassword'>
-        <Col componentClass={ControlLabel} sm={2}>
-          Confirm Password
-        </Col>
-        <Col sm={10}>
-          <FormControl type='password' placeholder='Confirm Password' />
-        </Col>
-      </FormGroup>
-
-      <FormGroup controlId='formHorizontalTelephone'>
-        <Col componentClass={ControlLabel} sm={2}>
-          Telephone
-        </Col>
-        <Col sm={10}>
-          <FormControl type='telephone' placeholder='Telephone' />
-        </Col>
-      </FormGroup>
-
-      <FormGroup>
-        <Col smOffset={2} sm={10}>
-          <Checkbox>Remember me</Checkbox>
-        </Col>
-      </FormGroup>
-
-      <FormGroup>
-        <Col smOffset={2} sm={10}>
-          <Button type='submit'>
-            Sign in
-          </Button>
-        </Col>
-      </FormGroup>
+      <button type="submit">Add</button>
     </Form>
-  </div>
+
   )
 }
 
