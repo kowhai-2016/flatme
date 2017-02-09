@@ -7,6 +7,7 @@ import React from 'react'
 import User from '..'
 
 test('User renders correctly', () => {
-  const wrapper = shallow(<User />)
+  const fetchUser = () => {}
+  const wrapper = shallow(<User fetchUser={fetchUser} />)
   expect(toJSON(wrapper)).toMatchSnapshot()
 })
