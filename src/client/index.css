@@ -2,6 +2,8 @@
   margin-bottom: 0px;
 }
 
+/*Landing page*/
+
 .leads {
   color: #76f2dd;
   background-color: rgba(128,128,128,0.2);
@@ -55,6 +57,7 @@
   min-height: 400px;
 }
 
+/* Login modal*/
 .loginForm{
   display: flex;
   justify-content: space-between;
@@ -62,4 +65,30 @@
 
 .loginForm label {
   padding-right: 10px;
+}
+
+/* Dashboard page*/
+.categories-bar {
+  padding-top: 20px;
+  padding-bottom: 100%;
+}
+
+.categories-bar div {
+  padding-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.col-md-3 {
+  padding: 0;
+}
+
+.categories-bar div a {
+  color: grey;
+  text-align: center;
+  text-decoration: none;
+}
+
+.categories-bar div a:hover {
+  text-decoration: none;
+  color: white;
 }

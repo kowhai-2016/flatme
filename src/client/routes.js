@@ -17,7 +17,7 @@ export default (
     <Route path='join' component={Join} />
     <Route path='user/:id' component={User} />
     <Route path='flat/:id' component={Flat} >
-      <Route path='contacts' component={Contacts} />
+      <IndexRoute component={Contacts} />
       <Route path='documents' component={Documents} />
       <Route path='notes' component={Notes} />
     </Route>
