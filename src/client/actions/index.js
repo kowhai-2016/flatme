@@ -48,15 +48,25 @@ export const fetchUser = id => {
   }
 }
 
-export const login = () => {
+export const login = (email, password) => {
   return dispatch => {
     dispatch({
       type: 'LOGIN_PENDING'
     })
-    dispatch({
-      type: 'LOGIN_SUCCESS',
-      user: {}
-    })
+    return axios.post(`/v1/login`, {email, password})
+      .then(response => {
+        const user = response.data
+        return dispatch({
+          type: 'LOGIN_SUCCESS',
+          user
+        })
+      })
+      .catch(error => {
+        return dispatch({
+          message: error.message,
+          type: 'LOGIN_FAILURE'
+        })
+      })
   }
 }
 

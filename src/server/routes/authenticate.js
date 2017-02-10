@@ -28,6 +28,8 @@ module.exports = (req, res) => {
             return res.status(403).send('Password is incorrect')
           }
         })
+      } else {
+        return res.status(403).send('User does not exist')
       }
     })
     .catch(err => {
