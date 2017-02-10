@@ -1,5 +1,5 @@
 /* eslint-env jest */
 
-import '../store'
+import '../../src/client/store'
 
 test('create store', () => {})
