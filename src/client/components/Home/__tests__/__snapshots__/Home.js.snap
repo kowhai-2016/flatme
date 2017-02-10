@@ -1,5 +1,0 @@
-exports[`test Home renders correctly 1`] = `
-<div>
-  <Landing />
-</div>
-`;

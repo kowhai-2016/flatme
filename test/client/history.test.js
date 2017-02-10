@@ -1,5 +1,5 @@
 /* eslint-env jest */
 
-import '../history'
+import '../../src/client/history'
 
 test('create history', () => {})

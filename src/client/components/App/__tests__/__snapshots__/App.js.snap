@@ -1,5 +1,0 @@
-exports[`test App renders correctly 1`] = `
-<div>
-  <Connect(Navigation) />
-</div>
-`;
