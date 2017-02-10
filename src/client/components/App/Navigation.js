@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 import { Navbar, Nav, NavItem, Modal, Button } from 'react-bootstrap'
 import { actions, Control, Errors, Form } from 'react-redux-form'
 import { LinkContainer } from 'react-router-bootstrap'
+import { browserHistory } from 'react-router'
 
 const Navigation = React.createClass({
   getInitialState () {
@@ -18,6 +19,7 @@ const Navigation = React.createClass({
 
   handleLogout () {
     this.props.logout()
+    browserHistory.push('/')
   },
 
   onSubmit (values) {
