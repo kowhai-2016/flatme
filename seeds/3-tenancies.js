@@ -46,6 +46,31 @@ exports.seed = knex => {
           id: 9,
           flat_id: 9,
           user_id: 8
+        }),
+        knex('tenancies').insert({
+          id: 10,
+          flat_id: 2,
+          user_id: 11
+        }),
+        knex('tenancies').insert({
+          id: 11,
+          flat_id: 2,
+          user_id: 12
+        }),
+        knex('tenancies').insert({
+          id: 12,
+          flat_id: 7,
+          user_id: 9
+        }),
+        knex('tenancies').insert({
+          id: 13,
+          flat_id: 7,
+          user_id: 10
+        }),
+        knex('tenancies').insert({
+          id: 14,
+          flat_id: 7,
+          user_id: 13
         })
       ])
     })

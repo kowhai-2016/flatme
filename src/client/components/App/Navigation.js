@@ -1,9 +1,9 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import { Navbar, Nav, NavItem, Modal, Button } from 'react-bootstrap'
-import { Form, Control } from 'react-redux-form'
+import { actions, Control, Errors, Form } from 'react-redux-form'
 import { LinkContainer } from 'react-router-bootstrap'
 
-export default React.createClass({
+const Navigation = React.createClass({
   getInitialState () {
     return {show: false}
   },
@@ -14,11 +14,22 @@ export default React.createClass({
 
   close () {
     this.setState({show: false})
-    this.props.login()
   },
 
   handleLogout () {
     this.props.logout()
+  },
+
+  onSubmit (values) {
+    const { email, password } = values
+    this.props.login(email, password)
+      .then(action => {
+        if (action.type === 'LOGIN_SUCCESS') {
+          this.close()
+        } else {
+          this.props.dispatch(actions.setErrors('forms.loginCredentials', 'The email address or password that you\'ve entered is incorrect'))
+        }
+      })
   },
 
   render () {
@@ -37,11 +48,11 @@ export default React.createClass({
     )
     const loginModal = (
       <Modal show={this.state.show} onHide={this.close}>
-        <Modal.Header closeButton>
-          <Modal.Title>Log in</Modal.Title>
-        </Modal.Header>
-        <Modal.Body>
-          <Form model='forms.loginCredentials'>
+        <Form model='forms.loginCredentials' onSubmit={this.onSubmit}>
+          <Modal.Header closeButton>
+            <Modal.Title>Log in</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
             <div className='loginForm'>
               <div>
                 <label>Email:</label>
@@ -52,11 +63,12 @@ export default React.createClass({
                 <Control model='.password' type='password' />
               </div>
             </div>
-          </Form>
-        </Modal.Body>
-        <Modal.Footer>
-          <Button onClick={this.close}>Send</Button>
-        </Modal.Footer>
+            <Errors model='forms.loginCredentials' />
+          </Modal.Body>
+          <Modal.Footer>
+            <Button type='submit'>Send</Button>
+          </Modal.Footer>
+        </Form>
       </Modal>
     )
     return (
@@ -77,3 +89,11 @@ export default React.createClass({
     )
   }
 })
+
+Navigation.propTypes = {
+  dispatch: PropTypes.func.isRequired,
+  login: PropTypes.func.isRequired,
+  logout: PropTypes.func.isRequired
+}
+
+export default Navigation

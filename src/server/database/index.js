@@ -1,18 +1,35 @@
 const knex = require('./knex')
+const bcrypt = require('bcrypt')
+
+const saltRounds = 10
+
+function comparePassword (password, hash) {
+  return bcrypt.compare(password, hash)
+}
 
 function addUser (user) {
+  return bcrypt.hash(user.password, saltRounds)
+    .then(hash => {
+      return knex('users')
+        .insert({
+          first_name: user.firstName,
+          last_name: user.lastName,
+          email: user.email,
+          phone_number: user.phoneNumber,
+          hash: hash
+        })
+        .then(inserted => {
+          const id = inserted[0]
+          return id
+        })
+        .then(getUserById)
+    })
+}
+
+function getUserByEmail (email) {
   return knex('users')
-    .insert({
-      first_name: user.firstName,
-      last_name: user.lastName,
-      email: user.email,
-      phone_number: user.phoneNumber
-    })
-    .then(inserted => {
-      const id = inserted[0]
-      return id
-    })
-    .then(getUserById)
+    .where('email', email)
+    .first()
 }
 
 function getUserById (id) {
@@ -82,5 +99,7 @@ module.exports = {
   addFlat,
   addUser,
   getFlatById,
-  getUserById
+  getUserById,
+  getUserByEmail,
+  comparePassword
 }

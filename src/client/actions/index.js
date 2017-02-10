@@ -1,12 +1,72 @@
-export const login = () => {
+import axios from 'axios'
+
+export const fetchFlat = id => {
+  return dispatch => {
+    dispatch({
+      id,
+      type: 'FETCH_FLAT_PENDING'
+    })
+    return axios.get(`/v1/flats?id=${id}`)
+      .then(response => {
+        const flat = response.data
+        return dispatch({
+          type: 'FETCH_FLAT_SUCCESS',
+          flat
+        })
+      })
+      .catch(error => {
+        return dispatch({
+          id,
+          message: error.message,
+          type: 'FETCH_FLAT_FAILURE'
+        })
+      })
+  }
+}
+
+export const fetchUser = id => {
+  return dispatch => {
+    dispatch({
+      id,
+      type: 'FETCH_USER_PENDING'
+    })
+    return axios.get(`/v1/users/${id}`)
+      .then(response => {
+        const user = response.data
+        return dispatch({
+          type: 'FETCH_USER_SUCCESS',
+          user
+        })
+      })
+      .catch(error => {
+        return dispatch({
+          id,
+          message: error.message,
+          type: 'FETCH_USER_FAILURE'
+        })
+      })
+  }
+}
+
+export const login = (email, password) => {
   return dispatch => {
     dispatch({
       type: 'LOGIN_PENDING'
     })
-    dispatch({
-      type: 'LOGIN_SUCCESS',
-      user: {}
-    })
+    return axios.post(`/v1/login`, {email, password})
+      .then(response => {
+        const user = response.data
+        return dispatch({
+          type: 'LOGIN_SUCCESS',
+          user
+        })
+      })
+      .catch(error => {
+        return dispatch({
+          message: error.message,
+          type: 'LOGIN_FAILURE'
+        })
+      })
   }
 }
 

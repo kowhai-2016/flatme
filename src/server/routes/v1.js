@@ -4,6 +4,8 @@ const db = require('../database')
 
 const router = express.Router()
 
+const authenticate = require('./authenticate')
+
 router.get('/users/:id', (request, response) => {
   const id = request.params.id
   db.getUserById(id)
@@ -45,6 +47,8 @@ router.get('/flats', (request, response) => {
       response.status(500).send(error.message)
     })
 })
+
+router.post('/login', authenticate)
 
 router.get('*', (request, response) => response.status(404).send('API endpoint not found.'))
 

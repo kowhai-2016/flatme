@@ -3,6 +3,8 @@ import { combineReducers } from 'redux'
 import { combineForms } from 'react-redux-form'
 
 import account from './account'
+import flats from './flats'
+import users from './users'
 
 const join = {
   firstName: '',
@@ -19,7 +21,9 @@ const loginCredentials = {
 }
 
 export default combineReducers({
-  forms: combineForms({ loginCredentials, join }, 'forms'),
   account,
-  routing: routerReducer
+  flats,
+  forms: combineForms({ loginCredentials, join }, 'forms'),
+  routing: routerReducer,
+  users
 })
