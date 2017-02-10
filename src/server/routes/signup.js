@@ -1,8 +1,8 @@
 const db = require('../database')
 
-module.exports = (request, response) => {
-  db.addUser(request.body)
+module.exports = (req, res) => {
+  db.addUser(req.body)
     .catch(error => {
-      response.status(500).send(error.message)
+      res.status(500).send(error.message)
     })
 }
