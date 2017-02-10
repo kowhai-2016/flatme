@@ -13,7 +13,7 @@ const store = createStore(
 )
 
 if (window.localStorage.getItem('login')) {
-  const user = JSON.parse(document.localStorage.getItem('login'))
+  const user = JSON.parse(window.localStorage.getItem('login'))
   store.dispatch({
     type: 'LOGIN_SUCCESS',
     user
