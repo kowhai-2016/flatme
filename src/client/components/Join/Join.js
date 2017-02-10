@@ -10,7 +10,7 @@ const Join = React.createClass({
   handleSubmit (values) {
     this.props.signUp(values)
     .then(user => {
-      if(user) {
+      if (user) {
         document.getElementById('successful-signup-confirm').innerHTML = 'Sign up successful!'
       }
     })
