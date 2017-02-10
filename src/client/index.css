@@ -3,9 +3,10 @@
 }
 
 .leads {
-  color: #7fffd4;
-  background-color: grey;
-  opacity: 0.2;
+  color: #76f2dd;
+  background-color: rgba(128,128,128,0.2);
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #000000;
 }
 
 .alternate {
@@ -17,9 +18,10 @@
 
 .description1 h1 {
   color: #7fffd4;
-  font-size: 50px;
+  font-size: 70px;
   color: black;
   font-weight: bolder;
+  text-shadow: 1px 1px 1px #FFFFFF;
 }
 
 .description1 {
