@@ -19,6 +19,7 @@ const Navigation = React.createClass({
 
   handleLogout () {
     this.props.logout()
+    browserHistory.push('/')
   },
 
   onSubmit (values) {

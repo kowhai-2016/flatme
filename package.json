@@ -75,6 +75,7 @@
     "moduleNameMapper": {
       "\\.(ico|svg)$": "<rootDir>/test/__mocks__/file.js",
       "\\.css$": "<rootDir>/test/__mocks__/style.js"
-    }
+    },
+    "setupFiles":["<rootDir>test/__mocks__/localStorage.js"]
   }
 }
