@@ -1,9 +1,31 @@
-.description h1 {
-  color: black;
+.navbar {
+  margin-bottom: 0px;
+}
+
+.leads {
+  color: #76f2dd;
+  background-color: rgba(128,128,128,0.2);
   font-weight: bold;
+  text-shadow: 1px 1px 1px #000000;
+}
+
+.alternate {
+  text-align: right;
+  color: black;
+  background-color: white;
+  opacity: 0.5;
+}
+
+.description1 h1 {
+  color: #7fffd4;
+  font-size: 70px;
+  color: black;
+  font-weight: bolder;
+  text-shadow: 1px 1px 1px #FFFFFF;
 }
 
 .description1 {
+  font-weight:bold;
   text-align: center;
   margin-top: 15%;
   padding: 2%;
