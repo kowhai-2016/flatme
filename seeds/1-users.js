@@ -9,7 +9,7 @@ exports.seed = knex => {
           last_name: 'R',
           email: 'Alice@bar.com',
           phone_number: '000 000 0000',
-          hash: 'xxxx'
+          hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
           id: 2,
@@ -17,7 +17,7 @@ exports.seed = knex => {
           last_name: 'H',
           email: 'Amanda@bar.com',
           phone_number: '000 000 0000',
-          hash: 'xxxx'
+          hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
           id: 3,
@@ -25,7 +25,7 @@ exports.seed = knex => {
           last_name: 'J',
           email: 'AnnaJ@bar.com',
           phone_number: '000 000 0000',
-          hash: 'xxxx'
+          hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
           id: 4,
@@ -33,7 +33,7 @@ exports.seed = knex => {
           last_name: 'U',
           email: 'AnnaU@bar.com',
           phone_number: '000 000 0000',
-          hash: 'xxxx'
+          hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
           id: 5,
@@ -41,7 +41,7 @@ exports.seed = knex => {
           last_name: 'C',
           email: 'David@bar.com',
           phone_number: '000 000 0000',
-          hash: 'xxxx'
+          hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
           id: 6,
@@ -49,7 +49,7 @@ exports.seed = knex => {
           last_name: 'N',
           email: 'Jessica@bar.com',
           phone_number: '000 000 0000',
-          hash: 'xxxx'
+          hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
           id: 7,
@@ -57,7 +57,7 @@ exports.seed = knex => {
           last_name: 'B',
           email: 'Thibaud@bar.com',
           phone_number: '000 000 0000',
-          hash: 'xxxx'
+          hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
           id: 8,
@@ -65,7 +65,7 @@ exports.seed = knex => {
           last_name: 'H',
           email: 'Quinn@bar.com',
           phone_number: '000 000 0000',
-          hash: 'xxxx'
+          hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
           id: 9,
@@ -73,7 +73,7 @@ exports.seed = knex => {
           last_name: 'C',
           email: 'Rich@bar.com',
           phone_number: '000 000 0000',
-          hash: 'xxxx'
+          hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
           id: 10,
@@ -81,7 +81,7 @@ exports.seed = knex => {
           last_name: 'R',
           email: 'Daisy@bar.com',
           phone_number: '000 000 0000',
-          hash: 'xxxx'
+          hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
           id: 11,
@@ -89,7 +89,7 @@ exports.seed = knex => {
           last_name: 'S',
           email: 'Don@bar.com',
           phone_number: '000 000 0000',
-          hash: 'xxxx'
+          hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
           id: 12,
@@ -97,7 +97,7 @@ exports.seed = knex => {
           last_name: 'P',
           email: 'Esther@bar.com',
           phone_number: '000 000 0000',
-          hash: 'xxxx'
+          hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
           id: 13,
@@ -105,7 +105,7 @@ exports.seed = knex => {
           last_name: 'J',
           email: 'Christy@bar.com',
           phone_number: '000 000 0000',
-          hash: 'xxxx'
+          hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         })
       ])
     })
