@@ -1,5 +1,9 @@
 exports[`test Flat renders correctly 1`] = `
 <div>
   <h1 />
+  <h2>
+    Flatmates
+  </h2>
+  <ul />
 </div>
 `;
