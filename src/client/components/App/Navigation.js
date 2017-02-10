@@ -34,11 +34,17 @@ const Navigation = React.createClass({
       })
   },
 
+  toUserPage (user) {
+    if (user) {
+      browserHistory.push(`/user/${user.id}`)
+    }
+  },
+
   render () {
     const user = this.props.account.user
     const loggedInButtons = (
       <Nav pullRight bsStyle='pills'>
-        <NavItem eventKey={1} href='/user/{user.id}'>{user ? user.firstName : null}</NavItem>
+        <NavItem eventKey={1} onClick={() => this.toUserPage(user)}>{user ? user.firstName : null}</NavItem>
         <NavItem eventKey={2} onClick={this.handleLogout}>Log out</NavItem>
       </Nav>
     )
