@@ -1,5 +1,8 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
+import { Grid, Row, Col } from 'react-bootstrap'
+
+import Categories from './Categories'
 
 const flatmates = props => {
   if (!props.flat) {
@@ -24,13 +27,21 @@ const Flat = React.createClass({
     const flat = this.props.flat
     const title = flat ? flat.flatName : null
     return (
-      <div>
-        <h1>{title}</h1>
-        <h2>Flatmates</h2>
-        <ul>
-          {flatmates(this.props)}
-        </ul>
-      </div>
+      <Grid>
+        <Row>
+          <Col md={3}>
+            <Categories id={this.props.params.id} />
+          </Col>
+          <Col md={9}>
+            <h1>{title}</h1>
+            <h2>Flatmates</h2>
+            <ul>
+              {flatmates(this.props)}
+            </ul>
+            {this.props.children}
+          </Col>
+        </Row>
+      </Grid>
     )
   }
 })
