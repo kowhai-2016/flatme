@@ -1,5 +1,7 @@
 import axios from 'axios'
 
+import history from '../history'
+
 export const fetchFlat = id => {
   return dispatch => {
     dispatch({
@@ -56,6 +58,8 @@ export const login = (email, password) => {
     return axios.post(`/v1/login`, {email, password})
       .then(response => {
         const user = response.data
+        window.localStorage.clear()
+        window.localStorage.setItem('login', JSON.stringify(user))
         return dispatch({
           type: 'LOGIN_SUCCESS',
           user
@@ -75,6 +79,8 @@ export const logout = () => {
     dispatch({
       type: 'LOGOUT_PENDING'
     })
+    window.localStorage.clear()
+    history.push('/')
     dispatch({
       type: 'LOGOUT_SUCCESS'
     })

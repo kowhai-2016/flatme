@@ -12,4 +12,12 @@ const store = createStore(
   )
 )
 
+if (window.localStorage.getItem('login')) {
+  const user = JSON.parse(document.localStorage.getItem('login'))
+  store.dispatch({
+    type: 'LOGIN_SUCCESS',
+    user
+  })
+}
+
 export default store
