@@ -7,8 +7,8 @@ export const fetchFlat = id => {
       type: 'FETCH_FLAT_PENDING'
     })
     return axios.get(`/v1/flats?id=${id}`)
-      .then(response => {
-        const flat = response.data
+      .then(res => {
+        const flat = res.data
         return dispatch({
           type: 'FETCH_FLAT_SUCCESS',
           flat
@@ -31,8 +31,8 @@ export const fetchUser = id => {
       type: 'FETCH_USER_PENDING'
     })
     return axios.get(`/v1/users/${id}`)
-      .then(response => {
-        const user = response.data
+      .then(res => {
+        const user = res.data
         return dispatch({
           type: 'FETCH_USER_SUCCESS',
           user
@@ -78,5 +78,27 @@ export const logout = () => {
     dispatch({
       type: 'LOGOUT_SUCCESS'
     })
+  }
+}
+
+export const signUp = user => {
+  return dispatch => {
+    dispatch({
+      type: 'SIGNUP_PENDING'
+    })
+    return axios.post(`/v1/users`, user)
+      .then(res => {
+        const user = res.data
+        return dispatch({
+          type: 'SIGNUP_SUCCESS',
+          user
+        })
+      })
+      .catch(error => {
+        return dispatch({
+          message: error.message,
+          type: 'SIGNUP_FAILURE'
+        })
+      })
   }
 }

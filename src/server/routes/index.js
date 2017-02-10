@@ -6,8 +6,8 @@ const router = express.Router()
 
 router.use('/v1', v1)
 
-router.get('*', (request, response) => {
-  return response.send(`
+router.get('*', (req, res) => {
+  return res.send(`
     <!DOCTYPE html>
     <html>
       <head>

@@ -6,50 +6,50 @@ const router = express.Router()
 
 const authenticate = require('./authenticate')
 
-router.get('/users/:id', (request, response) => {
-  const id = request.params.id
+router.get('/users/:id', (req, res) => {
+  const id = req.params.id
   db.getUserById(id)
     .then(user => {
-      response.json(user)
+      res.json(user)
     })
     .catch(error => {
-      response.status(500).send(error.message)
+      res.status(500).send(error.message)
     })
 })
 
-router.post('/users', (request, response) => {
-  db.addUser(request.body)
+router.post('/users', (req, res) => {
+  db.addUser(req.body)
     .then(user => {
-      response.json(user)
+      res.json(user)
     })
     .catch(error => {
-      response.status(500).send(error.message)
+      res.status(500).send(error.message)
     })
 })
 
-router.post('/flats', (request, response) => {
-  db.addFlat(request.body)
+router.post('/flats', (req, res) => {
+  db.addFlat(req.body)
     .then(flat => {
-      response.json(flat)
+      res.json(flat)
     })
     .catch(error => {
-      response.status(500).send(error.message)
+      res.status(500).send(error.message)
     })
 })
 
-router.get('/flats', (request, response) => {
-  const id = request.query.id
+router.get('/flats', (req, res) => {
+  const id = req.query.id
   db.getFlatById(id)
     .then(flat => {
-      response.json(flat)
+      res.json(flat)
     })
     .catch(error => {
-      response.status(500).send(error.message)
+      res.status(500).send(error.message)
     })
 })
 
 router.post('/login', authenticate)
 
-router.get('*', (request, response) => response.status(404).send('API endpoint not found.'))
+router.get('*', (req, res) => res.status(404).send('API endpoint not found.'))
 
 module.exports = router
