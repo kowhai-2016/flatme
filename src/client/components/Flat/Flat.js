@@ -32,7 +32,10 @@ Flat.propTypes = {
   fetchFlat: PropTypes.func.isRequired,
   flat: PropTypes.shape({
     flatName: PropTypes.string.isRequired
-  })
+  }).isRequired,
+  params: PropTypes.shape({
+    id: PropTypes.string.isRequired
+  }).isRequired
 }
 
 export default Flat
