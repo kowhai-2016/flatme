@@ -145,7 +145,7 @@ const Join = React.createClass({
             passwordMatch: 'Password need to match'
           }} />
         <button type='submit'>Add</button>
-        <div id='successful-signup-confirm'></div>
+        <div id='successful-signup-confirm' />
       </Form>
     )
   }
