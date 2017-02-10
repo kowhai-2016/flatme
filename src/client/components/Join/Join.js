@@ -9,6 +9,11 @@ const required = val => val && val.length
 const Join = React.createClass({
   handleSubmit (values) {
     this.props.signUp(values)
+    .then(user => {
+      if (user) {
+        document.getElementById('successful-signup-confirm').innerHTML = 'Sign up successful!'
+      }
+    })
   },
   render () {
     return (
@@ -140,6 +145,7 @@ const Join = React.createClass({
             passwordMatch: 'Password need to match'
           }} />
         <button type='submit'>Add</button>
+        <div id='successful-signup-confirm'></div>
       </Form>
     )
   }
