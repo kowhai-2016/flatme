@@ -84,7 +84,7 @@ const Navigation = React.createClass({
         <Navbar inverse collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
-              <a href='/'>GoFlat</a>
+              <a href='/'><img src='/images/web.svg' width='30px' /></a>
             </Navbar.Brand>
             <Navbar.Toggle />
           </Navbar.Header>

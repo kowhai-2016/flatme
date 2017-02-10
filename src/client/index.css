@@ -71,6 +71,7 @@
 .categories-bar {
   padding-top: 20px;
   padding-bottom: 100%;
+  padding-left: 20px;
 }
 
 .categories-bar div {
@@ -92,3 +93,13 @@
   text-decoration: none;
   color: white;
 }
+
+.navbar-brand {
+  width: 200px;
+}
+
+/*testing the borders*/
+
+/*div {
+  border: 1px solid red;
+}*/
