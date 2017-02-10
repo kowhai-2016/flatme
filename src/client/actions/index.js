@@ -70,3 +70,25 @@ export const logout = () => {
     })
   }
 }
+
+export const signUp = user => {
+  return dispatch => {
+    dispatch({
+      type: 'SIGNUP_PENDING'
+    })
+    return axios.post(`/v1/users`, user)
+      .then(response => {
+        const user = response.data
+        return dispatch({
+          type: 'SIGNUP_SUCCESS',
+          user
+        })
+      })
+      .catch(error => {
+        return dispatch({
+          message: error.message,
+          type: 'SIGNUP_FAILURE'
+        })
+      })
+  }
+}

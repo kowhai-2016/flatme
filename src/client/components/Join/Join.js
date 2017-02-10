@@ -8,12 +8,12 @@ const required = val => val && val.length
 
 const Join = React.createClass({
   handleSubmit (values) {
-    console.log('Submit Join form:', values)
+    this.props.signUp(values)
   },
   render () {
     return (
       <Form model='forms.join'
-        onSubmit={values => this.handleSubmit(values)}
+        onSubmit={this.handleSubmit}
         validators={{
           '': {
             passwordMatch
