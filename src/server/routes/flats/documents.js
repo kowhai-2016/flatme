@@ -5,7 +5,18 @@ const path = require('path')
 
 const router = express.Router()
 
+router.get('/:id/documents', (request, response) => {
+  fs.readdir(path.join(__dirname, 'images', request.params.id), (error, files) => {
+    if (error) {
+      response.send('Error reading documents: ' + error.message)
+    } else {
+      response.json({files})
+    }
+  })
+})
+
 router.post('/:id/documents', (request, response) => {
+  const { id } = request.params
   const form = new multiparty.Form()
   form.parse(request, (error, fields, files) => {
     if (error) {
@@ -15,22 +26,26 @@ router.post('/:id/documents', (request, response) => {
     if (!file) {
       return response.send('No file found to upload.')
     }
-    const newPath = path.join(__dirname, 'images', file.originalFilename)
     const publicPath = `/v1/flats/${request.params.id}/documents/${file.originalFilename}`
-    fs.readFile(file.path, (error, data) => {
-      if (error) {
-        response.send('File upload failed: ' + error.message)
-      }
-      fs.writeFile(newPath, data, error => {
+    fs.mkdir(path.join(__dirname, 'images', id), () => {
+      fs.readFile(file.path, (error, data) => {
         if (error) {
           response.send('File upload failed: ' + error.message)
         }
-        response.send('File successfully uploaded to: ' + publicPath)
+        fs.writeFile(path.join(__dirname, 'images', id, file.originalFilename), data, error => {
+          if (error) {
+            response.send('File upload failed: ' + error.message)
+          }
+          response.send('File successfully uploaded to: ' + publicPath)
+        })
       })
     })
   })
 })
 
-router.use('/:id/documents', express.static(path.join(__dirname, 'images')))
+router.get('/:id/documents/:name', (request, response) => {
+  const { id, name } = request.params
+  response.sendFile(path.join(__dirname, 'images', id, name))
+})
 
 module.exports = router
