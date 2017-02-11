@@ -1,6 +1,8 @@
 const knex = require('./knex')
 const bcrypt = require('bcrypt')
 
+import { getNotes, addNote, deleteNote } from './notes'
+
 const saltRounds = 10
 
 function comparePassword (password, hash) {
@@ -101,5 +103,8 @@ module.exports = {
   getFlatById,
   getUserById,
   getUserByEmail,
-  comparePassword
+  comparePassword,
+  getNotes,
+  addNote,
+  deleteNote
 }

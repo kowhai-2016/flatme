@@ -50,6 +50,30 @@ export const fetchUser = id => {
   }
 }
 
+export const fetchNotes = id => {
+  return dispatch => {
+    dispatch({
+      id,
+      type: 'FETCH_NOTES_PENDING'
+    })
+    return axios.get(`/v1/notes?id=${id}`)
+      .then(res => {
+        const notes = res.data
+        return dispatch({
+          type: 'FETCH_NOTES_SUCCESS',
+          notes
+        })
+      })
+      .catch(error => {
+        return dispatch({
+          id,
+          message: error.message,
+          type: 'FETCH_NOTES_FAILURE'
+        })
+      })
+  }
+}
+
 export const login = (email, password) => {
   return dispatch => {
     dispatch({
