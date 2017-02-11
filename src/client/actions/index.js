@@ -118,13 +118,13 @@ export const createNewFlat = flat => {
       .then(response => {
         const flat = response.data
         history.push(`/flat/${flat.id}`)
-        return dispatch({
+        dispatch({
           type: 'CREATE_FLAT_SUCCESS',
           flat
         })
       })
       .catch(error => {
-        return dispatch({
+        dispatch({
           message: error.message,
           type: 'CREATE_FLAT_FAILURE'
         })

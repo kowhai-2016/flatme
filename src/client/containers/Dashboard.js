@@ -4,13 +4,9 @@ import Dashboard from '../components/Home/Dashboard'
 
 import { createNewFlat } from '../actions'
 
-const mapDispatchToProps = (dispatch) => {
+const mapDispatchToProps = dispatch => {
   return {
-    createNewFlat: (flatName) => { return dispatch(createNewFlat(flatName)) }
+    createNewFlat: flat => dispatch(createNewFlat(flat))
   }
 }
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(Dashboard)
+export default connect(null, mapDispatchToProps)(Dashboard)

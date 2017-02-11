@@ -18,19 +18,12 @@ const Dashboard = React.createClass({
     this.setState({show: true})
   },
 
-  close (flat) {
+  close () {
     this.setState({show: false})
   },
 
-  onSubmit (val) {
-    this.props.createNewFlat(val)
-      .then(action => {
-        if (action.type === 'CREATE_FLAT_SUCCESS') {
-          this.close()
-        } else {
-          this.props.dispatch(actions.setErrors('forms.newFlat', 'Sorry, this flat is occupied. Please select another one :)'))
-        }
-      })
+  onSubmit (flat) {
+    this.props.createNewFlat(flat)
   },
 
   render () {
@@ -50,7 +43,7 @@ const Dashboard = React.createClass({
             <Errors model='forms.newFlat' />
           </Modal.Body>
           <Modal.Footer>
-            <Button type='submit'>Virtually create your flat</Button>
+            <Button type="submit">Virtually create your flat</Button>
           </Modal.Footer>
         </Form>
       </Modal>
