@@ -27,7 +27,7 @@ const User = React.createClass({
                     <tbody>
                       <tr>
                         <td>Email</td>
-                        <td><a href={`email`}>{email}</a></td>
+                        <td><a href={'mailto:' + `email`}>{email}</a></td>
                       </tr>
                       <tr>
                         <td>Phone Number:</td>

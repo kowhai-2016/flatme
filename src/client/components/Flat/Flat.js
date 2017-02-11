@@ -10,7 +10,6 @@ const Flat = React.createClass({
   render () {
     const flat = this.props.flat
     const flatName = flat ? flat.flatName : null
-    console.log(flat)
     return (
       <div className='container-fluid'>
         <Row>
