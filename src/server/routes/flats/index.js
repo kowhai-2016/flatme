@@ -1,9 +1,9 @@
 const express = require('express')
 
-const flat = require('./flat')
+const documents = require('./documents')
 
 const router = express.Router()
 
-router.use('/:id', flat)
+router.use(documents)
 
 module.exports = router
