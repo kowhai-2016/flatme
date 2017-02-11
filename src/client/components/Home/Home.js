@@ -1,7 +1,7 @@
 import React, { PropTypes } from 'react'
 
 import Landing from './Landing'
-import Dashboard from './Dashboard'
+import Dashboard from '../../containers/Dashboard'
 
 const Home = props => {
   return (

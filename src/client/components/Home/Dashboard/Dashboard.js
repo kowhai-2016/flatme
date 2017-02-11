@@ -1,6 +1,7 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import { Modal, Button } from 'react-bootstrap'
 import { actions, Control, Errors, Form } from 'react-redux-form'
+import { browserHistory } from 'react-router'
 // import { LinkContainer } from 'react-router-bootstrap'
 
 import DashboardHeader from './DashboardHeader'
@@ -20,11 +21,11 @@ const Dashboard = React.createClass({
 
   close () {
     this.setState({show: false})
+    browserHistory.push('/flat/2')
   },
 
-  onSubmit (value) {
-    const { flatName } = value
-    this.props.createNewFlat(flatName)
+  onSubmit (val) {
+    this.props.createNewFlat(val)
       .then(action => {
         if (action.type === 'CREATE_FLAT_SUCCESS') {
           this.close()
@@ -68,5 +69,9 @@ const Dashboard = React.createClass({
     )
   }
 })
+
+Dashboard.propTypes = {
+  createNewFlat: PropTypes.func.isRequired
+}
 
 export default Dashboard

@@ -57,7 +57,7 @@ function addFlat (flat) {
       const id = inserted[0]
       return id
     })
-}
+  }
 
 function getFlatById (id) {
   return knex('flats')

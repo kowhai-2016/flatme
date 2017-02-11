@@ -109,12 +109,12 @@ export const signUp = user => {
   }
 }
 
-export const createNewFlat = flatName => {
+export const createNewFlat = flat => {
   return dispatch => {
     dispatch({
       type: 'CREATE_FLAT_PENDING'
     })
-    return axios.post(`/v1/flats`, flatName)
+    return axios.post(`/v1/flats`, flat)
       .then(response => {
         const flat = response.data
         return dispatch({
