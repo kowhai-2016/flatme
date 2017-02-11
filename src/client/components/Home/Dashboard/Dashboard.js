@@ -45,7 +45,7 @@ const Dashboard = React.createClass({
           <Modal.Body>
             <div>
               <div>
-                <label>Flat Name: </label>
+                <label>Flat Name:</label>
                 <Control model='.flatName' />
               </div>
             </div>
