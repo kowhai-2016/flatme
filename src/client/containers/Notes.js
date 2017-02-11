@@ -3,9 +3,10 @@ import {connect} from 'react-redux'
 import { } from '../actions'
 import Navigation from '../components/App/Navigation'
 
-const mapStateToProps = ({notes}) => {
+const mapStateToProps = (state, ownProps) => {
+  const id = Number(ownProps.params.id)
   return {
-    
+    flat: state.flats[id]
   }
 }
 
