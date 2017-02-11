@@ -117,6 +117,7 @@ export const createNewFlat = flat => {
     return axios.post(`/v1/flats`, flat)
       .then(response => {
         const flat = response.data
+        history.push(`/flat/${flat.id}`)
         return dispatch({
           type: 'CREATE_FLAT_SUCCESS',
           flat

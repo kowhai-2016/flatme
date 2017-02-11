@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react'
 import { Modal, Button } from 'react-bootstrap'
 import { actions, Control, Errors, Form } from 'react-redux-form'
-import { browserHistory } from 'react-router'
 // import { LinkContainer } from 'react-router-bootstrap'
 
 import DashboardHeader from './DashboardHeader'
@@ -19,9 +18,8 @@ const Dashboard = React.createClass({
     this.setState({show: true})
   },
 
-  close () {
+  close (flat) {
     this.setState({show: false})
-    browserHistory.push('/flat/2')
   },
 
   onSubmit (val) {
