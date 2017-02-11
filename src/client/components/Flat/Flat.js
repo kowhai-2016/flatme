@@ -10,6 +10,7 @@ const Flat = React.createClass({
   render () {
     const flat = this.props.flat
     const flatName = flat ? flat.flatName : null
+    console.log(flat)
     return (
       <div className='container-fluid'>
         <Row>
@@ -20,7 +21,8 @@ const Flat = React.createClass({
             <h1>{flatName}</h1>
             {this.props.children && React.cloneElement(this.props.children, {
               flat
-            })}
+            }
+          )}
           </Col>
         </Row>
       </div>
