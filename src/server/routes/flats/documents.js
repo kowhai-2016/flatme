@@ -26,7 +26,6 @@ router.post('/:id/documents', (request, response) => {
     if (!file) {
       return response.send('No file found to upload.')
     }
-    const publicPath = `/v1/flats/${request.params.id}/documents/${file.originalFilename}`
     fs.mkdir(path.join(__dirname, 'images', id), () => {
       fs.readFile(file.path, (error, data) => {
         if (error) {
@@ -36,7 +35,7 @@ router.post('/:id/documents', (request, response) => {
           if (error) {
             response.send('File upload failed: ' + error.message)
           }
-          response.send('File successfully uploaded to: ' + publicPath)
+          response.redirect(`/flat/${id}/documents`)
         })
       })
     })

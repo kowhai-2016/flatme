@@ -1,11 +1,12 @@
 const express = require('express')
+const fs = require('fs')
+const path = require('path')
 
 const db = require('../database')
-
-const router = express.Router()
-
 const authenticate = require('./authenticate')
 const flats = require('./flats')
+
+const router = express.Router()
 
 router.use('/flats', flats)
 
@@ -43,6 +44,20 @@ router.post('/flats', (req, res) => {
 router.get('/flats', (req, res) => {
   const id = req.query.id
   db.getFlatById(id)
+    .then(flat => {
+      return new Promise((resolve, reject) => {
+        fs.readdir(path.join(__dirname, 'flats', 'images', id), (error, files) => {
+          if (error) {
+            resolve(Object.assign({}, flat, {documents: []}))
+          } else {
+            const documents = files.map(file => {
+              return path.join('/v1', 'flats', id, 'documents', file)
+            })
+            resolve(Object.assign({}, flat, {documents}))
+          }
+        })
+      })
+    })
     .then(flat => {
       res.json(flat)
     })
