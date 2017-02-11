@@ -98,8 +98,18 @@
   width: 200px;
 }
 
+/*JoinPage*/
+.formShape {
+  width: 380px;
+}
+
+.titleJoinForm label {
+  justify-content: right;
+
+}
+
 /*testing the borders*/
 
-/*div {
+div {
   border: 1px solid red;
-}*/
+}
