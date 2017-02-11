@@ -108,3 +108,25 @@ export const signUp = user => {
       })
   }
 }
+
+export const createNewFlat = flatName => {
+  return dispatch => {
+    dispatch({
+      type: 'CREATE_FLAT_PENDING'
+    })
+    return axios.post(`/v1/flats`, flatName)
+      .then(response => {
+        const flat = response.data
+        return dispatch({
+          type: 'CREATE_FLAT_SUCCESS',
+          flat
+        })
+      })
+      .catch(error => {
+        return dispatch({
+          message: error.message,
+          type: 'CREATE_FLAT_FAILURE'
+        })
+      })
+  }
+}
