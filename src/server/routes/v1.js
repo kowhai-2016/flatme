@@ -5,6 +5,9 @@ const db = require('../database')
 const router = express.Router()
 
 const authenticate = require('./authenticate')
+const flats = require('./flats')
+
+router.use('/flats', flats)
 
 router.get('/users/:id', (req, res) => {
   const id = req.params.id

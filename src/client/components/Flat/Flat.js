@@ -20,7 +20,8 @@ const Flat = React.createClass({
             <h1>{flatName}</h1>
             {this.props.children && React.cloneElement(this.props.children, {
               flat
-            })}
+            }
+          )}
           </Col>
         </Row>
       </div>
@@ -32,7 +33,7 @@ Flat.propTypes = {
   fetchFlat: PropTypes.func.isRequired,
   flat: PropTypes.shape({
     flatName: PropTypes.string.isRequired
-  }).isRequired,
+  }),
   params: PropTypes.shape({
     id: PropTypes.string.isRequired
   }).isRequired
