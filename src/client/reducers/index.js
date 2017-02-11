@@ -20,10 +20,14 @@ const loginCredentials = {
   password: ''
 }
 
+const newFlat = {
+  flatName: ''
+}
+
 export default combineReducers({
   account,
   flats,
-  forms: combineForms({ loginCredentials, join }, 'forms'),
+  forms: combineForms({ loginCredentials, join, newFlat }, 'forms'),
   routing: routerReducer,
   users
 })

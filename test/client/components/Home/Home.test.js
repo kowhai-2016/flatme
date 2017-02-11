@@ -1,6 +1,6 @@
 /* eslint-env jest */
 
-import { shallow } from 'enzyme'
+import { shallow, render } from 'enzyme'
 import React from 'react'
 
 import Home from '../../../../src/client/components/Home'
@@ -13,7 +13,8 @@ describe('Home', () => {
   })
   test('if logged in render Dashboard component', () => {
     const account = {user: {}}
-    const wrapper = shallow(<Home account={account} />)
+    const wrapper = render(<Home account={account} />)
+    console.log(wrapper)
     expect(wrapper.find('Dashboard').length).toBe(1)
   })
 })
