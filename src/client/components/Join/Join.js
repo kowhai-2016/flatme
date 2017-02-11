@@ -1,6 +1,6 @@
 import React from 'react'
 import { Control, Errors, Form } from 'react-redux-form'
-import { Col, FormControl } from 'react-bootstrap'
+import { Col } from 'react-bootstrap'
 
 const isNumber = val => !isNaN(Number(val))
 const maxLength = length => val => val && val.length <= length
@@ -26,63 +26,67 @@ const Join = React.createClass({
           }
         }}
       >
-        <div className='titleJoinForm'>
-          <Col sm={6} md={2}>
-            <label>First name:</label>
-          </Col>
-          <Col sm={6} md={10}>
-            <Control.text
-              className='formShape'
-              model='.firstName'
-              validators={{
-                required,
-                maxLength: maxLength(15)
+        <div className='globalJoinForm'>
+          <div className='titleJoinForm'>
+            <Col sm={6} >
+              <label>First name:</label>
+            </Col>
+            <Col sm={6} >
+              <Control.text
+                className='input-group input-group-lg'
+                placeholder='Enter Your Name'
+                model='.firstName'
+                validators={{
+                  required,
+                  maxLength: maxLength(15)
+                }}
+              />
+            </Col>
+            <Errors
+              className='errors'
+              model='forms.join.firstName'
+              show='touched'
+              messages={{
+                required: 'Required',
+                maxLength: ' Must be 15 characters or less'
               }}
             />
-          </Col>
-          <Errors
-            className='errors'
-            model='forms.join.firstName'
-            show='touched'
-            messages={{
-              required: 'Required',
-              maxLength: ' Must be 15 characters or less'
-            }}
-          />
-        </div>
-
-        <div className='titleJoinForm'>
-          <Col sm={6} md={2}>
-            <label>Last Name:</label>
-          </Col>
-          <Col sm={6} md={10}>
-            <Control.text
-              className='formShape'
-              model='.lastName'
-              validators={{
-                required,
-                maxLength: maxLength(15)
-              }}
-            />
-          </Col>
-          <Errors
-            className='errors'
-            model='forms.join.lastName'
-            show='touched'
-            messages={{
-              required: 'Required',
-              maxLength: ' Must be 15 characters or less'
-            }}
-          />
-        </div>
+          </div>
 
           <div className='titleJoinForm'>
-            <Col sm={6} md={2}>
+            <Col sm={6} >
+              <label>Last Name:</label>
+            </Col>
+            <Col sm={6} >
+              <Control.text
+                placeholder='Enter Your Family Name'
+                className='input-group input-group-lg'
+                model='.lastName'
+                validators={{
+                  required,
+                  maxLength: maxLength(15)
+                }}
+              />
+            </Col>
+            <Errors
+              className='errors'
+              model='forms.join.lastName'
+              show='touched'
+              messages={{
+                required: 'Required',
+                maxLength: ' Must be 15 characters or less'
+              }}
+            />
+          </div>
+
+          <div className='titleJoinForm'>
+            <Col sm={6} >
               <label>Email:</label>
             </Col>
-            <Col sm={6} md={10}>
+            <Col sm={6} >
               <Control.text
-                className='formShape'
+                placeholder='Enter Your Email'
+                className='input-group input-group-lg'
                 model='.email'
                 validators={{
                   required,
@@ -102,12 +106,13 @@ const Join = React.createClass({
           </div>
 
           <div className='titleJoinForm'>
-            <Col sm={6} md={2}>
+            <Col sm={6} >
               <label>Phone Number:</label>
             </Col>
-            <Col sm={6} md={10}>
+            <Col sm={6} >
               <Control.text
-                className='formShape'
+                placeholder='Enter Your Phone Number'
+                className='input-group input-group-lg'
                 model='.phoneNumber'
                 validators={{
                   required,
@@ -128,12 +133,13 @@ const Join = React.createClass({
           </div>
 
           <div className='titleJoinForm'>
-            <Col sm={6} md={2}>
+            <Col sm={6} >
               <label>Password:</label>
             </Col>
-            <Col sm={6} md={10}>
+            <Col sm={6} >
               <Control
-                className='formShape'
+                placeholder='Enter Your Password'
+                className='input-group input-group-lg'
                 type='password'
                 model='.password'
                 validators={{
@@ -154,12 +160,13 @@ const Join = React.createClass({
           </div>
 
           <div className='titleJoinForm'>
-            <Col sm={6} md={2}>
+            <Col sm={6} >
               <label>Confirm Password:</label>
             </Col>
-            <Col sm={6} md={10}>
+            <Col sm={6} >
               <Control
-                className='formShape'
+                placeholder='Re-Enter Your Password Here'
+                className='input-group input-group-lg'
                 type='password'
                 model='.confirmPassword'
                 validators={{
@@ -168,25 +175,26 @@ const Join = React.createClass({
                 }}
               />
             </Col>
-          <Errors
-            className='errors'
-            model='forms.join.confirmPassword'
-            show='touched'
-            messages={{
-              required: 'Required',
-              maxLength: ' Must be 15 characters or less'
-            }}
-          />
-        </div>
+            <Errors
+              className='errors'
+              model='forms.join.confirmPassword'
+              show='touched'
+              messages={{
+                required: 'Required',
+                maxLength: ' Must be 15 characters or less'
+              }}
+            />
+          </div>
 
-        <Errors
-          model='forms.join'
-          messages={{
-            passwordMatch: 'Password need to match'
-          }}
-          />
-        <button type='submit'>Add</button>
-        <div id='successful-signup-confirm' />
+          <Errors
+            model='forms.join'
+            messages={{
+              passwordMatch: 'Password need to match'
+            }}
+            />
+          <button className='submitJoinBtn' type='submit'>Add</button>
+          <div id='successful-signup-confirm' />
+        </div>
       </Form>
     )
   }

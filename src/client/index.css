@@ -99,13 +99,38 @@
 }
 
 /*JoinPage*/
-.formShape {
-  width: 380px;
+.input-group {
+  width: 340px;
 }
 
-.titleJoinForm label {
-  justify-content: right;
+/*.titleJoinForm label {
+  text-align: right;
+}*/
 
+.globalJoinForm  {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 5%;
+  text-align: right;
+}
+@media screen and (max-width: 767px) and (min-width: 400px) {
+    .globalJoinForm {
+        text-align: left;
+  }
+}
+.input-group-lg {
+  margin: 2%;
+  padding: 5px;
+}
+
+.titleJoinForm label{
+  padding: 11px;
+  /*padding-top: 2%;*/
+}
+
+.submitJoinBtn {
+  /*margin-right: 5%;*/
 }
 
 /*testing the borders*/
