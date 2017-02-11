@@ -1,16 +1,14 @@
 import React, { PropTypes } from 'react'
-import { Link } from 'react-router'
 
 const flatmates = props => {
   if (!props.flat) {
     return []
   }
+  console.log(props.flat)
   return props.flat.flatmates.map((flatmate, index) => {
     return (
       <li key={index}>
-        <Link to={`/user/${flatmate.id}`}>
-          {flatmate.firstName}
-        </Link>
+        {flatmate.firstName}
       </li>
     )
   })
