@@ -7,7 +7,7 @@ import Documents from './components/Documents'
 import Flat from './containers/Flat'
 import Home from './containers/Home'
 import Join from './containers/Join'
-import Notes from './components/Notes'
+import Notes from './containers/Notes'
 import PageNotFound from './components/PageNotFound'
 import User from './containers/User'
 

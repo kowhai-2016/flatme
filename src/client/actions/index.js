@@ -51,12 +51,13 @@ export const fetchUser = id => {
 }
 
 export const fetchNotes = id => {
+  console.log(id)
   return dispatch => {
     dispatch({
       id,
       type: 'FETCH_NOTES_PENDING'
     })
-    return axios.get(`/v1/notes?id=${id}`)
+    return axios.get(`/v1/notes/${id}`)
       .then(res => {
         const notes = res.data
         return dispatch({

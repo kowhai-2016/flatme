@@ -1,19 +1,19 @@
-import {connect} from 'react-redux'
+import { connect } from 'react-redux'
 
-import { } from '../actions'
-import Navigation from '../components/App/Navigation'
+import { fetchNotes, deleteNote } from '../actions'
+import Notes from '../components/Notes'
 
 const mapStateToProps = (state, ownProps) => {
-  const id = Number(ownProps.params.id)
   return {
-    flat: state.flats[id]
+    flat: Number(ownProps.params.id)
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    login: () => { return dispatch(login(email, password)) },
+    fetchNotes: (flat) => { return dispatch(fetchNotes(flat)) },
+    deleteNote: (id) => { return dispatch(deleteNote(id)) }
   }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Navigation)
+export default connect(mapStateToProps, mapDispatchToProps)(Notes)

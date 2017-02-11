@@ -25,5 +25,5 @@ function deleteNote (note) {
 
 function getNotes (id) {
   return knex('notes')
-  .where('flat_id', id)
+    .where('flat_id', id)
 }

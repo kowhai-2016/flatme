@@ -48,6 +48,17 @@ router.get('/flats', (req, res) => {
     })
 })
 
+router.get('/notes/:id', (req, res) => {
+  const id = req.params.id
+  db.getNotes(id)
+    .then(notes => {
+      res.json(notes)
+    })
+    .catch(error => {
+      res.status(500).send(error.message)
+    })
+})
+
 router.post('/login', authenticate)
 
 router.get('*', (req, res) => res.status(404).send('API endpoint not found.'))
