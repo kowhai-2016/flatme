@@ -1,14 +1,25 @@
 import axios from 'axios'
 
 import history from '../history'
+import store from '../store'
+
+function getAxios () {
+  const account = store.getState().account
+  const token = account.user ? account.user.token : null
+  return axios.create({
+    headers: {
+      token
+    }
+  })
+}
 
 export const fetchFlat = id => {
-  return dispatch => {
+  return (dispatch, getState) => {
     dispatch({
       id,
       type: 'FETCH_FLAT_PENDING'
     })
-    return axios.get(`/v1/flats?id=${id}`)
+    return getAxios().get(`/v1/flats?id=${id}`)
       .then(res => {
         const flat = res.data
         return dispatch({
@@ -32,7 +43,7 @@ export const fetchUser = id => {
       id,
       type: 'FETCH_USER_PENDING'
     })
-    return axios.get(`/v1/users/${id}`)
+    return getAxios().get(`/v1/users/${id}`)
       .then(res => {
         const user = res.data
         return dispatch({
@@ -153,6 +164,51 @@ export const signUp = user => {
         return dispatch({
           message: error.message,
           type: 'SIGNUP_FAILURE'
+        })
+      })
+  }
+}
+
+export const createNewFlat = flat => {
+  return dispatch => {
+    dispatch({
+      type: 'CREATE_FLAT_PENDING'
+    })
+    return getAxios().post(`/v1/flats`, flat)
+      .then(response => {
+        const flat = response.data
+        history.push(`/flat/${flat.id}`)
+        dispatch({
+          type: 'CREATE_FLAT_SUCCESS',
+          flat
+        })
+      })
+      .catch(error => {
+        dispatch({
+          message: error.message,
+          type: 'CREATE_FLAT_FAILURE'
+        })
+      })
+  }
+}
+
+export const joinFlat = flatName => {
+  return dispatch => {
+    dispatch({
+      type: 'JOIN_FLAT_PENDING'
+    })
+    return getAxios().post(`/v1/flats/join`, {name: flatName})
+      .then(response => {
+        const flatId = response.data.flatId
+        history.push(`/flat/${flatId}`)
+        dispatch({
+          type: 'JOIN_FLAT_SUCCESS'
+        })
+      })
+      .catch(error => {
+        dispatch({
+          message: error.message,
+          type: 'JOIN_FLAT_FAILURE'
         })
       })
   }

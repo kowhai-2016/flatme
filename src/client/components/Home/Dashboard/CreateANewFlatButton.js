@@ -1,9 +1,9 @@
 import React from 'react'
 
-const CreateANewFlat = () => {
+const CreateANewFlat = (props) => {
   return (
     <div className='row'>
-      <a className='btn btn-default glyphicon glyphicon-plus'> create a new flat</a>
+      <button onClick={props.open} className='btn btn-default glyphicon glyphicon-plus'> create a new flat</button>
     </div>
   )
 }

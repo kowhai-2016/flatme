@@ -21,11 +21,19 @@ const login = {
   password: ''
 }
 
+const newFlat = {
+  flatName: ''
+}
+
+const joinFlat = {
+  flatName: ''
+}
+
 export default combineReducers({
   account,
   flats,
   notes,
-  forms: combineForms({ login, join }, 'forms'),
+  forms: combineForms({ login, join, newFlat, joinFlat }, 'forms'),
   routing: routerReducer,
   users
 })
