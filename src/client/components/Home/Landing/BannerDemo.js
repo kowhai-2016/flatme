@@ -2,10 +2,17 @@ import React from 'react'
 
 const BannerDemo = () => {
   return (
-    <div className='height'>
+    <div className='height share'>
       <div className='container alternate'>
-        <h1>"Share the load"</h1>
-        <p>split your bills, schedule the chores and manage your documents</p>
+        <div className='row'>
+          <div className='col-md-9'>
+            <h1>"Share the load"</h1>
+            <p>split your bills, schedule the chores <br /> and manage your documents</p>
+          </div>
+          <div className='col-md-3 leads'>
+            <img src='/images/img2.jpg' width='100%' className='landing-img' />
+          </div>
+        </div>
       </div>
     </div>
   )
