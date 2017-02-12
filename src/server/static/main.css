@@ -197,6 +197,7 @@ body {
 
 .categories-bar div a:hover {
   text-decoration: none;
+  color: lightseagreen;
 }
 
 .categories-bar div .active {
