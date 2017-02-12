@@ -1,3 +1,5 @@
+
+
 body {
   background: #ECE9E6; /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF); /* Chrome 10-25, Safari 5.1-6 */
@@ -25,29 +27,8 @@ body {
   font-size: 1.3em;
 }
 
-.leads {
-  color: #76f2dd;
-  background-color: rgba(128,128,128,0.2);
-  font-weight: bold;
-  text-shadow: 1px 1px 1px #000000;
-}
-
-.alternate {
-  text-align: right;
-  color: black;
-  background-color: white;
-  opacity: 0.5;
-}
-
-.description1 h1 {
-  color: #7fffd4;
-  font-size: 70px;
-  color: black;
-  font-weight: bolder;
-  text-shadow: 1px 1px 1px #FFFFFF;
-}
-
-/*Landing page*/
+/* Landing page
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 #mainTitle {
   color: #000;
@@ -130,7 +111,8 @@ body {
   margin-top: 10%;
 }
 
-/* Login modal*/
+/* Login Modal
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .loginForm{
   display: flex;
   justify-content: space-between;
@@ -140,7 +122,8 @@ body {
   padding-right: 10px;
 }
 
-/* Dashboard page*/
+/* Dashboard page
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .categories-bar {
   padding-top: 20px;
   padding-bottom: 100%;
@@ -171,7 +154,8 @@ body {
   width: 200px;
 }
 
-/*profile page*/
+/* Profile Page
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .user-row {
     margin-bottom: 14px;
@@ -189,6 +173,17 @@ body {
     border-top: 0;
 }
 
+/* Flat Dashboard page
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.categories-bar {
+  margin-top: 20px;
+  padding-top: 20px;
+  /*padding-bottom: 100%;*/
+  /*padding-left: 20px;*/
+  background-color: rgba(255,255,255,0.9);
+  border: 2px solid lightseagreen;
+}
+
 .categories-bar div {
   padding-bottom: 10px;
   font-size: 1.2em;
@@ -198,7 +193,27 @@ body {
   padding: 0;
 }
 
-/*JoinPage*/
+.categories-bar div a {
+  color: grey;
+  text-align: center;
+  text-decoration: none;
+}
+
+.categories-bar div a:hover {
+  text-decoration: none;
+}
+
+.categories-bar div .active {
+  color: lightseagreen;
+}
+
+.navbar-brand {
+  width: 200px;
+}
+
+/* Join Page
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
 .input-group {
   width: 340px;
   border-radius: 3px;
@@ -221,21 +236,21 @@ body {
   text-align: right;
 }
 
-@media screen and (max-width: 767px) and (min-width: 400px) {
-    .globalJoinForm {
-        text-align: left;
+@media screen and (max-width: 767px) and (min-width: 200px) {
+  .globalJoinForm {
+    text-align: left;
   }
 }
 
 @media screen and (max-width: 767px) and (min-width: 200px) {
-    .titleJoinForm label{
-        padding-top: 0px;
+  .titleJoinForm label{
+    padding-top: 0px;
   }
 }
 
 @media screen and (max-width: 767px) and (min-width: 200px) {
-    .errors {
-        font-size: 0.8em;
+  .errors {
+    font-size: 0.8em;
   }
 }
 
@@ -279,6 +294,7 @@ body {
   color: red;
   /*height: 20px;
   text-align: right;*/
+}
 
 .popout {
   background-color: rgba(255,255,255,0.8);
@@ -292,7 +308,8 @@ body {
   border-left-width: medium;
 }
 
-/*profile page*/
+/* Profile Page
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .user-row {
     margin-bottom: 14px;
@@ -319,8 +336,20 @@ body {
 {
   margin-top:20px;
 }
-/*testing the borders*/
 
-/*div {
+/* Footer
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.git-logo {
+  max-width: 800px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+/*testing the borders*/
+/*
+div {
   border: 1px solid red;
 }*/
