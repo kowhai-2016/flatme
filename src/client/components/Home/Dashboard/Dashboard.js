@@ -34,10 +34,6 @@ const Dashboard = React.createClass({
     })
   },
 
-  onSubmit (flat) {
-    this.props.createNewFlat(flat)
-  },
-
   openJoin () {
     this.setState({
       showJoin: true
@@ -53,12 +49,12 @@ const Dashboard = React.createClass({
         <FlatCard />
         <CreateFlatModal
           close={this.closeCreate}
-          onSubmit={this.onSubmit}
+          onSubmit={this.props.createNewFlat}
           show={this.state.showCreate}
           />
         <JoinFlatModal
           close={this.closeJoin}
-          onSubmit={this.onSubmit}
+          onSubmit={this.props.joinFlat}
           show={this.state.showJoin}
           />
       </div>
@@ -67,7 +63,8 @@ const Dashboard = React.createClass({
 })
 
 Dashboard.propTypes = {
-  createNewFlat: PropTypes.func.isRequired
+  createNewFlat: PropTypes.func.isRequired,
+  joinFlat: PropTypes.func.isRequired
 }
 
 export default Dashboard
