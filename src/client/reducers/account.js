@@ -5,7 +5,9 @@ export default (state = {}, action) => {
         {},
         state,
         {
-          flats: action.flats
+          user: {
+            flats: action.flats
+          }
         }
       )
 

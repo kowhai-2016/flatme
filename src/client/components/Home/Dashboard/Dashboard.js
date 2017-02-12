@@ -31,6 +31,17 @@ const Dashboard = React.createClass({
   },
 
   render () {
+    let flats = []
+    if (this.props.user.flats) {
+      flats = this.props.user.flats.map(flat => {
+        return (
+          <p>
+            {flat.flatName}
+          </p>
+        )
+      })
+    }
+
     const createFlatModal = (
       <Modal show={this.state.show} onHide={this.close}>
         <Form model='forms.newFlat' onSubmit={this.onSubmit}>
@@ -59,6 +70,7 @@ const Dashboard = React.createClass({
         <JoinAFlat />
         <DashboardHeader />
         <FlatCard />
+        {flats}
         {createFlatModal}
       </div>
     )
