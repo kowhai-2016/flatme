@@ -4,39 +4,39 @@ exports.seed = knex => {
     .then(() => {
       return Promise.all([
         knex('flats').insert({
-          id: 1,
+          id: 88801,
           flat_name: 'Mouse House'
         }),
         knex('flats').insert({
-          id: 2,
+          id: 88802,
           flat_name: 'Fairy Castle'
         }),
         knex('flats').insert({
-          id: 3,
+          id: 88803,
           flat_name: 'Bag End'
         }),
         knex('flats').insert({
-          id: 4,
+          id: 88804,
           flat_name: 'The Grand Stand'
         }),
         knex('flats').insert({
-          id: 5,
+          id: 88805,
           flat_name: 'Dog Box'
         }),
         knex('flats').insert({
-          id: 6,
+          id: 88806,
           flat_name: 'Greenwich Villa'
         }),
         knex('flats').insert({
-          id: 7,
+          id: 88807,
           flat_name: 'The Shire'
         }),
         knex('flats').insert({
-          id: 8,
+          id: 88808,
           flat_name: 'Hotel California'
         }),
         knex('flats').insert({
-          id: 9,
+          id: 88809,
           flat_name: 'Beehive'
         })
       ])

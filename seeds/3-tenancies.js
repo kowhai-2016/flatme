@@ -3,74 +3,74 @@ exports.seed = knex => {
     .then(() => {
       return Promise.all([
         knex('tenancies').insert({
-          id: 1,
-          flat_id: 3,
-          user_id: 1
+          id: 77701,
+          flat_id: 88803,
+          user_id: 99901
         }),
         knex('tenancies').insert({
-          id: 2,
-          flat_id: 3,
-          user_id: 4
+          id: 77702,
+          flat_id: 88803,
+          user_id: 99904
         }),
         knex('tenancies').insert({
-          id: 3,
-          flat_id: 3,
-          user_id: 2
+          id: 77703,
+          flat_id: 88803,
+          user_id: 99902
         }),
         knex('tenancies').insert({
-          id: 4,
-          flat_id: 4,
-          user_id: 3
+          id: 77704,
+          flat_id: 88804,
+          user_id: 99903
         }),
         knex('tenancies').insert({
-          id: 5,
-          flat_id: 4,
-          user_id: 5
+          id: 77705,
+          flat_id: 88804,
+          user_id: 99905
         }),
         knex('tenancies').insert({
-          id: 6,
-          flat_id: 4,
-          user_id: 6
+          id: 77706,
+          flat_id: 88804,
+          user_id: 99906
         }),
         knex('tenancies').insert({
-          id: 7,
-          flat_id: 9,
-          user_id: 6
+          id: 77707,
+          flat_id: 88809,
+          user_id: 99906
         }),
         knex('tenancies').insert({
-          id: 8,
-          flat_id: 9,
-          user_id: 7
+          id: 77708,
+          flat_id: 88809,
+          user_id: 99907
         }),
         knex('tenancies').insert({
-          id: 9,
-          flat_id: 9,
-          user_id: 8
+          id: 77709,
+          flat_id: 88809,
+          user_id: 99908
         }),
         knex('tenancies').insert({
-          id: 10,
-          flat_id: 2,
-          user_id: 11
+          id: 77710,
+          flat_id: 88802,
+          user_id: 99911
         }),
         knex('tenancies').insert({
-          id: 11,
-          flat_id: 2,
-          user_id: 12
+          id: 77711,
+          flat_id: 88802,
+          user_id: 99912
         }),
         knex('tenancies').insert({
-          id: 12,
-          flat_id: 7,
-          user_id: 9
+          id: 77712,
+          flat_id: 88807,
+          user_id: 99909
         }),
         knex('tenancies').insert({
-          id: 13,
-          flat_id: 7,
-          user_id: 10
+          id: 77713,
+          flat_id: 88807,
+          user_id: 99910
         }),
         knex('tenancies').insert({
-          id: 14,
-          flat_id: 7,
-          user_id: 13
+          id: 77714,
+          flat_id: 88807,
+          user_id: 99913
         })
       ])
     })
