@@ -83,7 +83,7 @@ function getFlatsByUserId (userId) {
     .join('users', 'tenancies.user_id', '=', 'users.id')
     .join('flats', 'tenancies.flat_id', '=', 'flats.id')
     .select('users.id as userId', 'flats.id as flatId', 'flats.flat_name as flatName')
-    .where('userId', userId)
+    .where('user_id', userId)
     .then(flatInfos => {
       return flatInfos.map(flatInfo => {
         return {
