@@ -85,6 +85,57 @@ export const fetchUser = id => {
   }
 }
 
+export const fetchNotes = flatId => {
+  return dispatch => {
+    dispatch({
+      flatId,
+      type: 'FETCH_NOTES_PENDING'
+    })
+    return getAxios().get(`/v1/flats/${flatId}/notes`)
+      .then(res => {
+        const notes = res.data
+          .reduce((acc, note) => {
+            acc[note.id] = note
+            return acc
+          }, {})
+        return dispatch({
+          type: 'FETCH_NOTES_SUCCESS',
+          notes
+        })
+      })
+      .catch(error => {
+        return dispatch({
+          id,
+          message: error.message,
+          type: 'FETCH_NOTES_FAILURE'
+        })
+      })
+  }
+}
+
+export const deleteNote = id => {
+  return dispatch => {
+    dispatch({
+      id,
+      type: 'DELETE_NOTE_PENDING'
+    })
+    return getAxios().delete(`/v1/notes/${id}`)
+      .then(res => {
+        return dispatch({
+          type: 'DELETE_NOTE_SUCCESS',
+          id
+        })
+      })
+      .catch(error => {
+        return dispatch({
+          id,
+          message: error.message,
+          type: 'DELETE_NOTE_FAILURE'
+        })
+      })
+  }
+}
+
 export const login = (email, password) => {
   return dispatch => {
     dispatch({

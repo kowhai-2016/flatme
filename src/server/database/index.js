@@ -83,7 +83,7 @@ function getFlatsByUserId (userId) {
     .join('users', 'tenancies.user_id', '=', 'users.id')
     .join('flats', 'tenancies.flat_id', '=', 'flats.id')
     .select('users.id as userId', 'flats.id as flatId', 'flats.flat_name as flatName')
-    .where('user_id', userId)
+    .where('userId', userId)
     .then(flatInfos => {
       return flatInfos.map(flatInfo => {
         return {
@@ -137,6 +137,44 @@ function getFlatmates (flatId) {
     })
 }
 
+function addNote (note) {
+  return knex('notes')
+    .insert({
+      flat_id: note.flat_id,
+      content: note.content,
+      author: note.author
+    })
+    .then(getNotes(note.flat_id))
+}
+
+function editNote (note) {
+  return knex('notes')
+    .where('id', note.id)
+    .update({
+      content: note.content
+    })
+}
+
+function deleteNote (id) {
+  return knex('notes')
+    .where('id', id)
+    .del()
+}
+
+function getNotesByFlatId (flatId) {
+  return knex('notes')
+    .where('flat_id', flatId)
+    .then(notes => {
+      return notes.map(note => {
+        return {
+          id: note.id,
+          content: note.content,
+          author: note.author
+        }
+      })
+    })
+}
+
 module.exports = {
   addFlat,
   addTenancy,
@@ -146,5 +184,9 @@ module.exports = {
   getFlatByName,
   getUserById,
   getUserByEmail,
-  comparePassword
+  comparePassword,
+  getNotesByFlatId,
+  addNote,
+  deleteNote,
+  editNote
 }

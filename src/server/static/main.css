@@ -25,6 +25,28 @@ body {
   font-size: 1.3em;
 }
 
+.leads {
+  color: #76f2dd;
+  background-color: rgba(128,128,128,0.2);
+  font-weight: bold;
+  text-shadow: 1px 1px 1px #000000;
+}
+
+.alternate {
+  text-align: right;
+  color: black;
+  background-color: white;
+  opacity: 0.5;
+}
+
+.description1 h1 {
+  color: #7fffd4;
+  font-size: 70px;
+  color: black;
+  font-weight: bolder;
+  text-shadow: 1px 1px 1px #FFFFFF;
+}
+
 /*Landing page*/
 
 #mainTitle {
@@ -167,19 +189,6 @@ body {
     border-top: 0;
 }
 
-
-/* Flat Dashboard page*/
-
-.categories-bar {
-  margin-top: 20px;
-  padding-top: 20px;
-  /*padding-bottom: 100%;*/
-  /*padding-left: 20px;*/
-  background-color: rgba(255,255,255,0.9);
-  border: 2px solid lightseagreen;
-
-}
-
 .categories-bar div {
   padding-bottom: 10px;
   font-size: 1.2em;
@@ -187,24 +196,6 @@ body {
 
 .col-md-3 {
   padding: 0;
-}
-
-.categories-bar div a {
-  color: grey;
-  text-align: center;
-  text-decoration: none;
-}
-
-.categories-bar div a:hover {
-  text-decoration: none;
-}
-
-.categories-bar div .active {
-  color: lightseagreen;
-}
-
-.navbar-brand {
-  width: 200px;
 }
 
 /*JoinPage*/
@@ -228,18 +219,20 @@ body {
   margin-right: auto;
   margin: 5%;
   text-align: right;
-  font-family: 'Montserrat', sans-serif;
 }
-@media screen and (max-width: 767px) and (min-width: 200px) {
+
+@media screen and (max-width: 767px) and (min-width: 400px) {
     .globalJoinForm {
         text-align: left;
   }
 }
+
 @media screen and (max-width: 767px) and (min-width: 200px) {
     .titleJoinForm label{
         padding-top: 0px;
   }
 }
+
 @media screen and (max-width: 767px) and (min-width: 200px) {
     .errors {
         font-size: 0.8em;
@@ -326,8 +319,6 @@ body {
 {
   margin-top:20px;
 }
-
-
 /*testing the borders*/
 
 /*div {
