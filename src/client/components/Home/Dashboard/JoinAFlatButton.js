@@ -1,9 +1,9 @@
 import React from 'react'
 
-const JoinAFlat = () => {
+const JoinAFlat = (props) => {
   return (
     <div className='row'>
-      <a className='btn btn-default glyphicon glyphicon-ok'> join a flat</a>
+      <button onClick={props.open} className='btn btn-default glyphicon glyphicon-ok'> join a flat</button>
     </div>
   )
 }

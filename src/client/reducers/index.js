@@ -24,10 +24,14 @@ const newFlat = {
   flatName: ''
 }
 
+const joinFlat = {
+  flatName: ''
+}
+
 export default combineReducers({
   account,
   flats,
-  forms: combineForms({ loginCredentials, join, newFlat }, 'forms'),
+  forms: combineForms({ loginCredentials, join, newFlat, joinFlat }, 'forms'),
   routing: routerReducer,
   users
 })
