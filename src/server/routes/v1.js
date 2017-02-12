@@ -1,6 +1,4 @@
 const express = require('express')
-const fs = require('fs')
-const path = require('path')
 
 const db = require('../database')
 const authenticate = require('./authenticate')
@@ -63,23 +61,10 @@ router.get('/flats', (req, res) => {
   const id = req.query.id
   db.getFlatById(id)
     .then(flat => {
-      return new Promise((resolve, reject) => {
-        fs.readdir(path.join(__dirname, 'flats', 'images', id), (error, files) => {
-          if (error) {
-            resolve(Object.assign({}, flat, {documents: []}))
-          } else {
-            const documents = files.map(file => {
-              return path.join('/v1', 'flats', id, 'documents', file)
-            })
-            resolve(Object.assign({}, flat, {documents}))
-          }
-        })
-      })
-    })
-    .then(flat => {
       res.json(flat)
     })
     .catch(error => {
+      console.log(error)
       res.status(500).send(error.message)
     })
 })
@@ -90,16 +75,18 @@ router.post('/flats/join', (req, res) => {
   db.getFlatByName(name)
     .then(flat => {
       if (flat) {
-        return db.addTenancy(userId, flat.id)
+        return db.addJoinRequest(userId, flat.id)
           .then(() => {
-            return res.json({flatId: flat.id})
+            return db.addTenancy(userId, flat.id)
+              .then(() => {
+                return res.json({flatId: flat.id})
+              })
           })
       } else {
         return res.status(400).send('Flat not found: ' + name)
       }
     })
     .catch(error => {
-      console.log(error)
       return res.status(500).send(error.message)
     })
 })

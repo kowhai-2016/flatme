@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 import { Row, Col } from 'react-bootstrap'
 
 import Categories from './Categories'
+import JoinRequests from './JoinRequests'
 
 const Flat = React.createClass({
   componentDidMount () {
@@ -10,6 +11,7 @@ const Flat = React.createClass({
   render () {
     const flat = this.props.flat
     const flatName = flat ? flat.flatName : null
+    const joinRequests = flat ? flat.requests : []
     return (
       <div className='container-fluid plain-background flat'>
         <Row>
@@ -23,7 +25,9 @@ const Flat = React.createClass({
             }
           )}
           </Col>
-          <Col md={3} />
+          <Col md={3}>
+            <JoinRequests requests={joinRequests} />
+          </Col>
         </Row>
       </div>
     )
