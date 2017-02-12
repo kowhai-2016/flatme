@@ -49,8 +49,16 @@ const Dashboard = React.createClass({
     const flats = this.props.user.flats ? this.props.user.flats : []
     return (
       <div className='container'>
-        <CreateANewFlat open={this.openCreate} />
-        <JoinAFlat open={this.openJoin} />
+        <div className='row'>
+          <div className='col-md-3'>
+            <CreateANewFlat open={this.openCreate} />
+          </div>
+        </div>
+        <div className='row'>
+          <div className='col-md-3'>
+            <JoinAFlat open={this.openJoin} />
+          </div>
+        </div>
         <DashboardHeader />
         <FlatCard flats={flats} />
         <CreateFlatModal
