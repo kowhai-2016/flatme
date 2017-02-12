@@ -21,6 +21,19 @@ router.get('/users/:id', (req, res) => {
     })
 })
 
+router.get('/users/:id/flats', (req, res) => {
+  const id = req.params.id
+  db.getFlatsByUserId(id)
+    .then(flats => {
+      return res.json({
+        flats
+      })
+    })
+    .catch(error => {
+      res.status(500).send(error.message)
+    })
+})
+
 router.post('/users', (req, res) => {
   db.addUser(req.body)
     .then(user => {
