@@ -1,9 +1,3 @@
-.navbar {
-  margin-bottom: 0px;
-  font-family: 'Cabin Sketch', cursive;
-  font-size: 1.3em;
-}
-
 body {
   background: #ECE9E6; /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF); /* Chrome 10-25, Safari 5.1-6 */
@@ -16,42 +10,77 @@ body {
   /*background-image: url('/images/sofa.jpg');*/
 }
 
+.navbar {
+  margin-bottom: 0px;
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 1.3em;
+}
+
+.navbar-brand img {
+  display: inline-block;
+}
+.navbar-brand span {
+  display: inline-block;
+  padding-left: 15px;
+  font-size: 1.3em;
+}
+
 /*Landing page*/
 
+#mainTitle {
+  color: #000;
+  font-weight: bolder;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 8em;
+  text-shadow: rgba(0, 0, 0, 0.2) 2px 6px 5px, rgba(255, 255, 255, 0.4) 0px -4px 30px;
+  margin-top: 10%;
+  margin-left: 5%;
+}
+
+#subtitle {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3em;
+  margin-left: 5%;
+}
+
 .leads {
-  color: #76f2dd;
-  background-color: rgba(128,128,128,0.2);
+  font-family: 'Montserrat', sans-serif;
+  color: #00989e;
   font-weight: bold;
-  text-shadow: 1px 1px 1px #000000;
+}
+
+.leads p {
+  font-size: 2em;
+}
+
+.alternate p {
+  font-size: 2em;
+}
+
+.leads h1, .alternate h1 {
+  margin-top: 35px;
+  font-size: 3em;
+  color: red;
 }
 
 .alternate {
   text-align: right;
   color: black;
-  background-color: white;
-  opacity: 0.5;
-}
-
-.description1 h1 {
-  color: #7fffd4;
-  font-size: 70px;
-  color: black;
-  font-weight: bolder;
-  text-shadow: 1px 1px 1px #FFFFFF;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .description1 {
   font-weight:bold;
   text-align: center;
-  margin-top: 15%;
   padding: 2%;
 }
 
 .description2 {
+  font-family: 'Montserrat', sans-serif;
   text-align: right;
   margin-top: 20%;
-  margin-left: 2%;
-  margin-right: 2%;
+  /*margin-left: 2%;
+  margin-right: 2%;*/
   margin-bottom: 1%;
   padding: 2%;
   background-color: white;
@@ -71,6 +100,14 @@ body {
   min-height: 400px;
 }
 
+.share {
+  background-color: #00989e;
+}
+
+.landing-img {
+  margin-top: 10%;
+}
+
 /* Login modal*/
 .loginForm{
   display: flex;
@@ -80,6 +117,56 @@ body {
 .loginForm label {
   padding-right: 10px;
 }
+
+/* Dashboard page*/
+.categories-bar {
+  padding-top: 20px;
+  padding-bottom: 100%;
+  padding-left: 20px;
+}
+
+.categories-bar div {
+  padding-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.col-md-3 {
+  padding: 0;
+}
+
+.categories-bar div a {
+  color: grey;
+  text-align: center;
+  text-decoration: none;
+}
+
+.categories-bar div a:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.navbar-brand {
+  width: 200px;
+}
+
+/*profile page*/
+
+.user-row {
+    margin-bottom: 14px;
+}
+
+.user-row:last-child {
+    margin-bottom: 0;
+}
+
+.table-user-information > tbody > tr {
+    border-top: 1px solid rgb(221, 221, 221);
+}
+
+.table-user-information > tbody > tr:first-child {
+    border-top: 0;
+}
+
 
 /* Flat Dashboard page*/
 
@@ -229,6 +316,7 @@ body {
 {
   margin-top:20px;
 }
+
 
 /*testing the borders*/
 
