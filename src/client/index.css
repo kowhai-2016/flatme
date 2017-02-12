@@ -124,6 +124,11 @@
         padding-top: 0px;
   }
 }
+@media screen and (max-width: 1900px) and (min-width: 400px) {
+    .errors{
+        text-align: left;
+  }
+}
 
 .input-group-lg {
   margin: 2%;
@@ -195,7 +200,6 @@
   margin-top:20px;
 }
 
->>>>>>> dev
 /*testing the borders*/
 
 /*div {
