@@ -5,17 +5,21 @@ const FlatCard = React.createClass({
   render () {
     const flats = this.props.flats.map((flat, index) => {
       return (
-        <div className='panel-group' key={index}>
-          <div className='panel panel-default'>
-            <div className='panel-heading'>MyFlat</div>
-            <div className='panel-body'>
-              <ul>
-                <li>
-                  <Link to={`/flat/${flat.id}`}>
-                    {flat.flatName}
-                  </Link>
-                </li>
-              </ul>
+        <div className='row'>
+          <div className='col-md-6 col-md-offset-3'>
+            <div className='panel-group main-flat-card' key={index}>
+              <div className='panel panel-default flat-card'>
+                <div className='panel-heading'><h4>My Flat # {index + 1}</h4></div>
+                <div className='panel-body'>
+                  <ul>
+                    <li>
+                      <Link to={`/flat/${flat.id}`}>
+                        <h4><img src='/images/livingroom-window-with-curtains.svg' className='curtains' />{flat.flatName}</h4>
+                      </Link>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
