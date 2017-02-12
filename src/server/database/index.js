@@ -76,13 +76,13 @@ function getFlatById (id) {
           return flat
         })
     })
-    // .then(flat => {
-    //   return getJoinRequests(flat.id)
-    //   .then(requests => {
-    //     flat.requests = requests
-    //     return flat
-    //   })
-    // })
+    .then(flat => {
+      return getJoinRequests(flat.id)
+        .then(requests => {
+          flat.requests = requests
+          return flat
+        })
+    })
 }
 
 function getFlatsByUserId (userId) {
@@ -154,27 +154,50 @@ function addJoinRequest (userId, flatId) {
 
 function getJoinRequests (flatId) {
   return knex('join-requests')
-    .join('users', 'join_requests.user_id', '=', 'users.id')
-    .join('flats', 'join_requests.flat_id', '=', 'flats.id')
-    .select(
-      'join-requests.id as id',
-      'users.id as userId',
-      'users.first_name as firstName',
-      'users.last_name as lastName')
+    .join('users', 'join-requests.user_id', '=', 'users.id')
+    .join('flats', 'join-requests.flat_id', '=', 'flats.id')
+    .select('join-requests.id as id', 'flats.id as flatId', 'users.first_name as firstName', 'users.last_name as lastName', 'users.id as userId')
     .where('flat_id', flatId)
     .then(records => {
       return records.map(record => {
         return {
           id: record.id,
           user: {
-            id: record.userId,
             firstName: record.firstName,
             lastName: record.lastName
           }
         }
       })
     })
+    .then(requests => {
+      return requests
+    })
 }
+
+// function getJoinRequests (flatId) {
+//   return knex('join-requests')
+//     .join('users', 'join-requests.user_id', '=', 'users.id')
+//     .join('flats', 'join-requests.flat_id', '=', 'flats.id')
+//     .select(
+//       'join-requests.id as id',
+//       'flat_id as flatId',
+//       'users.id as userId',
+//       'users.first_name as firstName',
+//       'users.last_name as lastName')
+//     .where('flat_id', flatId)
+//     .then(records => {
+//       return records.map(record => {
+//         return {
+//           id: record.id,
+//           user: {
+//             id: record.userId,
+//             firstName: record.firstName,
+//             lastName: record.lastName
+//           }
+//         }
+//       })
+//     })
+// }
 
 module.exports = {
   addFlat,
