@@ -159,7 +159,6 @@ body {
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .categories-bar {
   padding-top: 20px;
-  padding-bottom: 100%;
   padding-left: 20px;
 }
 
@@ -373,7 +372,7 @@ body {
 #contacts-title {
   font-family: 'Montserrat', sans-serif;
   font-size: 3em;
-  
+
 /* Footer
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .git-logo {
