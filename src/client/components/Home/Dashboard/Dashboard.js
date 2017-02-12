@@ -1,7 +1,6 @@
 import React, { PropTypes } from 'react'
 import { Modal, Button } from 'react-bootstrap'
-import { actions, Control, Errors, Form } from 'react-redux-form'
-// import { LinkContainer } from 'react-router-bootstrap'
+import { Control, Errors, Form } from 'react-redux-form'
 
 import DashboardHeader from './DashboardHeader'
 import CreateANewFlat from './CreateANewFlatButton'
@@ -31,17 +30,7 @@ const Dashboard = React.createClass({
   },
 
   render () {
-    let flats = []
-    if (this.props.user.flats) {
-      flats = this.props.user.flats.map(flat => {
-        return (
-          <p>
-            {flat.flatName}
-          </p>
-        )
-      })
-    }
-
+    const flats = this.props.user.flats ? this.props.user.flats : []
     const createFlatModal = (
       <Modal show={this.state.show} onHide={this.close}>
         <Form model='forms.newFlat' onSubmit={this.onSubmit}>
@@ -58,7 +47,7 @@ const Dashboard = React.createClass({
             <Errors model='forms.newFlat' />
           </Modal.Body>
           <Modal.Footer>
-            <Button type="submit">Virtually create your flat</Button>
+            <Button type='submit'>Virtually create your flat</Button>
           </Modal.Footer>
         </Form>
       </Modal>
@@ -69,8 +58,7 @@ const Dashboard = React.createClass({
         <CreateANewFlat open={this.open} />
         <JoinAFlat />
         <DashboardHeader />
-        <FlatCard />
-        {flats}
+        <FlatCard flats={flats} />
         {createFlatModal}
       </div>
     )
@@ -78,7 +66,11 @@ const Dashboard = React.createClass({
 })
 
 Dashboard.propTypes = {
-  createNewFlat: PropTypes.func.isRequired
+  createNewFlat: PropTypes.func.isRequired,
+  fetchUserFlats: PropTypes.func.isRequired,
+  user: PropTypes.shape({
+    flats: PropTypes.arrayOf(PropTypes.object)
+  }).isRequired
 }
 
 export default Dashboard
