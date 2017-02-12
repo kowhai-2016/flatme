@@ -85,15 +85,19 @@ export const fetchUser = id => {
   }
 }
 
-export const fetchNotes = id => {
+export const fetchNotes = flatId => {
   return dispatch => {
     dispatch({
-      id,
+      flatId,
       type: 'FETCH_NOTES_PENDING'
     })
-    return getAxios().get(`/v1/notes/${id}`)
+    return getAxios().get(`/v1/flats/${flatId}/notes`)
       .then(res => {
         const notes = res.data
+          .reduce((acc, note) => {
+            acc[note.id] = note
+            return acc
+          }, {})
         return dispatch({
           type: 'FETCH_NOTES_SUCCESS',
           notes
@@ -109,23 +113,22 @@ export const fetchNotes = id => {
   }
 }
 
-export const deleteNote = note => {
+export const deleteNote = id => {
   return dispatch => {
     dispatch({
-      note,
+      id,
       type: 'DELETE_NOTE_PENDING'
     })
-    const id = note.id
-    return getAxios().post(`/v1/notes/${id}`)
+    return getAxios().delete(`/v1/notes/${id}`)
       .then(res => {
         return dispatch({
           type: 'DELETE_NOTE_SUCCESS',
-          note
+          id
         })
       })
       .catch(error => {
         return dispatch({
-          note,
+          id,
           message: error.message,
           type: 'DELETE_NOTE_FAILURE'
         })

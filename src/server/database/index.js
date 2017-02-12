@@ -161,9 +161,9 @@ function deleteNote (id) {
     .del()
 }
 
-function getNotes (id) {
+function getNotesByFlatId (flatId) {
   return knex('notes')
-    .where('flat_id', id)
+    .where('flat_id', flatId)
     .then(notes => {
       return notes.map(note => {
         return {
@@ -185,7 +185,7 @@ module.exports = {
   getUserById,
   getUserByEmail,
   comparePassword,
-  getNotes,
+  getNotesByFlatId,
   addNote,
   deleteNote,
   editNote

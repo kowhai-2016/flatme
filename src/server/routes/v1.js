@@ -20,6 +20,7 @@ router.post('/users', (req, res) => {
       res.status(500).send(error.message)
     })
 })
+
 // Routes under this middleware require a valid token to access
 router.use(jwtMiddleware)
 
@@ -84,40 +85,6 @@ router.get('/flats', (req, res) => {
     })
 })
 
-router.get('/notes/:id', (req, res) => {
-  const id = req.params.id
-  db.getNotes(id)
-    .then(notes => {
-      return res.json(notes)
-    })
-    .catch(error => {
-      return res.status(500).send(error.message)
-    })
-})
-
-router.post('/notes/:id', (req, res) => {
-  const id = req.params.id
-  db.deleteNote(id)
-    .then(index => {
-      return res.json(index)
-    })
-    .catch(error => {
-      return res.status(500).send(error.message)
-    })
-})
-
-router.put('/notes/:id', (req, res) => {
-  db.updateNote(req.body)
-    .then(content => {
-      return res.json(content)
-    })
-    .catch(error => {
-      return res.status(500).send(error.message)
-    })
-})
-
-router.post('/login', authenticate)
-
 router.post('/flats/join', (req, res) => {
   const { name } = req.body
   const userId = req.decoded.id
@@ -134,6 +101,38 @@ router.post('/flats/join', (req, res) => {
     })
     .catch(error => {
       console.log(error)
+      return res.status(500).send(error.message)
+    })
+})
+
+router.get('/flats/:id/notes', (req, res) => {
+  const id = req.params.id
+  db.getNotesByFlatId(id)
+    .then(notes => {
+      return res.json(notes)
+    })
+    .catch(error => {
+      return res.status(500).send(error.message)
+    })
+})
+
+router.delete('/notes/:id', (req, res) => {
+  const id = req.params.id
+  db.deleteNote(id)
+    .then(id => {
+      return res.json({success: true})
+    })
+    .catch(error => {
+      return res.status(500).send(error.message)
+    })
+})
+
+router.put('/notes/:id', (req, res) => {
+  db.updateNote(req.body)
+    .then(content => {
+      return res.json(content)
+    })
+    .catch(error => {
       return res.status(500).send(error.message)
     })
 })

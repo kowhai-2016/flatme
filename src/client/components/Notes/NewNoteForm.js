@@ -18,3 +18,5 @@ const NewNoteForm = () => {
   </Form>
   )
 }
+
+export default NewNoteForm

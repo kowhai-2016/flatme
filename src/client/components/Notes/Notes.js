@@ -3,8 +3,6 @@ import { Modal } from 'react-bootstrap'
 
 import NewNoteForm from './NewNoteForm'
 
-let notes
-
 export default React.createClass({
   // gets note data from api
   componentDidMount () {
@@ -21,14 +19,14 @@ export default React.createClass({
     this.setState({show: false})
   },
   // functions for adding and deleting notes
-  delete (note) {
-    this.props.deleteNote(note)
+  delete (id) {
+    this.props.deleteNote(id)
   },
   add () {
 
   },
   render () {
-    notes = this.props.notes
+    const {notes} = this.props
     return (
       <div>
         <h1>Notes</h1>
@@ -36,16 +34,15 @@ export default React.createClass({
         <Modal show={this.state.show} onHide={this.close}>
           <NewNoteForm />
         </Modal>
-        {notes[0] ? Object.keys(notes).map(note => {
+        {Object.keys(notes).map(noteId => {
           return (
-            <div>
-              <div>{notes[note].content}</div>
-              <div>{notes[note].author}</div>
-              <button onClick={() => this.delete(notes[note])}>&#10060;</button>
+            <div key={noteId}>
+              <div>{notes[noteId].content}</div>
+              <div>{notes[noteId].author}</div>
+              <button onClick={() => this.delete(noteId)}>&#10060;</button>
             </div>
           )
-        }) : <div>Nothing Found</div>
-      }
+        })}
       </div>
     )
   }
