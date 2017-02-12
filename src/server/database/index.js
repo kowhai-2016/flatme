@@ -78,6 +78,22 @@ function getFlatById (id) {
     })
 }
 
+function getFlatsByUserId (userId) {
+  return knex('tenancies')
+    .join('users', 'tenancies.user_id', '=', 'users.id')
+    .join('flats', 'tenancies.flat_id', '=', 'flats.id')
+    .select('users.id as userId', 'flats.id as flatId', 'flats.flat_name as flatName')
+    .where('userId', userId)
+    .then(flatInfos => {
+      return flatInfos.map(flatInfo => {
+        return {
+          id: flatInfo.flatId,
+          flatName: flatInfo.flatName
+        }
+      })
+    })
+}
+
 function getFlatByName (name) {
   return knex('flats')
     .where('flats.flat_name', name)
@@ -131,6 +147,14 @@ function addNote (note) {
     .then(getNotes(note.flat_id))
 }
 
+function editNote (note) {
+  return knex('notes')
+    .where('id', note.id)
+    .update({
+      content: note.content
+    })
+}
+
 function deleteNote (id) {
   return knex('notes')
     .where('id', id)
@@ -156,11 +180,13 @@ module.exports = {
   addTenancy,
   addUser,
   getFlatById,
+  getFlatsByUserId,
   getFlatByName,
   getUserById,
   getUserByEmail,
   comparePassword,
   getNotes,
   addNote,
-  deleteNote
+  deleteNote,
+  editNote
 }

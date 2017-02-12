@@ -37,6 +37,30 @@ export const fetchFlat = id => {
   }
 }
 
+export const fetchUserFlats = id => {
+  return dispatch => {
+    dispatch({
+      id,
+      type: 'FETCH_USER_FLATS_PENDING'
+    })
+    return getAxios().get(`/v1/users/${id}/flats`)
+      .then(res => {
+        const { flats } = res.data
+        return dispatch({
+          type: 'FETCH_USER_FLATS_SUCCESS',
+          flats
+        })
+      })
+      .catch(error => {
+        return dispatch({
+          id,
+          message: error.message,
+          type: 'FETCH_USER_FLATS_FAILURE'
+        })
+      })
+  }
+}
+
 export const fetchUser = id => {
   return dispatch => {
     dispatch({
@@ -115,7 +139,7 @@ export const login = (email, password) => {
     dispatch({
       type: 'LOGIN_PENDING'
     })
-    return axios.post(`/v1/login`, {email, password})
+    return getAxios().post(`/v1/login`, {email, password})
       .then(response => {
         const user = response.data
         window.localStorage.clear()
@@ -152,7 +176,7 @@ export const signUp = user => {
     dispatch({
       type: 'SIGNUP_PENDING'
     })
-    return axios.post(`/v1/users`, user)
+    return getAxios().post(`/v1/users`, user)
       .then(res => {
         const user = res.data
         return dispatch({
