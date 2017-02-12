@@ -9,15 +9,22 @@ const Categories = props => {
     <Navbar className='categories-bar'>
       <div>
         <img src='/images/phone.svg' width='25px' />
-        <Link activeClassName={'active'} to={`/flat/${id}`}> Contacts</Link>
+        <Link
+          activeClassName={'active'}
+          onlyActiveOnIndex={true}
+          to={`/flat/${id}`}> Contacts</Link>
       </div>
       <div>
         <img src='/images/interface.svg' width='25px' />
-        <Link activeClassName={'active'} to={`/flat/${id}/documents`}> Documents</Link>
+        <Link activeClassName={'active'}
+          onlyActiveOnIndex={true}
+          to={`/flat/${id}/documents`}> Documents</Link>
       </div>
       <div>
         <img src='/images/interface-1.svg' width='25px' />
-        <Link activeClassName={'active'} to={`/flat/${id}/notes`}> Notes</Link>
+        <Link activeClassName={'active'}
+          onlyActiveOnIndex={true}
+          to={`/flat/${id}/notes`}> Notes</Link>
       </div>
     </Navbar>
   )
