@@ -13,7 +13,7 @@ const Flat = React.createClass({
     return (
       <div className='container-fluid plain-background flat'>
         <Row>
-          <Col mdOffset={1} md={2}>
+          <Col md={3}>
             <Categories id={this.props.params.id} />
           </Col>
           <Col md={6} className='popout'>

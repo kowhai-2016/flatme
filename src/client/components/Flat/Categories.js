@@ -6,25 +6,31 @@ import { Navbar } from 'react-bootstrap'
 const Categories = props => {
   const id = props.id
   return (
-    <Navbar className='categories-bar'>
+    <Navbar className='categories-bar' style={{margin: '10%'}}>
       <div>
-        <img src='/images/phone.svg' width='25px' />
         <Link
           activeClassName={'active'}
           onlyActiveOnIndex={true}
-          to={`/flat/${id}`}> Contacts</Link>
+          to={`/flat/${id}`}
+          >
+          <img src='/images/phone.svg' width='25px' />
+          <span>Contacts</span>
+        </Link>
       </div>
       <div>
-        <img src='/images/interface.svg' width='25px' />
+
         <Link activeClassName={'active'}
-          onlyActiveOnIndex={true}
-          to={`/flat/${id}/documents`}> Documents</Link>
+          to={`/flat/${id}/documents`}>
+          <img src='/images/interface.svg' width='25px' />
+          <span>Documents</span>
+        </Link>
       </div>
       <div>
-        <img src='/images/interface-1.svg' width='25px' />
         <Link activeClassName={'active'}
-          onlyActiveOnIndex={true}
-          to={`/flat/${id}/notes`}> Notes</Link>
+          to={`/flat/${id}/notes`}>
+          <img src='/images/interface-1.svg' width='25px' />
+          <span>Nodes</span>
+        </Link>
       </div>
     </Navbar>
   )

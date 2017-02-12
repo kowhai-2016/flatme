@@ -10,9 +10,10 @@ body {
   background: linear-gradient(to left, #ECE9E6 , #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
   background-size:contain;
   background-position: center center;
-  background-repeat: repeat;
-  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-attachment: cover;
   min-height: 800px;
+  /*background-image: url('/images/sofa.jpg');*/
 }
 
 /*Landing page*/
@@ -83,10 +84,13 @@ body {
 /* Flat Dashboard page*/
 
 .categories-bar {
+  margin-top: 20px;
   padding-top: 20px;
   /*padding-bottom: 100%;*/
   /*padding-left: 20px;*/
-  background-color: rgba(255,255,255,0);
+  background-color: rgba(255,255,255,0.9);
+  border: 2px solid lightseagreen;
+
 }
 
 .categories-bar div {
@@ -117,7 +121,7 @@ body {
 }
 
 .popout {
-  background-color: white;
+  background-color: rgba(255,255,255,0.8);
   margin-left: 0;
   min-height: 900px;
   border-right-style: solid;
