@@ -32,17 +32,29 @@
 }
 
 .leads {
-  color: #76f2dd;
-  background-color: rgba(128,128,128,0.2);
+  font-family: 'Montserrat', sans-serif;
+  color: #00989e;
   font-weight: bold;
-  text-shadow: 1px 1px 1px #000000;
+}
+
+.leads p {
+  font-size: 2em;
+}
+
+.alternate p {
+  font-size: 2em;
+}
+
+.leads h1, .alternate h1 {
+  margin-top: 35px;
+  font-size: 3em;
+  color: red;
 }
 
 .alternate {
   text-align: right;
   color: black;
-  background-color: white;
-  opacity: 0.5;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .description1 {
@@ -74,6 +86,14 @@
 
 .height{
   min-height: 400px;
+}
+
+.share {
+  background-color: #00989e;
+}
+
+.landing-img {
+  margin-top: 10%;
 }
 
 /* Login modal*/
