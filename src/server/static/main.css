@@ -8,16 +8,15 @@ body {
   background: #ECE9E6; /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF); /* Chrome 10-25, Safari 5.1-6 */
   background: linear-gradient(to left, #ECE9E6 , #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-  background-size:contain;
+  background-size:cover;
   background-position: center center;
   background-repeat: no-repeat;
-  background-attachment: cover;
+  background-attachment: fixed;
   min-height: 800px;
   /*background-image: url('/images/sofa.jpg');*/
 }
 
 /*Landing page*/
-
 .leads {
   color: #76f2dd;
   background-color: rgba(128,128,128,0.2);
@@ -126,6 +125,11 @@ body {
   border-radius: 3px;
 }
 
+.containerJoin {
+  background-image: url('/images/table.jpg');
+  background-size:cover;
+}
+
 .globalJoinForm  {
   max-width: 600px;
   margin-left: auto;
@@ -151,7 +155,7 @@ body {
 
 .input-group-lg {
   margin: 2%;
-  height: 40px;
+  height: 30px;
 }
 
 .titleJoinForm label{
