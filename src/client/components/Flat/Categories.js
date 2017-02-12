@@ -10,7 +10,7 @@ const Categories = props => {
       <div>
         <Link
           activeClassName={'active'}
-          onlyActiveOnIndex={true}
+          onlyActiveOnIndex
           to={`/flat/${id}`}
           >
           <img src='/images/phone.svg' width='25px' />

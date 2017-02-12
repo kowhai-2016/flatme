@@ -1,68 +1,70 @@
 import React, { PropTypes } from 'react'
-import { Modal, Button } from 'react-bootstrap'
-import { actions, Control, Errors, Form } from 'react-redux-form'
-// import { LinkContainer } from 'react-router-bootstrap'
 
+import CreateFlatModal from './CreateFlatModal'
 import DashboardHeader from './DashboardHeader'
 import CreateANewFlat from './CreateANewFlatButton'
 import JoinAFlat from './JoinAFlatButton'
+import JoinFlatModal from './JoinFlatModal'
 import FlatCard from './FlatCard'
 
 const Dashboard = React.createClass({
 
+  closeCreate () {
+    this.setState({
+      showCreate: false
+    })
+  },
+
+  closeJoin () {
+    this.setState({
+      showJoin: false
+    })
+  },
+
   getInitialState () {
-    return {show: false}
+    return {
+      showCreate: false,
+      showJoin: false
+    }
   },
 
-  open () {
-    this.setState({show: true})
+  openCreate () {
+    this.setState({
+      showCreate: true
+    })
   },
 
-  close () {
-    this.setState({show: false})
-  },
-
-  onSubmit (flat) {
-    this.props.createNewFlat(flat)
+  openJoin () {
+    this.setState({
+      showJoin: true
+    })
   },
 
   render () {
-    const createFlatModal = (
-      <Modal show={this.state.show} onHide={this.close}>
-        <Form model='forms.newFlat' onSubmit={this.onSubmit}>
-          <Modal.Header closeButton>
-            <Modal.Title>Create a new Flat</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <div>
-              <div>
-                <label>Flat Name: </label>
-                <Control model='.flatName' />
-              </div>
-            </div>
-            <Errors model='forms.newFlat' />
-          </Modal.Body>
-          <Modal.Footer>
-            <Button type="submit">Virtually create your flat</Button>
-          </Modal.Footer>
-        </Form>
-      </Modal>
-  )
-
     return (
       <div className='container'>
-        <CreateANewFlat open={this.open} />
-        <JoinAFlat />
+        <CreateANewFlat open={this.openCreate} />
+        <JoinAFlat open={this.openJoin} />
         <DashboardHeader />
         <FlatCard />
-        {createFlatModal}
+        <CreateFlatModal
+          close={this.closeCreate}
+          onSubmit={this.props.createNewFlat}
+          show={this.state.showCreate}
+          />
+        <JoinFlatModal
+          close={this.closeJoin}
+          onSubmit={this.props.joinFlat}
+          show={this.state.showJoin}
+          />
       </div>
     )
   }
 })
 
 Dashboard.propTypes = {
-  createNewFlat: PropTypes.func.isRequired
+  createNewFlat: PropTypes.func.isRequired,
+  joinFlat: PropTypes.func.isRequired
 }
 
 export default Dashboard
