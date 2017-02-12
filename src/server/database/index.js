@@ -82,16 +82,15 @@ function getFlatsByUserId (userId) {
   return knex('tenancies')
     .join('users', 'tenancies.user_id', '=', 'users.id')
     .join('flats', 'tenancies.flat_id', '=', 'flats.id')
-    .select('flats.id as flatId', 'users.first_name as firstName', 'users.last_name as lastName', 'users.id as userId', 'users.email as email', 'users.phone_number as phoneNumber')
-    .where('flatId', flatId)
-    .then(flatmates => {
-      return flatmates.map(flatmate => {
+    .select('tenancies.user_id as tenanciesUserId', 'users.id as userId', 'flats.flat_name as flatName', 'users.first_name as firstName', 'users.last_name as lastName')
+    .where('tenanciesUserId', userId)
+    .then(flatInfos => {
+      return flatInfos.map(flatInfo => {
         return {
-          id: flatmate.userId,
-          firstName: flatmate.firstName,
-          lastName: flatmate.lastName,
-          email: flatmate.email,
-          phoneNumber: flatmate.phoneNumber
+          id: flatInfo.tenanciesUserId,
+          flatName: flatInfo.flatName,
+          firstName: flatInfo.firstName,
+          lastName: flatInfo.lastName
         }
       })
     })

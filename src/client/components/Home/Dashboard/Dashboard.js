@@ -10,6 +10,10 @@ import FlatCard from './FlatCard'
 
 const Dashboard = React.createClass({
 
+  componentDidMount () {
+    this.props.fetchUserFlats(this.props.user.id)
+  },
+
   getInitialState () {
     return {show: false}
   },

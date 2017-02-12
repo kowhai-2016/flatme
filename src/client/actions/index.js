@@ -26,6 +26,30 @@ export const fetchFlat = id => {
   }
 }
 
+export const fetchUserFlats = id => {
+  return dispatch => {
+    dispatch({
+      id,
+      type: 'FETCH_USER_FLATS_PENDING'
+    })
+    return axios.get(`/v1/users/${id}/flats`)
+      .then(res => {
+        const { flats } = res.data
+        return dispatch({
+          type: 'FETCH_USER_FLATS_SUCCESS',
+          flats
+        })
+      })
+      .catch(error => {
+        return dispatch({
+          id,
+          message: error.message,
+          type: 'FETCH_USER_FLATS_FAILURE'
+        })
+      })
+  }
+}
+
 export const fetchUser = id => {
   return dispatch => {
     dispatch({
