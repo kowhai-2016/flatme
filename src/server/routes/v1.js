@@ -87,8 +87,8 @@ router.get('/notes/:id', (req, res) => {
 router.post('/notes/:id', (req, res) => {
   const id = req.params.id
   db.deleteNote(id)
-    .then(note => {
-      res.json(note)
+    .then(index => {
+      res.json(index)
     })
     .catch(error => {
       res.status(500).send(error.message)
