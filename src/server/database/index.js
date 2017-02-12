@@ -182,7 +182,7 @@ function addNote (note) {
       content: note.content,
       author: note.author
     })
-    .then(getNotes(note.flat_id))
+    .then(getNotesByFlatId(note.flat_id))
 }
 
 function editNote (note) {
@@ -213,7 +213,6 @@ function getNotesByFlatId (flatId) {
     })
 }
 
->>>>>>> dev
 module.exports = {
   addFlat,
   addJoinRequest,
