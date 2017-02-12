@@ -6,7 +6,7 @@ const BannerDream = () => {
       <div className='container'>
         <div className='row'>
           <div className='col-md-3 leads'>
-            <img src='/images/img3.jpg' width='100%' className='landing-img'/>
+            <img src='/images/img3.jpg' width='100%' className='landing-img' />
           </div>
           <div className='col-md-9 leads'>
             <h1>"Live the Dream"</h1>

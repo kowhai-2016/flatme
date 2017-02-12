@@ -4,10 +4,10 @@ const flatmates = props => {
   if (!props.flat) {
     return []
   }
-  console.log(props.flat)
+
   return props.flat.flatmates.map((flatmate, index) => {
     return (
-      <div className='row'>
+      <div key={index} className='row'>
         <div className='col-sm-8'>
           <div className='card'>
             <div className='card-block'>
