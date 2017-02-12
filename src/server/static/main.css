@@ -4,6 +4,18 @@
   font-size: 1.3em;
 }
 
+body {
+  background: #ECE9E6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #ECE9E6 , #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size:contain;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: cover;
+  min-height: 800px;
+  /*background-image: url('/images/sofa.jpg');*/
+}
+
 /*Landing page*/
 
 .leads {
@@ -47,7 +59,7 @@
 }
 
 .header {
-  background-image: url('/images/background.jpg');
+  background-image: url('/images/sofa.jpg');
   background-size: cover;
   background-position: center center;
   background-repeat: no-repeat;
@@ -69,11 +81,16 @@
   padding-right: 10px;
 }
 
-/* Dashboard page*/
+/* Flat Dashboard page*/
+
 .categories-bar {
+  margin-top: 20px;
   padding-top: 20px;
-  padding-bottom: 100%;
-  padding-left: 20px;
+  /*padding-bottom: 100%;*/
+  /*padding-left: 20px;*/
+  background-color: rgba(255,255,255,0.9);
+  border: 2px solid lightseagreen;
+
 }
 
 .categories-bar div {
@@ -93,14 +110,16 @@
 
 .categories-bar div a:hover {
   text-decoration: none;
-  color: white;
+}
+
+.categories-bar div .active {
+  color: lightseagreen;
 }
 
 .navbar-brand {
   width: 200px;
 }
 
-<<<<<<< HEAD
 /*JoinPage*/
 .input-group {
   width: 340px;
@@ -170,6 +189,17 @@
   color: red;
   /*height: 20px;
   text-align: right;*/
+
+.popout {
+  background-color: rgba(255,255,255,0.8);
+  margin-left: 0;
+  min-height: 900px;
+  border-right-style: solid;
+  border-left-style: solid;
+  border-right-color: lightseagreen;
+  border-right-width:medium;
+  border-left-color: lightseagreen;
+  border-left-width: medium;
 }
 
 /*profile page*/
