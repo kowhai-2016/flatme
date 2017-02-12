@@ -45,11 +45,10 @@ const Dashboard = React.createClass({
   },
 
   render () {
-
     return (
       <div className='container'>
         <CreateANewFlat open={this.openCreate} />
-        <JoinAFlat />
+        <JoinAFlat open={this.openJoin} />
         <DashboardHeader />
         <FlatCard />
         <CreateFlatModal
@@ -58,10 +57,10 @@ const Dashboard = React.createClass({
           show={this.state.showCreate}
           />
         <JoinFlatModal
-        close={this.closeJoin}
-        onSubmit={this.onSubmit}
-        show={this.state.showJoin}
-        />
+          close={this.closeJoin}
+          onSubmit={this.onSubmit}
+          show={this.state.showJoin}
+          />
       </div>
     )
   }
