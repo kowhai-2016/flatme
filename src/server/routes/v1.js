@@ -104,6 +104,38 @@ router.post('/flats/join', (req, res) => {
     })
 })
 
+router.get('/flats/:id/notes', (req, res) => {
+  const id = req.params.id
+  db.getNotesByFlatId(id)
+    .then(notes => {
+      return res.json(notes)
+    })
+    .catch(error => {
+      return res.status(500).send(error.message)
+    })
+})
+
+router.delete('/notes/:id', (req, res) => {
+  const id = req.params.id
+  db.deleteNote(id)
+    .then(id => {
+      return res.json({success: true})
+    })
+    .catch(error => {
+      return res.status(500).send(error.message)
+    })
+})
+
+router.put('/notes/:id', (req, res) => {
+  db.updateNote(req.body)
+    .then(content => {
+      return res.json(content)
+    })
+    .catch(error => {
+      return res.status(500).send(error.message)
+    })
+})
+
 router.get('*', (req, res) => res.status(404).send('API endpoint not found.'))
 
 module.exports = router

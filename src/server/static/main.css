@@ -63,7 +63,7 @@ body {
 .leads h1, .alternate h1 {
   margin-top: 35px;
   font-size: 3em;
-  color: red;
+  color: #E31B1B;
 }
 
 .alternate {
@@ -175,8 +175,6 @@ body {
 
 /* Flat Dashboard page
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-
 .categories-bar {
   margin-top: 20px;
   padding-top: 20px;
@@ -184,7 +182,6 @@ body {
   /*padding-left: 20px;*/
   background-color: rgba(255,255,255,0.9);
   border: 2px solid lightseagreen;
-
 }
 
 .categories-bar div {
@@ -216,14 +213,19 @@ body {
 
 /* Join Page
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+
 .input-group {
   width: 340px;
   border-radius: 3px;
 }
 
-.containerJoin {
+.bg-join {
   background-image: url('/images/table.jpg');
-  background-size:cover;
+  background-size:100%;
+  min-height: 800px;
+}
+.containerJoin {
+  background-color: #fff;
 }
 
 .globalJoinForm  {
@@ -233,16 +235,19 @@ body {
   margin: 5%;
   text-align: right;
 }
+
 @media screen and (max-width: 767px) and (min-width: 200px) {
   .globalJoinForm {
     text-align: left;
   }
 }
+
 @media screen and (max-width: 767px) and (min-width: 200px) {
   .titleJoinForm label{
     padding-top: 0px;
   }
 }
+
 @media screen and (max-width: 767px) and (min-width: 200px) {
   .errors {
     font-size: 0.8em;
