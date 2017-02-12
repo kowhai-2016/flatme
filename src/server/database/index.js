@@ -163,6 +163,7 @@ function getJoinRequests (flatId) {
         return {
           id: record.id,
           user: {
+            id: record.userId,
             firstName: record.firstName,
             lastName: record.lastName
           }
