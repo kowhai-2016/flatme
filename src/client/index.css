@@ -100,6 +100,78 @@
   width: 200px;
 }
 
+<<<<<<< HEAD
+/*JoinPage*/
+.input-group {
+  width: 340px;
+  border-radius: 3px;
+}
+
+.globalJoinForm  {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 5%;
+  text-align: right;
+}
+@media screen and (max-width: 767px) and (min-width: 400px) {
+    .globalJoinForm {
+        text-align: left;
+  }
+}
+@media screen and (max-width: 767px) and (min-width: 400px) {
+    .titleJoinForm label{
+        padding-top: 0px;
+  }
+}
+@media screen and (max-width: 1900px) and (min-width: 400px) {
+    .errors{
+        text-align: left;
+  }
+}
+
+.input-group-lg {
+  margin: 2%;
+  height: 40px;
+}
+
+.titleJoinForm label{
+  text-align: right;
+  padding-top: 4%;
+  padding-left: 0px;
+}
+
+.submitJoinBtn {
+  width: 100px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.joinTitle h1 {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.containerJoin {
+  border: 1px solid grey;
+  margin: 10px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  border-radius: 25px;
+  -webkit-box-shadow: 0px 3px 20px 0px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 3px 20px 0px rgba(0,0,0,1);
+  box-shadow: 0px 3px 20px 0px rgba(0,0,0,1);
+}
+
+.errors {
+  color: red;
+  /*height: 20px;
+  text-align: right;*/
+}
+
 /*profile page*/
 
 .user-row {
