@@ -133,19 +133,19 @@ body {
   margin: 5%;
   text-align: right;
 }
-@media screen and (max-width: 767px) and (min-width: 400px) {
+@media screen and (max-width: 767px) and (min-width: 200px) {
     .globalJoinForm {
         text-align: left;
   }
 }
-@media screen and (max-width: 767px) and (min-width: 400px) {
+@media screen and (max-width: 767px) and (min-width: 200px) {
     .titleJoinForm label{
         padding-top: 0px;
   }
 }
-@media screen and (max-width: 1900px) and (min-width: 400px) {
-    .errors{
-        text-align: left;
+@media screen and (max-width: 767px) and (min-width: 200px) {
+    .errors {
+        font-size: 0.8em;
   }
 }
 
