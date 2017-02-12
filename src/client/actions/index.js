@@ -86,13 +86,12 @@ export const fetchUser = id => {
 }
 
 export const fetchNotes = id => {
-  console.log(id)
   return dispatch => {
     dispatch({
       id,
       type: 'FETCH_NOTES_PENDING'
     })
-    return axios.get(`/v1/notes/${id}`)
+    return getAxios().get(`/v1/notes/${id}`)
       .then(res => {
         const notes = res.data
         return dispatch({
@@ -117,7 +116,7 @@ export const deleteNote = note => {
       type: 'DELETE_NOTE_PENDING'
     })
     const id = note.id
-    return axios.post(`/v1/notes/${id}`)
+    return getAxios().post(`/v1/notes/${id}`)
       .then(res => {
         return dispatch({
           type: 'DELETE_NOTE_SUCCESS',

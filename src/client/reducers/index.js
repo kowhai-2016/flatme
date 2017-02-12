@@ -16,7 +16,7 @@ const join = {
   confirmPassword: ''
 }
 
-const login = {
+const loginCredentials = {
   email: '',
   password: ''
 }
@@ -33,7 +33,7 @@ export default combineReducers({
   account,
   flats,
   notes,
-  forms: combineForms({ login, join, newFlat, joinFlat }, 'forms'),
+  forms: combineForms({ loginCredentials, join, newFlat, joinFlat }, 'forms'),
   routing: routerReducer,
   users
 })

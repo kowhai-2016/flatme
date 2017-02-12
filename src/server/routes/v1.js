@@ -88,11 +88,10 @@ router.get('/notes/:id', (req, res) => {
   const id = req.params.id
   db.getNotes(id)
     .then(notes => {
-      console.log('server', res.json(notes))
-      res.json(notes)
+      return res.json(notes)
     })
     .catch(error => {
-      res.status(500).send(error.message)
+      return res.status(500).send(error.message)
     })
 })
 
@@ -100,20 +99,20 @@ router.post('/notes/:id', (req, res) => {
   const id = req.params.id
   db.deleteNote(id)
     .then(index => {
-      res.json(index)
+      return res.json(index)
     })
     .catch(error => {
-      res.status(500).send(error.message)
+      return res.status(500).send(error.message)
     })
 })
 
 router.put('/notes/:id', (req, res) => {
   db.updateNote(req.body)
     .then(content => {
-      res.json(content)
+      return res.json(content)
     })
     .catch(error => {
-      res.status(500).send(error.message)
+      return res.status(500).send(error.message)
     })
 })
 
