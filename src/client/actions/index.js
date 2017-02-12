@@ -90,7 +90,7 @@ export const login = (email, password) => {
     dispatch({
       type: 'LOGIN_PENDING'
     })
-    return axios.post(`/v1/login`, {email, password})
+    return getAxios().post(`/v1/login`, {email, password})
       .then(response => {
         const user = response.data
         window.localStorage.clear()
@@ -127,7 +127,7 @@ export const signUp = user => {
     dispatch({
       type: 'SIGNUP_PENDING'
     })
-    return axios.post(`/v1/users`, user)
+    return getAxios().post(`/v1/users`, user)
       .then(res => {
         const user = res.data
         return dispatch({
