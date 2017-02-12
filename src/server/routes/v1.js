@@ -80,7 +80,7 @@ router.post('/flats/join', (req, res) => {
       if (flat) {
         return db.addTenancy(userId, flat.id)
           .then(() => {
-            return res.send('You have been joined to your new flat')
+            return res.json({flatId: flat.id})
           })
       } else {
         return res.status(400).send('Flat not found: ' + name)
