@@ -75,6 +75,30 @@ export const fetchNotes = id => {
   }
 }
 
+export const deleteNote = note => {
+  return dispatch => {
+    dispatch({
+      note,
+      type: 'DELETE_NOTE_PENDING'
+    })
+    const id = note.id
+    return axios.post(`/v1/notes/${id}`)
+      .then(res => {
+        return dispatch({
+          type: 'DELETE_NOTE_SUCCESS',
+          note
+        })
+      })
+      .catch(error => {
+        return dispatch({
+          note,
+          message: error.message,
+          type: 'DELETE_NOTE_FAILURE'
+        })
+      })
+  }
+}
+
 export const login = (email, password) => {
   return dispatch => {
     dispatch({

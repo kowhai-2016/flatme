@@ -105,16 +105,24 @@ function addNote (note) {
     .then(getNotes(note.flat_id))
 }
 
-function deleteNote (note) {
+function deleteNote (id) {
   return knex('notes')
-    .where('id', note.id)
+    .where('id', id)
     .del()
-    .then(getNotes(note.flat_id))
 }
 
 function getNotes (id) {
   return knex('notes')
     .where('flat_id', id)
+    .then(notes => {
+      return notes.map(note => {
+        return {
+          id: note.id,
+          content: note.content,
+          author: note.author
+        }
+      })
+    })
 }
 
 module.exports = {

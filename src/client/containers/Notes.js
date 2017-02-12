@@ -5,14 +5,15 @@ import Notes from '../components/Notes'
 
 const mapStateToProps = (state, ownProps) => {
   return {
-    flat: Number(ownProps.params.id)
+    flat: Number(ownProps.params.id),
+    notes: state.notes
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
     fetchNotes: (flat) => { return dispatch(fetchNotes(flat)) },
-    deleteNote: (id) => { return dispatch(deleteNote(id)) }
+    deleteNote: (note) => { return dispatch(deleteNote(note)) }
   }
 }
 

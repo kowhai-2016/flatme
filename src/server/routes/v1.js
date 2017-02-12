@@ -52,7 +52,19 @@ router.get('/notes/:id', (req, res) => {
   const id = req.params.id
   db.getNotes(id)
     .then(notes => {
+      console.log('server', res.json(notes))
       res.json(notes)
+    })
+    .catch(error => {
+      res.status(500).send(error.message)
+    })
+})
+
+router.post('/notes/:id', (req, res) => {
+  const id = req.params.id
+  db.deleteNote(id)
+    .then(note => {
+      res.json(note)
     })
     .catch(error => {
       res.status(500).send(error.message)
