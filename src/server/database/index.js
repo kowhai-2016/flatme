@@ -148,7 +148,8 @@ function addJoinRequest (userId, flatId) {
   return knex('join-requests')
     .insert({
       flat_id: flatId,
-      user_id: userId
+      user_id: userId,
+      status: 'pending'
     })
 }
 
