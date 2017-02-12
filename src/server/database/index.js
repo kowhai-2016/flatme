@@ -123,7 +123,7 @@ function getFlatmates (flatId) {
     .join('users', 'tenancies.user_id', '=', 'users.id')
     .join('flats', 'tenancies.flat_id', '=', 'flats.id')
     .select('flats.id as flatId', 'users.first_name as firstName', 'users.last_name as lastName', 'users.id as userId', 'users.email as email', 'users.phone_number as phoneNumber')
-    .where('flatId', flatId)
+    .where('flat_id', flatId)
     .then(flatmates => {
       return flatmates.map(flatmate => {
         return {
