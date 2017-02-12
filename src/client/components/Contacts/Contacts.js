@@ -4,6 +4,7 @@ const flatmates = props => {
   if (!props.flat) {
     return []
   }
+
   return props.flat.flatmates.map((flatmate, index) => {
     return (
       <div className='row'>

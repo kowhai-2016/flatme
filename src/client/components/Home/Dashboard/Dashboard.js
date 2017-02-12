@@ -9,6 +9,10 @@ import FlatCard from './FlatCard'
 
 const Dashboard = React.createClass({
 
+  componentDidMount () {
+    this.props.fetchUserFlats(this.props.user.id)
+  },
+
   closeCreate () {
     this.setState({
       showCreate: false
@@ -23,6 +27,7 @@ const Dashboard = React.createClass({
 
   getInitialState () {
     return {
+      show: false,
       showCreate: false,
       showJoin: false
     }
@@ -41,12 +46,13 @@ const Dashboard = React.createClass({
   },
 
   render () {
+    const flats = this.props.user.flats ? this.props.user.flats : []
     return (
       <div className='container'>
         <CreateANewFlat open={this.openCreate} />
         <JoinAFlat open={this.openJoin} />
         <DashboardHeader />
-        <FlatCard />
+        <FlatCard flats={flats} />
         <CreateFlatModal
           close={this.closeCreate}
           onSubmit={this.props.createNewFlat}
@@ -64,6 +70,10 @@ const Dashboard = React.createClass({
 
 Dashboard.propTypes = {
   createNewFlat: PropTypes.func.isRequired,
+  fetchUserFlats: PropTypes.func.isRequired,
+  user: PropTypes.shape({
+    flats: PropTypes.arrayOf(PropTypes.object)
+  }).isRequired,
   joinFlat: PropTypes.func.isRequired
 }
 
