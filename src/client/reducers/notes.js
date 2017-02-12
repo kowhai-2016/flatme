@@ -3,6 +3,9 @@ export default (state = {}, action) => {
     case 'FETCH_NOTES_SUCCESS':
       return Object.assign({}, action.notes)
 
+    case 'ADD_NOTE_SUCCESS':
+      return
+
     case 'DELETE_NOTE_SUCCESS':
      return (Object.keys(state)
        .filter(id => id !== action.id)

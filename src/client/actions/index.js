@@ -113,6 +113,29 @@ export const fetchNotes = flatId => {
   }
 }
 
+export const addNote = note => {
+  return dispatch => {
+    dispatch({
+      note,
+      type: 'ADD_NOTE_PENDING'
+    })
+    return getAxios().delete(`/v1/flat/${note.flat_id}/notes`)
+      .then(res => {
+        return dispatch({
+          type: 'ADD_NOTE_SUCCESS',
+          note
+        })
+      })
+      .catch(error => {
+        return dispatch({
+          note,
+          message: error.message,
+          type: 'ADD_NOTE_FAILURE'
+        })
+      })
+  }
+}
+
 export const deleteNote = id => {
   return dispatch => {
     dispatch({

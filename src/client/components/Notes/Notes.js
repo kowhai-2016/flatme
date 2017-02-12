@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal } from 'react-bootstrap'
+import { Modal, Button } from 'react-bootstrap'
 
 import NewNoteForm from './NewNoteForm'
 
@@ -22,8 +22,21 @@ export default React.createClass({
   delete (id) {
     this.props.deleteNote(id)
   },
-  add () {
-
+  handleSubmit () {
+    const note = {
+      flat_id: this.props.flat,
+      content: this.props.newNote,
+      author: this.props.user.firstName
+    }
+    console.log('adding', note)
+    // this.props.login(email, password)
+    //   .then(action => {
+    //     if (action.type === 'LOGIN_SUCCESS') {
+    //       this.close()
+    //     } else {
+    //       this.props.dispatch(actions.setErrors('forms.loginCredentials', 'The email address or password that you\'ve entered is incorrect'))
+    //     }
+    //   })
   },
   render () {
     const {notes} = this.props
@@ -32,7 +45,7 @@ export default React.createClass({
         <h1>Notes</h1>
         <button onClick={this.open}>Add new</button>
         <Modal show={this.state.show} onHide={this.close}>
-          <NewNoteForm />
+          <NewNoteForm onSubmit={this.handleSubmit} />
         </Modal>
         {Object.keys(notes).map(noteId => {
           return (
