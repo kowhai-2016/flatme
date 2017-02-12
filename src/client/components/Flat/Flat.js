@@ -13,10 +13,10 @@ const Flat = React.createClass({
     return (
       <div className='container-fluid plain-background flat'>
         <Row>
-          <Col md={3}>
+          <Col mdOffset={1} md={3}>
             <Categories id={this.props.params.id} />
           </Col>
-          <Col md={6} className='popout'>
+          <Col md={5} className='popout'>
             <h1 className='text-center'>{flatName}</h1>
             {this.props.children && React.cloneElement(this.props.children, {
               flat
