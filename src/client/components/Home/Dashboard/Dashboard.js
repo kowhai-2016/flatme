@@ -1,33 +1,36 @@
 import React, { PropTypes } from 'react'
-import { Modal, Button } from 'react-bootstrap'
-import { Control, Errors, Form } from 'react-redux-form'
-// import { LinkContainer } from 'react-router-bootstrap'
 
+import CreateFlatModal from './CreateFlatModal'
 import DashboardHeader from './DashboardHeader'
 import CreateANewFlat from './CreateANewFlatButton'
 import JoinAFlat from './JoinAFlatButton'
+import JoinFlatModal from './JoinFlatModal'
 import FlatCard from './FlatCard'
 
 const Dashboard = React.createClass({
 
-  getInitialState () {
-    return {
-      showCreate: false
-      // showJoin: false
-    }
-  },
-
-  open () {
+  closeCreate () {
     this.setState({
-      showCreate: true
-      // showJoin: true
+      showCreate: false
     })
   },
 
-  close () {
+  closeJoin () {
     this.setState({
-      showCreate: false
-      // showJoin: false
+      showJoin: false
+    })
+  },
+
+  getInitialState () {
+    return {
+      showCreate: false,
+      showJoin: false
+    }
+  },
+
+  openCreate () {
+    this.setState({
+      showCreate: true
     })
   },
 
@@ -35,59 +38,30 @@ const Dashboard = React.createClass({
     this.props.createNewFlat(flat)
   },
 
-  render () {
-    const createFlatModal = (
-      <Modal show={this.state.showCreate} onHide={this.close}>
-        <Form model='forms.newFlat' onSubmit={this.onSubmit}>
-          <Modal.Header closeButton>
-            <Modal.Title>Create a new Flat</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <div>
-              <div>
-                <label>Flat Name:</label>
-                <Control model='.flatName' />
-              </div>
-            </div>
-            <Errors model='forms.newFlat' />
-          </Modal.Body>
-          <Modal.Footer>
-            <Button type='submit'>Virtually create your flat</Button>
-          </Modal.Footer>
-        </Form>
-      </Modal>
-  )
+  openJoin () {
+    this.setState({
+      showJoin: true
+    })
+  },
 
-    const joinFlatModal = (
-      <Modal show={this.state.showJoin} onHide={this.close}>
-        <Form model='forms.joinFlat' onSubmit={this.onSubmit}>
-          <Modal.Header closeButton>
-            <Modal.Title>Join a Flat</Modal.Title>
-          </Modal.Header>
-          <Modal.Body>
-            <div>
-              <div>
-                <label>Search by Flat Name: </label>
-                <Control model='.joinFlatName' />
-              </div>
-            </div>
-            <Errors model='forms.joinFlat' />
-          </Modal.Body>
-          <Modal.Footer>
-            <Button type='submit'>Join my new flat</Button>
-          </Modal.Footer>
-        </Form>
-      </Modal>
-)
+  render () {
 
     return (
       <div className='container'>
-        <CreateANewFlat open={this.open} />
+        <CreateANewFlat open={this.openCreate} />
         <JoinAFlat />
         <DashboardHeader />
         <FlatCard />
-        {createFlatModal}
-        {joinFlatModal}
+        <CreateFlatModal
+          close={this.closeCreate}
+          onSubmit={this.onSubmit}
+          show={this.state.showCreate}
+          />
+        <JoinFlatModal
+        close={this.closeJoin}
+        onSubmit={this.onSubmit}
+        show={this.state.showJoin}
+        />
       </div>
     )
   }
