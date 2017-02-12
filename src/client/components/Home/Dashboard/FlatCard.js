@@ -5,25 +5,27 @@ const FlatCard = React.createClass({
   render () {
     const flats = this.props.flats.map((flat, index) => {
       return (
-        <li key={index}>
-          <Link to={`/flat/${flat.id}`}>
-            {flat.flatName}
-          </Link>
-        </li>
-      )
-    })
-    return (
-        <div className='panel-group'>
+        <div className='panel-group' key={index}>
           <div className='panel panel-default'>
-            <div className='panel-heading'>MyFlat 1</div>
+            <div className='panel-heading'>MyFlat</div>
             <div className='panel-body'>
               <ul>
-                {flats}
+                <li>
+                  <Link to={`/flat/${flat.id}`}>
+                    {flat.flatName}
+                  </Link>
+                </li>
               </ul>
             </div>
           </div>
         </div>
       )
+    })
+    return (
+      <div>
+        {flats}
+      </div>
+    )
   }
 })
 
