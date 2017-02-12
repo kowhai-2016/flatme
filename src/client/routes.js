@@ -3,7 +3,7 @@ import { IndexRoute, Route } from 'react-router'
 
 import App from './components/App'
 import Contacts from './components/Contacts'
-import Documents from './components/Documents'
+import Documents from './containers/Documents'
 import Flat from './containers/Flat'
 import Home from './containers/Home'
 import Join from './containers/Join'

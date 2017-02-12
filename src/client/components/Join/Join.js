@@ -26,13 +26,12 @@ const Join = React.createClass({
               passwordMatch
             }
           }}
-        >
-
-        <div className='joinTitle'>
+          >
+          <div className='joinTitle'>
             <Col sm={12} >
-            <h1>Join us</h1>
-          </Col>
-         </div>
+              <h1>Join us</h1>
+            </Col>
+          </div>
           <div className='globalJoinForm'>
             <div className='titleJoinForm'>
               <Col sm={4} >
@@ -128,16 +127,16 @@ const Join = React.createClass({
                   }}
                 />
               </Col>
-                <div>
-                  <Errors
-                    className='errors'
-                    model='forms.join.phoneNumber'
-                    show='touched'
-                    messages={{
-                      required: 'Required',
-                      isNumber: 'Must be a phone number'
-                    }}
-                  />
+              <div>
+                <Errors
+                  className='errors'
+                  model='forms.join.phoneNumber'
+                  show='touched'
+                  messages={{
+                    required: 'Required',
+                    isNumber: 'Must be a phone number'
+                  }}
+                />
               </div>
             </div>
 

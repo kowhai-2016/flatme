@@ -55,7 +55,7 @@ function addFlat (flat) {
     })
     .then(inserted => {
       const id = inserted[0]
-      return id
+      return {id}
     })
 }
 
@@ -78,18 +78,44 @@ function getFlatById (id) {
     })
 }
 
+function getFlatByName (name) {
+  return knex('flats')
+    .where('flats.flat_name', name)
+    .first()
+    .then(record => {
+      if (record) {
+        return {
+          id: record.id,
+          flatName: record.flat_name
+        }
+      } else {
+        return null
+      }
+    })
+}
+
+function addTenancy (userId, flatId) {
+  return knex('tenancies')
+    .insert({
+      user_id: userId,
+      flat_id: flatId
+    })
+}
+
 function getFlatmates (flatId) {
   return knex('tenancies')
     .join('users', 'tenancies.user_id', '=', 'users.id')
     .join('flats', 'tenancies.flat_id', '=', 'flats.id')
-    .select('flats.id as flatId', 'users.first_name as firstName', 'users.last_name as lastName', 'users.id as userId')
+    .select('flats.id as flatId', 'users.first_name as firstName', 'users.last_name as lastName', 'users.id as userId', 'users.email as email', 'users.phone_number as phoneNumber')
     .where('flatId', flatId)
     .then(flatmates => {
       return flatmates.map(flatmate => {
         return {
           id: flatmate.userId,
           firstName: flatmate.firstName,
-          lastName: flatmate.lastName
+          lastName: flatmate.lastName,
+          email: flatmate.email,
+          phoneNumber: flatmate.phoneNumber
         }
       })
     })
@@ -97,8 +123,10 @@ function getFlatmates (flatId) {
 
 module.exports = {
   addFlat,
+  addTenancy,
   addUser,
   getFlatById,
+  getFlatByName,
   getUserById,
   getUserByEmail,
   comparePassword
