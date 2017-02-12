@@ -1,3 +1,5 @@
+
+
 body {
   background: #ECE9E6; /* fallback for old browsers */
   background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF); /* Chrome 10-25, Safari 5.1-6 */
@@ -25,7 +27,8 @@ body {
   font-size: 1.3em;
 }
 
-/*Landing page*/
+/* Landing page
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 #mainTitle {
   color: #000;
@@ -108,7 +111,8 @@ body {
   margin-top: 10%;
 }
 
-/* Login modal*/
+/* Login Modal
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .loginForm{
   display: flex;
   justify-content: space-between;
@@ -118,7 +122,8 @@ body {
   padding-right: 10px;
 }
 
-/* Dashboard page*/
+/* Dashboard page
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .categories-bar {
   padding-top: 20px;
   padding-bottom: 100%;
@@ -149,7 +154,8 @@ body {
   width: 200px;
 }
 
-/*profile page*/
+/* Profile Page
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .user-row {
     margin-bottom: 14px;
@@ -167,9 +173,8 @@ body {
     border-top: 0;
 }
 
-
-/* Flat Dashboard page*/
-
+/* Flat Dashboard page
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .categories-bar {
   margin-top: 20px;
   padding-top: 20px;
@@ -177,7 +182,6 @@ body {
   /*padding-left: 20px;*/
   background-color: rgba(255,255,255,0.9);
   border: 2px solid lightseagreen;
-
 }
 
 .categories-bar div {
@@ -207,7 +211,9 @@ body {
   width: 200px;
 }
 
-/*JoinPage*/
+/* Join Page
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
 .input-group {
   width: 340px;
   border-radius: 3px;
@@ -228,21 +234,23 @@ body {
   margin-right: auto;
   margin: 5%;
   text-align: right;
-  font-family: 'Montserrat', sans-serif;
 }
+
 @media screen and (max-width: 767px) and (min-width: 200px) {
-    .globalJoinForm {
-        text-align: left;
+  .globalJoinForm {
+    text-align: left;
   }
 }
+
 @media screen and (max-width: 767px) and (min-width: 200px) {
-    .titleJoinForm label{
-        padding-top: 0px;
+  .titleJoinForm label{
+    padding-top: 0px;
   }
 }
+
 @media screen and (max-width: 767px) and (min-width: 200px) {
-    .errors {
-        font-size: 0.8em;
+  .errors {
+    font-size: 0.8em;
   }
 }
 
@@ -286,6 +294,7 @@ body {
   color: red;
   /*height: 20px;
   text-align: right;*/
+}
 
 .popout {
   background-color: rgba(255,255,255,0.8);
@@ -299,7 +308,8 @@ body {
   border-left-width: medium;
 }
 
-/*profile page*/
+/* Profile Page
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 
 .user-row {
     margin-bottom: 14px;
@@ -327,9 +337,19 @@ body {
   margin-top:20px;
 }
 
+/* Footer
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.git-logo {
+  max-width: 800px;
+  padding: 10px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
 
 /*testing the borders*/
-
-/*div {
+/*
+div {
   border: 1px solid red;
 }*/
