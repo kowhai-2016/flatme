@@ -12,7 +12,6 @@ module.exports = (req, res, next) => {
     jwt.verify(token, SECRET, (err, decoded) => {
       if (err) {
         return res.status(403).json({
-          success: false,
           message: 'Failed to authenticate token.'
         })
       } else {
@@ -24,7 +23,6 @@ module.exports = (req, res, next) => {
   } else {
     // if there is no token return an error
     return res.status(403).send({
-      success: false,
       message: 'No token provided.'
     })
   }
