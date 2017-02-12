@@ -2,7 +2,7 @@ import { connect } from 'react-redux'
 
 import Dashboard from '../components/Home/Dashboard'
 
-import { createNewFlat, fetchUserFlats } from '../actions'
+import { createNewFlat, fetchUserFlats, joinFlat } from '../actions'
 
 const mapStateToProps = state => {
   return {
@@ -13,7 +13,8 @@ const mapStateToProps = state => {
 const mapDispatchToProps = dispatch => {
   return {
     createNewFlat: flat => dispatch(createNewFlat(flat)),
-    fetchUserFlats: id => dispatch(fetchUserFlats(id))
+    fetchUserFlats: id => dispatch(fetchUserFlats(id)),
+    joinFlat: ({ joinFlatName }) => dispatch(joinFlat(joinFlatName))
   }
 }
 export default connect(

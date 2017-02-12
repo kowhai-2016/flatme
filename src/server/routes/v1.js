@@ -5,14 +5,14 @@ const path = require('path')
 const db = require('../database')
 const authenticate = require('./authenticate')
 const flats = require('./flats')
+const jwtMiddleware = require('./jwt-middleware')
 
 const router = express.Router()
 
-router.use('/flats', flats)
+router.post('/login', authenticate)
 
-router.get('/users/:id', (req, res) => {
-  const id = req.params.id
-  db.getUserById(id)
+router.post('/users', (req, res) => {
+  db.addUser(req.body)
     .then(user => {
       res.json(user)
     })
@@ -20,22 +20,27 @@ router.get('/users/:id', (req, res) => {
       res.status(500).send(error.message)
     })
 })
+// Routes under this middleware require a valid token to access
+router.use(jwtMiddleware)
 
 router.get('/users/:id/flats', (req, res) => {
   const id = req.params.id
   db.getFlatsByUserId(id)
-    .then(flats => {
-      return res.json({
-        flats
-      })
+  .then(flats => {
+    return res.json({
+      flats
     })
-    .catch(error => {
-      res.status(500).send(error.message)
-    })
+  })
+  .catch(error => {
+    res.status(500).send(error.message)
+  })
 })
 
-router.post('/users', (req, res) => {
-  db.addUser(req.body)
+router.use('/flats', flats)
+
+router.get('/users/:id', (req, res) => {
+  const id = req.params.id
+  db.getUserById(id)
     .then(user => {
       res.json(user)
     })
@@ -79,7 +84,25 @@ router.get('/flats', (req, res) => {
     })
 })
 
-router.post('/login', authenticate)
+router.post('/flats/join', (req, res) => {
+  const { name } = req.body
+  const userId = req.decoded.id
+  db.getFlatByName(name)
+    .then(flat => {
+      if (flat) {
+        return db.addTenancy(userId, flat.id)
+          .then(() => {
+            return res.json({flatId: flat.id})
+          })
+      } else {
+        return res.status(400).send('Flat not found: ' + name)
+      }
+    })
+    .catch(error => {
+      console.log(error)
+      return res.status(500).send(error.message)
+    })
+})
 
 router.get('*', (req, res) => res.status(404).send('API endpoint not found.'))
 
