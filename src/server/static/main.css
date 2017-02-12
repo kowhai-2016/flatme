@@ -60,7 +60,7 @@ body {
 .leads h1, .alternate h1 {
   margin-top: 35px;
   font-size: 3em;
-  color: red;
+  color: #E31B1B;
 }
 
 .alternate {
@@ -213,9 +213,13 @@ body {
   border-radius: 3px;
 }
 
-.containerJoin {
+.bg-join {
   background-image: url('/images/table.jpg');
-  background-size:cover;
+  background-size:100%;
+  min-height: 800px;
+}
+.containerJoin {
+  background-color: #fff;
 }
 
 .globalJoinForm  {
@@ -224,6 +228,7 @@ body {
   margin-right: auto;
   margin: 5%;
   text-align: right;
+  font-family: 'Montserrat', sans-serif;
 }
 @media screen and (max-width: 767px) and (min-width: 200px) {
     .globalJoinForm {
