@@ -17,7 +17,7 @@ function addUser (user) {
           email: user.email,
           phone_number: user.phoneNumber,
           hash: hash
-        })
+        }, 'id')
         .then(inserted => {
           const id = inserted[0]
           return id
@@ -52,7 +52,7 @@ function addFlat (flat) {
   return knex('flats')
     .insert({
       flat_name: flat.flatName
-    })
+    }, 'id')
     .then(inserted => {
       const id = inserted[0]
       return {id}
@@ -115,7 +115,7 @@ function addTenancy (userId, flatId) {
     .insert({
       user_id: userId,
       flat_id: flatId
-    })
+    }, 'id')
 }
 
 function getFlatmates (flatId) {
