@@ -6,7 +6,7 @@ const Footer = props => {
       <nav className='navbar navbar-inverse navbar-fixed-bottom'>
         <div className='container-fluid'>
           <a href='https://github.com/kowhai-2016/flatme'>
-            <img className='git-logo' src='/images/GitHub-Mark-light-32px.png' />
+            <img className='git-logo center-block' src='/images/GitHub-Mark-light-32px.png' />
           </a>
         </div>
       </nav>
