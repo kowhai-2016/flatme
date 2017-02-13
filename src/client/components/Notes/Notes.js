@@ -29,6 +29,7 @@ export default React.createClass({
       author: this.props.user.firstName
     }
     this.props.addNote(note)
+    this.close()
   },
   render () {
     const {notes} = this.props
