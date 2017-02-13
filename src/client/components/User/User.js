@@ -23,7 +23,7 @@ const User = React.createClass({
               <div className='panel-body'>
                 <div className='row'>
                   <div className='col-md-3 col-lg-3 '>
-                    <img alt='User Pic' src='http://resources2.news.com.au/images/2013/12/06/1226777/420994-.jpg' className='img-circle img-responsive' />
+                    <img alt='User Pic' src='/images/profile.jpg' className='img-circle img-responsive' />
                   </div>
                   <div className=' col-md-9 col-lg-9 '>
                     <table className='table table-user-information'>

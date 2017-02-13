@@ -6,7 +6,7 @@ const BannerDemo = () => {
       <div className='container alternate'>
         <div className='row'>
           <div className='col-md-9'>
-            <h1>"Share the load"</h1>
+            <h1>"Share the Load"</h1>
             <p>split your bills, schedule the chores <br /> and manage your documents</p>
           </div>
           <div className='col-md-3 leads'>

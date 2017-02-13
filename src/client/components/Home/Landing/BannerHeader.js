@@ -11,8 +11,8 @@ const BannerHeader = () => {
       <br />
       <div className='row description2'>
         <div className='col-md-12'>
-          <h2>Make the Rules, Share the load, Live the dream!</h2>
-          <h3>Creates transparency, accountability and harmony between flatmates to maintain ideal living conditions</h3>
+          <h2>Make the Rules, Share the Load, Live the Dream!</h2>
+          <h3>creates transparency, accountability and harmony between flatmates to maintain ideal living conditions</h3>
         </div>
       </div>
     </div>
