@@ -28,14 +28,14 @@ const Flat = React.createClass({
           <Col mdOffset={1} md={3}>
             <Categories id={this.props.params.id} />
           </Col>
-          <Col md={5} className='popout'>
+          <Col md={7} className='popout'>
             <h1 className='text-center'>{flatName}</h1>
             {this.props.children && React.cloneElement(this.props.children, {
               flat
             }
           )}
           </Col>
-          <Col md={3}>
+          <Col md={2}>
             <JoinRequests
               acceptJoinRequest={acceptJoinRequest}
               ignoreJoinRequest={ignoreJoinRequest}
