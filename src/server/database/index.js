@@ -144,7 +144,9 @@ function addNote (note) {
       content: note.content,
       author: note.author
     })
-    .then(getNotes(note.flat_id))
+    .then(index => {
+      return getNotesByFlatId(note.flat_id)
+    })
 }
 
 function editNote (note) {

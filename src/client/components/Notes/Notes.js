@@ -28,15 +28,7 @@ export default React.createClass({
       content: this.props.newNote,
       author: this.props.user.firstName
     }
-    console.log('adding', note)
-    // this.props.login(email, password)
-    //   .then(action => {
-    //     if (action.type === 'LOGIN_SUCCESS') {
-    //       this.close()
-    //     } else {
-    //       this.props.dispatch(actions.setErrors('forms.loginCredentials', 'The email address or password that you\'ve entered is incorrect'))
-    //     }
-    //   })
+    this.props.addNote(note)
   },
   render () {
     const {notes} = this.props

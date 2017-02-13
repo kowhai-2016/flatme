@@ -11,10 +11,31 @@ const router = express.Router()
 
 router.post('/login', authenticate)
 
+router.post('/users', (req, res) => {
+  db.addUser(req.body)
+    .then(user => {
+      res.json(user)
+    })
+    .catch(error => {
+      res.status(500).send(error.message)
+    })
+})
+
 router.post('/flats/:id/notes', (req, res) => {
   db.addNote(req.body)
-    .then(id => {
-      return res.json({success: true})
+    .then(notes => {
+      return res.json(notes)
+    })
+    .catch(error => {
+      return res.status(500).send(error.message)
+    })
+})
+
+router.get('/flats/:id/notes', (req, res) => {
+  const id = req.params.id
+  db.getNotesByFlatId(id)
+    .then(notes => {
+      return res.json(notes)
     })
     .catch(error => {
       return res.status(500).send(error.message)
@@ -50,7 +71,7 @@ router.get('/users/:id', (req, res) => {
     })
 })
 
-router.post('/flats/:id/notes', (req, res) => {
+router.post('/flats', (req, res) => {
   db.addFlat(req.body)
     .then(flat => {
       res.json(flat)
@@ -101,17 +122,6 @@ router.post('/flats/join', (req, res) => {
     })
     .catch(error => {
       console.log(error)
-      return res.status(500).send(error.message)
-    })
-})
-
-router.get('/flats/:id/notes', (req, res) => {
-  const id = req.params.id
-  db.getNotesByFlatId(id)
-    .then(notes => {
-      return res.json(notes)
-    })
-    .catch(error => {
       return res.status(500).send(error.message)
     })
 })

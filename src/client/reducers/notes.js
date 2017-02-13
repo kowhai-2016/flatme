@@ -4,7 +4,7 @@ export default (state = {}, action) => {
       return Object.assign({}, action.notes)
 
     case 'ADD_NOTE_SUCCESS':
-      return
+      return action.notes
 
     case 'DELETE_NOTE_SUCCESS':
      return (Object.keys(state)
