@@ -174,6 +174,9 @@ function getJoinRequests (flatId) {
         }
       })
     })
+    .then(requests => {
+      return requests
+    })
 }
 
 function acceptJoinRequest (requestId) {
