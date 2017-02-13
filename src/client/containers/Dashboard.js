@@ -17,6 +17,7 @@ const mapDispatchToProps = (dispatch, state) => {
     joinFlat: ({ joinFlatName }) => dispatch(joinFlat(joinFlatName))
   }
 }
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps

@@ -79,10 +79,7 @@ router.post('/flats/join', (req, res) => {
       if (flat) {
         return db.addJoinRequest(userId, flat.id)
           .then(() => {
-            return db.addTenancy(userId, flat.id)
-              .then(() => {
-                return res.json({flatId: flat.id})
-              })
+            return res.json({flatId: flat.id})
           })
       } else {
         return res.status(400).send('Flat not found: ' + name)
@@ -114,7 +111,6 @@ router.get('/flats/:id/notes', (req, res) => {
       return res.status(500).send(error.message)
     })
 })
-
 
 router.post('/flats/:id/notes', (req, res) => {
   db.addNote(req.body)
