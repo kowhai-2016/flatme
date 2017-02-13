@@ -9,12 +9,14 @@ import Home from './containers/Home'
 import Join from './containers/Join'
 import Notes from './containers/Notes'
 import PageNotFound from './components/PageNotFound'
+import About from './components/About'
 import User from './containers/User'
 
 export default (
   <Route path='/' component={App}>
     <IndexRoute component={Home} />
     <Route path='join' component={Join} />
+    <Route path='about' component={About} />
     <Route path='user/:id' component={User} />
     <Route path='flat/:id' component={Flat} >
       <IndexRoute component={Contacts} />
