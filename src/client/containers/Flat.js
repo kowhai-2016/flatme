@@ -1,6 +1,6 @@
 import { connect } from 'react-redux'
 
-import { fetchFlat } from '../actions'
+import { acceptJoinRequest, fetchFlat } from '../actions'
 import Flat from '../components/Flat'
 
 const mapStateToProps = (state, ownProps) => {
@@ -12,6 +12,9 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
+    acceptJoinRequest: requestId => {
+      dispatch(acceptJoinRequest(requestId))
+    },
     fetchFlat: () => {
       const id = Number(ownProps.params.id)
       dispatch(fetchFlat(id))
