@@ -92,10 +92,10 @@ router.post('/flats/join', (req, res) => {
 })
 
 router.put('/flats/join', (req, res) => {
-  const { requestId } = req.body
-  db.acceptJoinRequest(requestId)
+  const { requestId, status } = req.body
+  db.updateJoinRequestStatus(requestId, status)
     .then(() => {
-      return res.send('Join request accepted.')
+      return res.send('Join request status changed to: ' + status)
     })
     .catch(error => {
       return res.status(500).send(error.message)

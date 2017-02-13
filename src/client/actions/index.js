@@ -264,3 +264,28 @@ export const acceptJoinRequest = requestId => {
       })
   }
 }
+
+export const ignoreJoinRequest = requestId => {
+  return dispatch => {
+    dispatch({
+      type: 'IGNORE_JOIN_REQUEST_PENDING'
+    })
+    return getAxios().put(`/v1/flats/join`, {
+      requestId,
+      status: 'ignored'
+    })
+      .then(response => {
+        dispatch({
+          requestId,
+          type: 'IGNORE_JOIN_REQUEST_SUCCESS'
+        })
+      })
+      .catch(error => {
+        dispatch({
+          message: error.message,
+          requestId,
+          type: 'IGNORE_JOIN_REQUEST_FAILURE'
+        })
+      })
+  }
+}

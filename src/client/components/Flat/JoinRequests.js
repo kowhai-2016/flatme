@@ -12,6 +12,7 @@ const JoinRequests = props => {
             <JoinRequest
               acceptJoinRequest={props.acceptJoinRequest}
               key={index}
+              ignoreJoinRequest={props.ignoreJoinRequest}
               request={request}
               />
           )
@@ -23,6 +24,7 @@ const JoinRequests = props => {
 
 JoinRequests.propTypes = {
   acceptJoinRequest: PropTypes.func.isRequired,
+  ignoreJoinRequest: PropTypes.func.isRequired,
   requests: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 

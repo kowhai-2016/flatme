@@ -16,6 +16,10 @@ const Flat = React.createClass({
       this.props.acceptJoinRequest(requestId)
       this.props.fetchFlat()
     }
+    const ignoreJoinRequest = requestId => {
+      this.props.ignoreJoinRequest(requestId)
+      this.props.fetchFlat()
+    }
     return (
       <div className='container-fluid plain-background flat'>
         <Row>
@@ -31,7 +35,9 @@ const Flat = React.createClass({
           </Col>
           <Col md={3}>
             <JoinRequests
-              acceptJoinRequest={acceptJoinRequest} requests={joinRequests}
+              acceptJoinRequest={acceptJoinRequest}
+              ignoreJoinRequest={ignoreJoinRequest}
+              requests={joinRequests}
               />
           </Col>
         </Row>
@@ -46,6 +52,7 @@ Flat.propTypes = {
   flat: PropTypes.shape({
     flatName: PropTypes.string.isRequired
   }),
+  ignoreJoinRequest: PropTypes.func.isRequired,
   params: PropTypes.shape({
     id: PropTypes.string.isRequired
   }).isRequired
