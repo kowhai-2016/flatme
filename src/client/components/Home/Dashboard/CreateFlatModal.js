@@ -13,7 +13,7 @@ const CreateFlatModal = props => {
           <div>
             <div>
               <label>Flat Name:</label>
-              <Control model='.flatName' />
+              <Control model='.flatName' className='modal-input' />
             </div>
           </div>
           <Errors model='forms.newFlat' />

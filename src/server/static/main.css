@@ -372,6 +372,13 @@ body {
 #contacts-title {
   font-family: 'Montserrat', sans-serif;
   font-size: 3em;
+}
+/* MODALS ------------------------------------------------ */
+
+
+.modal-input {
+  margin-left: 10px;
+}
 
 /* Footer
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
