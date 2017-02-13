@@ -43,10 +43,9 @@ export default React.createClass({
         </Modal>
         <Grid className='notesAll'>
         <Col md={5}>
-        <Row>
         {Object.keys(notes).map(noteId => {
           return (
-            <Draggable>
+            <Draggable bounds="body">
               <div key={noteId} className='noteFull'>
                 <div className='noteContent'>{notes[noteId].content}</div>
                 <div className='noteAuthor'>{notes[noteId].author}</div>
@@ -55,7 +54,6 @@ export default React.createClass({
             </Draggable>
           )
         })}
-        </Row>
         </Col>
         </Grid>
       </div>
