@@ -105,9 +105,30 @@ export const fetchNotes = flatId => {
       })
       .catch(error => {
         return dispatch({
-          id,
           message: error.message,
           type: 'FETCH_NOTES_FAILURE'
+        })
+      })
+  }
+}
+
+export const addNote = note => {
+  return dispatch => {
+    dispatch({
+      note,
+      type: 'ADD_NOTE_PENDING'
+    })
+    return getAxios().post(`/v1/flats/${note.flat_id}/notes`, note)
+      .then(res => {
+        return dispatch({
+          type: 'ADD_NOTE_SUCCESS',
+          note: res.data
+        })
+      })
+      .catch(error => {
+        return dispatch({
+          message: error.message,
+          type: 'ADD_NOTE_FAILURE'
         })
       })
   }
@@ -260,6 +281,31 @@ export const acceptJoinRequest = requestId => {
           message: error.message,
           requestId,
           type: 'ACCEPT_JOIN_REQUEST_FAILURE'
+        })
+      })
+  }
+}
+
+export const ignoreJoinRequest = requestId => {
+  return dispatch => {
+    dispatch({
+      type: 'IGNORE_JOIN_REQUEST_PENDING'
+    })
+    return getAxios().put(`/v1/flats/join`, {
+      requestId,
+      status: 'ignored'
+    })
+      .then(response => {
+        dispatch({
+          requestId,
+          type: 'IGNORE_JOIN_REQUEST_SUCCESS'
+        })
+      })
+      .catch(error => {
+        dispatch({
+          message: error.message,
+          requestId,
+          type: 'IGNORE_JOIN_REQUEST_FAILURE'
         })
       })
   }

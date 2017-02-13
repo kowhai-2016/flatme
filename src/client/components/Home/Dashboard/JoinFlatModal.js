@@ -13,7 +13,7 @@ const JoinFlatModal = props => {
           <div>
             <div>
               <label>Search by Flat Name: </label>
-              <Control model='.joinFlatName' />
+              <Control model='.joinFlatName' className='modal-input' />
             </div>
           </div>
           <Errors model='forms.joinFlat' />

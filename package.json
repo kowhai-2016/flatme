@@ -42,6 +42,7 @@
     "react-bootstrap": "^0.30.7",
     "react-bootstrap-validation": "^0.1.11",
     "react-dom": "^15.4.2",
+    "react-draggable": "^2.2.3",
     "react-redux": "^5.0.2",
     "react-redux-form": "^1.5.4",
     "react-router": "^3.0.2",
@@ -54,6 +55,7 @@
     "webpack": "^2.2.1"
   },
   "devDependencies": {
+    "babel-preset-stage-0": "^6.22.0",
     "enzyme": "^2.7.1",
     "enzyme-to-json": "^1.4.5",
     "jest": "^18.1.0",
@@ -66,7 +68,8 @@
   "babel": {
     "presets": [
       "es2015",
-      "react"
+      "react",
+      "stage-0"
     ]
   },
   "jest": {

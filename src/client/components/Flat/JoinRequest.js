@@ -6,6 +6,7 @@ const JoinRequest = props => {
   const user = request.user
   const { id: userId, firstName, lastName } = user
   const accept = () => props.acceptJoinRequest(request.id)
+  const ignore = () => props.ignoreJoinRequest(request.id)
   return (
     <li>
       <Link to={`/user/${userId}`}>
@@ -18,7 +19,12 @@ const JoinRequest = props => {
           >
           Accept
         </button>
-        <button className='btn btn-danger glyphicon glyphicon-remove'>Ignore</button>
+        <button
+          className='btn btn-danger glyphicon glyphicon-remove'
+          onClick={ignore}
+          >
+          Ignore
+        </button>
       </div>
     </li>
   )
@@ -26,6 +32,7 @@ const JoinRequest = props => {
 
 JoinRequest.propTypes = {
   acceptJoinRequest: PropTypes.func.isRequired,
+  ignoreJoinRequest: PropTypes.func.isRequired,
   request: PropTypes.shape({
     id: PropTypes.number.isRequired,
     user: {
