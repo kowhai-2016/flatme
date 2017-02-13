@@ -1,0 +1,86 @@
+/* Join Page
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.Join .input-group {
+  width: 340px;
+  border-radius: 3px;
+}
+
+.Join .bg-join {
+  background-image: url('/images/table.jpg');
+  background-size:100%;
+  min-height: 800px;
+  background-repeat: no-repeat;
+}
+
+.Join .containerJoin {
+  background-color: #fff;
+}
+
+.Join .globalJoinForm  {
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  margin: 5%;
+  text-align: right;
+}
+
+@media screen and (max-width: 767px) and (min-width: 200px) {
+  .Join .globalJoinForm {
+    text-align: left;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 200px) {
+  .Join .titleJoinForm label{
+    padding-top: 0px;
+  }
+}
+
+@media screen and (max-width: 767px) and (min-width: 200px) {
+  .Join .errors {
+    font-size: 0.8em;
+  }
+}
+
+.Join .input-group-lg {
+  margin: 2%;
+  height: 30px;
+}
+
+.Join .titleJoinForm label{
+  text-align: right;
+  padding-top: 4%;
+  padding-left: 0px;
+}
+
+.Join .submitJoinBtn {
+  width: 100px;
+  height: 40px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.Join .joinTitle h1 {
+  text-align: center;
+  margin-bottom: 35px;
+}
+
+.Join .containerJoin {
+  border: 1px solid grey;
+  margin: 10px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 30px;
+  border-radius: 25px;
+  -webkit-box-shadow: 0px 3px 20px 0px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 3px 20px 0px rgba(0,0,0,1);
+  box-shadow: 0px 3px 20px 0px rgba(0,0,0,1);
+}
+
+.Join .errors {
+  color: red;
+  /*height: 20px;
+  text-align: right;*/
+}

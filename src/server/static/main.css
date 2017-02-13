@@ -1,0 +1,19 @@
+body {
+  background: #ECE9E6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(to left, #ECE9E6 , #FFFFFF); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to left, #ECE9E6 , #FFFFFF); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background-size:cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 800px;
+  font-family: 'Montserrat', sans-serif;
+  /*background-image: url('/images/sofa.jpg');*/
+}
+
+/*testing the borders*/
+
+/*
+div {
+  border: 1px solid red;
+}*/

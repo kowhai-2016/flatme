@@ -1,0 +1,42 @@
+/* Dashboard page
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.Dashboard #myflats {
+  text-align: center;
+  font-weight: bolder;
+}
+
+.Dashboard .flat-card {
+  margin: 10px;
+}
+
+.Dashboard .flat-card ul {
+  list-style-type: none;
+}
+
+.Dashboard .main-flat-card {
+  -webkit-box-shadow: 12px 12px 36px 2px rgba(0,0,0,0.54);
+  -moz-box-shadow: 12px 12px 36px 2px rgba(0,0,0,0.54);
+  box-shadow: 12px 12px 36px 2px rgba(0,0,0,0.54);
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+
+.Dashboard .curtains {
+  padding-right: 10px;
+  width: 45px;
+}
+
+.Dashboard .flat-button {
+  margin: 10px;
+  font-size: 1.2em;
+  width: 100%;
+}
+
+.CreateFlatModal .modal-input {
+  margin-left: 10px;
+}
+
+.JoinFlatModal .modal-input {
+  margin-left: 10px;
+}
