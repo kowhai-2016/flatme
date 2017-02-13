@@ -1,5 +1,5 @@
 import React from 'react'
-import { Modal } from 'react-bootstrap'
+import { Modal, Button } from 'react-bootstrap'
 
 import NewNoteForm from './NewNoteForm'
 
@@ -22,8 +22,14 @@ export default React.createClass({
   delete (id) {
     this.props.deleteNote(id)
   },
-  add () {
-
+  handleSubmit () {
+    const note = {
+      flat_id: this.props.flat,
+      content: this.props.newNote,
+      author: this.props.user.firstName
+    }
+    this.props.addNote(note)
+    this.close()
   },
   render () {
     const {notes} = this.props
@@ -32,7 +38,7 @@ export default React.createClass({
         <h1>Notes</h1>
         <button onClick={this.open}>Add new</button>
         <Modal show={this.state.show} onHide={this.close}>
-          <NewNoteForm />
+          <NewNoteForm onSubmit={this.handleSubmit} />
         </Modal>
         {Object.keys(notes).map(noteId => {
           return (

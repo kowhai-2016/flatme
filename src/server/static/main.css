@@ -383,7 +383,6 @@ body {
 /* Footer
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .git-logo{
-  flex-wrap: nowrap;
   margin-top: 8px;
   width:20px;
 }
