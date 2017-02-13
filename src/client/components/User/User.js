@@ -1,6 +1,8 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
 
+import './style.css'
+
 const User = React.createClass({
   componentDidMount () {
     this.props.fetchUser()
@@ -11,7 +13,7 @@ const User = React.createClass({
     const email = user ? `${user.email}` : null
     const phoneNumber = user ? `${user.phoneNumber}` : null
     return (
-      <div className='container'>
+      <div className='User container'>
         <div className='row'>
           <div className='col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad' >
             <div className='panel panel-info'>

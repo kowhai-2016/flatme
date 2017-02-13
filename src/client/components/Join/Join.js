@@ -2,6 +2,8 @@ import React from 'react'
 import { Control, Errors, Form } from 'react-redux-form'
 import { Col } from 'react-bootstrap'
 
+import './style.css'
+
 const isNumber = val => !isNaN(Number(val))
 const maxLength = length => val => val && val.length <= length
 const passwordMatch = vals => vals.confirmPassword === vals.password
@@ -18,7 +20,7 @@ const Join = React.createClass({
   },
   render () {
     return (
-      <div className='container-fluid'>
+      <div className='Join container-fluid'>
         <div className='row'>
           <div className='col-md-12 bg-join'>
             <div className='container containerJoin'>

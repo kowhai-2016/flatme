@@ -4,7 +4,7 @@ import { Control, Errors, Form } from 'react-redux-form'
 
 const CreateFlatModal = props => {
   return (
-    <Modal show={props.show} onHide={props.close}>
+    <Modal class='CreateFlatModal' show={props.show} onHide={props.close}>
       <Form model='forms.newFlat' onSubmit={props.onSubmit}>
         <Modal.Header closeButton>
           <Modal.Title>Create a new Flat</Modal.Title>
