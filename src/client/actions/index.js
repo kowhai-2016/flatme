@@ -216,12 +216,16 @@ export const signUp = user => {
   }
 }
 
-export const createNewFlat = flat => {
+export const createNewFlat = (flat, user) => {
   return dispatch => {
     dispatch({
       type: 'CREATE_FLAT_PENDING'
     })
-    return getAxios().post(`/v1/flats`, flat)
+    const req = {
+      flat,
+      user
+    }
+    return getAxios().post(`/v1/flats`, req)
       .then(response => {
         const flat = response.data
         history.push(`/flat/${flat.id}`)
@@ -230,6 +234,7 @@ export const createNewFlat = flat => {
           flat
         })
       })
+      .then()
       .catch(error => {
         dispatch({
           message: error.message,

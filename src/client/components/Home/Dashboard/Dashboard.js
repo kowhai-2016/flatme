@@ -44,7 +44,9 @@ const Dashboard = React.createClass({
       showJoin: true
     })
   },
-
+  handleSubmit (values) {
+    this.props.createNewFlat(values, this.props.user)
+  },
   render () {
     const flats = this.props.user.flats ? this.props.user.flats : []
     return (
@@ -63,7 +65,7 @@ const Dashboard = React.createClass({
         <FlatCard flats={flats} />
         <CreateFlatModal
           close={this.closeCreate}
-          onSubmit={this.props.createNewFlat}
+          onSubmit={this.handleSubmit}
           show={this.state.showCreate}
           />
         <JoinFlatModal
