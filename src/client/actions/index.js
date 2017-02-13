@@ -252,8 +252,8 @@ export const joinFlat = flatName => {
     return getAxios().post(`/v1/flats/join`, {name: flatName})
       .then(response => {
         const flatId = response.data.flatId
-        history.push(`/flat/${flatId}`)
         dispatch({
+          flatId: flatId,
           type: 'JOIN_FLAT_SUCCESS'
         })
       })
