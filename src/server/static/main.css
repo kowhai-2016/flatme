@@ -6,6 +6,7 @@ body {
   background-position: center center;
   background-repeat: no-repeat;
   background-attachment: fixed;
+  font-family: 'Montserrat', sans-serif;
   min-height: 800px;
   /*background-image: url('/images/sofa.jpg');*/
 }
@@ -25,9 +26,7 @@ body {
   font-size: 1.3em;
 }
 
-/* Landing page
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
+/*Landing page*/
 #mainTitle {
   color: #000;
   font-weight: bolder;
@@ -120,11 +119,44 @@ body {
   padding-right: 10px;
 }
 
+/* Dashboard page*/
+#myflats {
+  text-align: center;
+  font-weight: bolder;
+}
+
+.flat-card {
+  margin: 10px;
+}
+
+.flat-card ul {
+  list-style-type: none;
+}
+
+.main-flat-card {
+  -webkit-box-shadow: 12px 12px 36px 2px rgba(0,0,0,0.54);
+  -moz-box-shadow: 12px 12px 36px 2px rgba(0,0,0,0.54);
+  box-shadow: 12px 12px 36px 2px rgba(0,0,0,0.54);
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+
+.curtains {
+  padding-right: 10px;
+  width: 45px;
+}
+
+.flat-button {
+  margin: 10px;
+  font-size: 1.2em;
+  width: 100%;
+}
+
 /* Dashboard page
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .categories-bar {
   padding-top: 20px;
-  padding-bottom: 100%;
   padding-left: 20px;
 }
 
@@ -176,8 +208,6 @@ body {
 .categories-bar {
   margin-top: 20px;
   padding-top: 20px;
-  /*padding-bottom: 100%;*/
-  /*padding-left: 20px;*/
   background-color: rgba(255,255,255,0.9);
   border: 2px solid lightseagreen;
 }
@@ -199,6 +229,7 @@ body {
 
 .categories-bar div a:hover {
   text-decoration: none;
+  color: lightseagreen;
 }
 
 .categories-bar div .active {
@@ -334,6 +365,11 @@ body {
 {
   margin-top:20px;
 }
+
+/*Contact Component*/
+#contacts-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3em;
 
 /* Footer
 –––––––––––––––––––––––––––––––––––––––––––––––––– */

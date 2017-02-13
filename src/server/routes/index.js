@@ -16,7 +16,7 @@ router.get('*', (req, res) => {
         <link href="https://fonts.googleapis.com/css?family=Cabin|Cabin+Sketch|Montserrat|Mukta+Vaani" rel="stylesheet">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://fonts.googleapis.com/css?family=Cabin+Sketch" rel="stylesheet">
-        <link rel="stylesheet" href="main.css"></link>
+        <link rel="stylesheet" href="/main.css"></link>
         <meta name="viewport" content="width=device-width, initial-scale=1">
       </head>
       <body>

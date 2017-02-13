@@ -29,7 +29,7 @@ const Categories = props => {
         <Link activeClassName={'active'}
           to={`/flat/${id}/notes`}>
           <img src='/images/interface-1.svg' width='25px' />
-          <span>Nodes</span>
+          <span>Notes</span>
         </Link>
       </div>
     </Navbar>

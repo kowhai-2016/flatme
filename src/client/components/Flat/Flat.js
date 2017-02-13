@@ -2,6 +2,7 @@ import React, { PropTypes } from 'react'
 import { Row, Col } from 'react-bootstrap'
 
 import Categories from './Categories'
+import JoinRequests from './JoinRequests'
 
 const Flat = React.createClass({
   componentDidMount () {
@@ -10,20 +11,23 @@ const Flat = React.createClass({
   render () {
     const flat = this.props.flat
     const flatName = flat ? flat.flatName : null
+    const joinRequests = flat ? flat.requests : []
     return (
       <div className='container-fluid plain-background flat'>
         <Row>
-          <Col md={3}>
+          <Col mdOffset={1} md={3}>
             <Categories id={this.props.params.id} />
           </Col>
-          <Col md={6} className='popout'>
+          <Col md={5} className='popout'>
             <h1 className='text-center'>{flatName}</h1>
             {this.props.children && React.cloneElement(this.props.children, {
               flat
             }
           )}
           </Col>
-          <Col md={3} />
+          <Col md={3}>
+            <JoinRequests requests={joinRequests} />
+          </Col>
         </Row>
       </div>
     )
