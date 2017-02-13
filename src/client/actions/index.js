@@ -120,15 +120,13 @@ export const addNote = note => {
     })
     return getAxios().post(`/v1/flats/${note.flat_id}/notes`, note)
       .then(res => {
-        console.log(res.data)
         return dispatch({
           type: 'ADD_NOTE_SUCCESS',
-          notes: res.data
+          note: res.data
         })
       })
       .catch(error => {
         return dispatch({
-          note,
           message: error.message,
           type: 'ADD_NOTE_FAILURE'
         })

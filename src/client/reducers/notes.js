@@ -4,10 +4,10 @@ export default (state = {}, action) => {
       return Object.assign({}, action.notes)
 
     case 'ADD_NOTE_SUCCESS':
-      return action.notes
-        .reduce((newState, id) => {
-          newState[id] = state[id]
-        })
+      return {
+        ...state,
+        [action.note.id]: action.note
+      }
 
     case 'DELETE_NOTE_SUCCESS':
        return (Object.keys(state)

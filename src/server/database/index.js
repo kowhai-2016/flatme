@@ -181,9 +181,9 @@ function addNote (note) {
       flat_id: note.flat_id,
       content: note.content,
       author: note.author
-    })
-    .then(index => {
-      return getNotesByFlatId(note.flat_id)
+    }, 'id')
+    .then(noteId => {
+      return getNoteById(noteId[0])
     })
 }
 
@@ -199,6 +199,11 @@ function deleteNote (id) {
   return knex('notes')
     .where('id', id)
     .del()
+}
+
+function getNoteById (id) {
+  return knex('notes')
+    .where('id', id)
 }
 
 function getNotesByFlatId (flatId) {
