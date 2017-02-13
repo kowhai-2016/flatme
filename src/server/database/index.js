@@ -179,10 +179,10 @@ function getJoinRequests (flatId) {
     })
 }
 
-function acceptJoinRequest (requestId) {
+function updateJoinRequestStatus (requestId, status) {
   return knex('join-requests')
     .where('id', requestId)
-    .update('status', 'accepted')
+    .update('status', status)
 }
 
 function addNote (note) {
@@ -224,7 +224,6 @@ function getNotesByFlatId (flatId) {
 }
 
 module.exports = {
-  acceptJoinRequest,
   addFlat,
   addJoinRequest,
   addTenancy,
@@ -239,5 +238,6 @@ module.exports = {
   getNotesByFlatId,
   addNote,
   deleteNote,
-  editNote
+  editNote,
+  updateJoinRequestStatus
 }
