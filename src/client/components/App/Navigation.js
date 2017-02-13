@@ -80,7 +80,7 @@ const Navigation = React.createClass({
       </Modal>
     )
     return (
-      <div>
+      <div className='Navigation'>
         <Navbar inverse collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>

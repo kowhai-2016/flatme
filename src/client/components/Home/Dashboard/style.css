@@ -32,3 +32,11 @@
   font-size: 1.2em;
   width: 100%;
 }
+
+.CreateFlatModal .modal-input {
+  margin-left: 10px;
+}
+
+.JoinFlatModal .modal-input {
+  margin-left: 10px;
+}

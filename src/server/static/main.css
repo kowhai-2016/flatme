@@ -11,24 +11,7 @@ body {
   /*background-image: url('/images/sofa.jpg');*/
 }
 
-.navbar {
-  margin-bottom: 0px;
-  font-family: 'Cabin Sketch', cursive;
-  font-size: 1.3em;
-}
 
-.navbar-brand img {
-  display: inline-block;
-}
-.navbar-brand span {
-  display: inline-block;
-  padding-left: 15px;
-  font-size: 1.3em;
-}
-
-.navbar-brand {
-  width: 200px;
-}
 
 /* Login Modal
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
