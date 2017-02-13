@@ -2,6 +2,8 @@ import React from 'react'
 import { Modal, Button, Grid, Row, Col } from 'react-bootstrap'
 import Draggable, {DraggableCore} from 'react-draggable'
 
+import './style.css'
+
 import NewNoteForm from './NewNoteForm'
 
 export default React.createClass({
@@ -35,27 +37,26 @@ export default React.createClass({
   render () {
     const {notes} = this.props
     return (
-      <div>
-        <h1>Notes</h1>
-        <Button onClick={this.open}>Add new</Button>
+      <div className='notes'>
+        <h1 className='noteTitle'>Notes</h1>
+        <Button className='noteAdd' onClick={this.open}>Add new</Button>
         <Modal show={this.state.show} onHide={this.close}>
           <NewNoteForm onSubmit={this.handleSubmit} />
         </Modal>
-        <Grid className='notesAll'>
-        <Col md={5}>
+
+        <Col className="notesContainer box">
         {Object.keys(notes).map(noteId => {
           return (
-            <Draggable bounds="body">
-              <div key={noteId} className='noteFull'>
+              <div className='noteFull' key={noteId}>
+                <button className='noteDelete' onClick={() => this.delete(noteId)}>
+                  <img src='/images/delete-cross.svg' width='15px' />
+                </button>
                 <div className='noteContent'>{notes[noteId].content}</div>
-                <div className='noteAuthor'>{notes[noteId].author}</div>
-                <Button className='noteDelete' onClick={() => this.delete(noteId)}>&#10060;</Button>
+                <div className='noteAuthor'> - {notes[noteId].author}</div>
               </div>
-            </Draggable>
           )
         })}
         </Col>
-        </Grid>
       </div>
     )
   }
