@@ -1,4 +1,5 @@
 import React, { PropTypes } from 'react'
+import { Link } from 'react-router'
 
 const User = React.createClass({
   componentDidMount () {
@@ -39,7 +40,7 @@ const User = React.createClass({
                         </tr>
                       </tbody>
                     </table>
-                    <a href='#' className='btn btn-primary'>To Dashboard</a>
+                    <Link to='/' className='btn btn-primary'>To Dashboard</Link>
                     <a href='#' className='btn btn-primary' style={{float: 'right'}}>Edit</a>
                   </div>
                 </div>
