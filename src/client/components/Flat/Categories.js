@@ -35,7 +35,7 @@ const Categories = props => {
       <div>
         <Link activeClassName={'active'}
           to={`/flat/${id}/calendar`}>
-          <img src='/images/paper.svg' width='25px' />
+          <img src='/images/alarm.svg' width='25px' />
           <span>Calendar</span>
         </Link>
       </div>
