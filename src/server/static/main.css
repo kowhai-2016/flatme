@@ -122,6 +122,39 @@ body {
 
 /* Dashboard page
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+#myflats {
+  text-align: center;
+  font-weight: bolder;
+}
+
+.flat-card {
+  margin: 10px;
+}
+
+.flat-card ul {
+  list-style-type: none;
+}
+
+.main-flat-card {
+  -webkit-box-shadow: 12px 12px 36px 2px rgba(0,0,0,0.54);
+  -moz-box-shadow: 12px 12px 36px 2px rgba(0,0,0,0.54);
+  box-shadow: 12px 12px 36px 2px rgba(0,0,0,0.54);
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+
+.curtains {
+  padding-right: 10px;
+  width: 45px;
+}
+
+.flat-button {
+  margin: 10px;
+  font-size: 1.2em;
+  width: 100%;
+}
+
 .categories-bar {
   padding-top: 20px;
   padding-bottom: 100%;
