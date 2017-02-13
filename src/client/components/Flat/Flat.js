@@ -4,6 +4,8 @@ import { Row, Col } from 'react-bootstrap'
 import Categories from './Categories'
 import JoinRequests from './JoinRequests'
 
+import './style.css'
+
 const Flat = React.createClass({
   componentDidMount () {
     this.props.fetchFlat()
@@ -21,7 +23,7 @@ const Flat = React.createClass({
       this.props.fetchFlat()
     }
     return (
-      <div className='container-fluid plain-background flat'>
+      <div className='Flat container-fluid plain-background flat'>
         <Row>
           <Col mdOffset={1} md={3}>
             <Categories id={this.props.params.id} />

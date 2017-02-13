@@ -26,6 +26,9 @@ body {
   font-size: 1.3em;
 }
 
+.navbar-brand {
+  width: 200px;
+}
 
 /* Login Modal
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -39,59 +42,6 @@ body {
 }
 
 
-
-/* Profile Page
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-
-.user-row {
-    margin-bottom: 14px;
-}
-
-.user-row:last-child {
-    margin-bottom: 0;
-}
-
-.table-user-information > tbody > tr {
-    border-top: 1px solid rgb(221, 221, 221);
-}
-
-.table-user-information > tbody > tr:first-child {
-    border-top: 0;
-}
-
-/* Flat Dashboard page
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.categories-bar {
-  margin-top: 20px;
-  padding-top: 20px;
-  /*padding-bottom: 100%;*/
-  /*padding-left: 20px;*/
-  background-color: rgba(255,255,255,0.9);
-  border: 2px solid lightseagreen;
-}
-
-.categories-bar div {
-  padding-bottom: 10px;
-  font-size: 1.2em;
-}
-
-.col-md-3 {
-  padding: 0;
-}
-
-.categories-bar div a {
-  color: grey;
-  text-align: center;
-  text-decoration: none;
-}
-
-.categories-bar div a:hover {
-  text-decoration: none;
-}
-
-.categories-bar div .active {
-  color: lightseagreen;
-}
 
 .navbar-brand {
   width: 200px;
@@ -256,29 +206,3 @@ body {
 div {
   border: 1px solid red;
 }*/
-
-.categories-bar {
-  padding-top: 20px;
-  padding-bottom: 100%;
-  padding-left: 20px;
-}
-
-.categories-bar div {
-  padding-bottom: 10px;
-  font-size: 1.2em;
-}
-
-.categories-bar div a {
-  color: grey;
-  text-align: center;
-  text-decoration: none;
-}
-
-.categories-bar div a:hover {
-  text-decoration: none;
-  color: white;
-}
-
-.navbar-brand {
-  width: 200px;
-}

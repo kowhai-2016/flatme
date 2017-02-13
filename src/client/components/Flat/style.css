@@ -1,0 +1,28 @@
+/* Flat Dashboard page
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.Flat .categories-bar {
+  margin-top: 20px;
+  padding-top: 20px;
+  background-color: rgba(255,255,255,0.9);
+  border: 2px solid lightseagreen;
+}
+
+.Flat .categories-bar div {
+  padding-bottom: 10px;
+  font-size: 1.2em;
+}
+
+.Flat .categories-bar div a {
+  color: grey;
+  text-align: center;
+  text-decoration: none;
+}
+
+.Flat .categories-bar div a:hover {
+  text-decoration: none;
+  color: lightseagreen;
+}
+
+.Flat .categories-bar div .active {
+  color: lightseagreen;
+}
