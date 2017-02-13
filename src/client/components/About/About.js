@@ -21,6 +21,19 @@ const About = props => {
           </div>
         </div>
       </div>
+      <div className='container'>
+        <div className='row'>
+          <div className='col-sm-7'>
+            <h2>What We Do</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+            sagittis ultrices dolor rhoncus eu.
+            </p>
+            <p>Excepteur sint occaecat cupidatat non proident,
+            sunt in culpa qui officia deserunt mollit anim id est laborum
+            </p>
+          </div>
+        </div>
+      </div>
       <h2 className='text-center'>
         Our team
       </h2>
