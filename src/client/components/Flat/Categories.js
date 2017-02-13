@@ -32,6 +32,13 @@ const Categories = props => {
           <span>Notes</span>
         </Link>
       </div>
+      <div>
+        <Link activeClassName={'active'}
+          to={`/flat/${id}/calendar`}>
+          <img src='/images/paper.svg' width='25px' />
+          <span>Calendar</span>
+        </Link>
+      </div>
     </Navbar>
   )
 }
