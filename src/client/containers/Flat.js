@@ -12,15 +12,21 @@ const mapStateToProps = (state, ownProps) => {
 
 const mapDispatchToProps = (dispatch, ownProps) => {
   return {
-    acceptJoinRequest: requestId => {
+    acceptJoinRequest (requestId) {
       dispatch(acceptJoinRequest(requestId))
+        .then(() => {
+          dispatch(this.fetchFlat())
+        })
     },
-    fetchFlat: () => {
+    fetchFlat () {
       const id = Number(ownProps.params.id)
       dispatch(fetchFlat(id))
     },
-    ignoreJoinRequest: requestId => {
+    ignoreJoinRequest (requestId) {
       dispatch(ignoreJoinRequest(requestId))
+        .then(() => {
+          dispatch(this.fetchFlat())
+        })
     }
   }
 }
