@@ -6,6 +6,7 @@ import CreateANewFlat from './CreateANewFlatButton'
 import JoinAFlat from './JoinAFlatButton'
 import JoinFlatModal from './JoinFlatModal'
 import FlatCard from './FlatCard'
+import './style.css'
 
 const Dashboard = React.createClass({
 
@@ -48,7 +49,7 @@ const Dashboard = React.createClass({
   render () {
     const flats = this.props.user.flats ? this.props.user.flats : []
     return (
-      <div className='container'>
+      <div className='Dashboard container'>
         <div className='row'>
           <div className='col-md-3'>
             <CreateANewFlat open={this.openCreate} />
