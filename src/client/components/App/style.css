@@ -31,3 +31,15 @@
 .Navigation .navbar-brand {
   width: 200px;
 }
+
+
+/* Login Modal
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.App .loginForm{
+  display: flex;
+  justify-content: space-between;
+}
+
+.App .loginForm label {
+  padding-right: 10px;
+}

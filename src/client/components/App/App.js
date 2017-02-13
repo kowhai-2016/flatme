@@ -7,7 +7,7 @@ import './style.css'
 
 const App = props => {
   return (
-    <div>
+    <div className='App'>
       <Navigation />
       {props.children}
       <Footer />

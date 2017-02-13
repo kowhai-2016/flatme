@@ -26,3 +26,15 @@
 .Flat .categories-bar div .active {
   color: lightseagreen;
 }
+
+.Flat .popout {
+  background-color: rgba(255,255,255,0.8);
+  margin-left: 0;
+  min-height: 900px;
+  border-right-style: solid;
+  border-left-style: solid;
+  border-right-color: lightseagreen;
+  border-right-width:medium;
+  border-left-color: lightseagreen;
+  border-left-width: medium;
+}

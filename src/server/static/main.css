@@ -11,38 +11,8 @@ body {
   /*background-image: url('/images/sofa.jpg');*/
 }
 
-
-
-/* Login Modal
-–––––––––––––––––––––––––––––––––––––––––––––––––– */
-.loginForm{
-  display: flex;
-  justify-content: space-between;
-}
-
-.loginForm label {
-  padding-right: 10px;
-}
-
-.navbar-brand {
-  width: 200px;
-}
-
-
-
-/*Contact Component*/
-#contacts-title {
-  font-family: 'Montserrat', sans-serif;
-  font-size: 3em;
-}
-/* MODALS ------------------------------------------------ */
-
-
-.modal-input {
-  margin-left: 10px;
-}
-
 /*testing the borders*/
+
 /*
 div {
   border: 1px solid red;
