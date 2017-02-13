@@ -91,6 +91,17 @@ router.post('/flats/join', (req, res) => {
     })
 })
 
+router.put('/flats/join', (req, res) => {
+  const { requestId } = req.body
+  db.acceptJoinRequest(requestId)
+    .then(() => {
+      return res.send('Join request accepted.')
+    })
+    .catch(error => {
+      return res.status(500).send(error.message)
+    })
+})
+
 router.get('/flats/:id/notes', (req, res) => {
   const id = req.params.id
   db.getNotesByFlatId(id)

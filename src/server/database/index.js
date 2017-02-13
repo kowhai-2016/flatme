@@ -79,7 +79,9 @@ function getFlatById (id) {
     .then(flat => {
       return getJoinRequests(flat.id)
         .then(requests => {
-          flat.requests = requests
+          flat.requests = requests.filter(request => {
+            return request.status === 'pending'
+          })
           return flat
         })
     })
@@ -157,12 +159,13 @@ function getJoinRequests (flatId) {
   return knex('join-requests')
     .join('users', 'join-requests.user_id', '=', 'users.id')
     .join('flats', 'join-requests.flat_id', '=', 'flats.id')
-    .select('join-requests.id as id', 'flats.id as flatId', 'users.first_name as firstName', 'users.last_name as lastName', 'users.id as userId')
+    .select('join-requests.id as id', 'flats.id as flatId', 'users.first_name as firstName', 'users.last_name as lastName', 'users.id as userId', 'join-requests.status as status')
     .where('flat_id', flatId)
     .then(records => {
       return records.map(record => {
         return {
           id: record.id,
+          status: record.status,
           user: {
             id: record.userId,
             firstName: record.firstName,
@@ -171,9 +174,12 @@ function getJoinRequests (flatId) {
         }
       })
     })
-    .then(requests => {
-      return requests
-    })
+}
+
+function acceptJoinRequest (requestId) {
+  return knex('join-requests')
+    .where('id', requestId)
+    .update('status', 'accepted')
 }
 
 function addNote (note) {
@@ -215,6 +221,7 @@ function getNotesByFlatId (flatId) {
 }
 
 module.exports = {
+  acceptJoinRequest,
   addFlat,
   addJoinRequest,
   addTenancy,

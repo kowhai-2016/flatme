@@ -8,7 +8,13 @@ const JoinRequests = props => {
       <h2>Join Requests</h2>
       <ul>
         {props.requests.map((request, index) => {
-          return <JoinRequest key={index} request={request} />
+          return (
+            <JoinRequest
+              acceptJoinRequest={props.acceptJoinRequest}
+              key={index}
+              request={request}
+              />
+          )
         })}
       </ul>
     </div>
@@ -16,6 +22,7 @@ const JoinRequests = props => {
 }
 
 JoinRequests.propTypes = {
+  acceptJoinRequest: PropTypes.func.isRequired,
   requests: PropTypes.arrayOf(PropTypes.object).isRequired
 }
 
