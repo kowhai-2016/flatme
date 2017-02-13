@@ -49,8 +49,10 @@ router.get('/users/:id', (req, res) => {
 })
 
 router.post('/flats', (req, res) => {
-  db.addFlat(req.body)
+  const userId = req.body.user.id
+  db.addFlat(req.body.flat)
     .then(flat => {
+      db.addTenancy(userId, flat.id) // adds current user to the flat
       res.json(flat)
     })
     .catch(error => {
@@ -65,7 +67,6 @@ router.get('/flats', (req, res) => {
       res.json(flat)
     })
     .catch(error => {
-      console.log(error)
       res.status(500).send(error.message)
     })
 })
