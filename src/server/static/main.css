@@ -34,7 +34,7 @@ body {
   font-family: 'Montserrat', sans-serif;
   font-size: 8em;
   text-shadow: rgba(0, 0, 0, 0.2) 2px 6px 5px, rgba(255, 255, 255, 0.4) 0px -4px 30px;
-  margin-top: 10%;
+  margin-top: 5%;
   margin-left: 5%;
 }
 
@@ -122,6 +122,39 @@ body {
 
 /* Dashboard page
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+#myflats {
+  text-align: center;
+  font-weight: bolder;
+}
+
+.flat-card {
+  margin: 10px;
+}
+
+.flat-card ul {
+  list-style-type: none;
+}
+
+.main-flat-card {
+  -webkit-box-shadow: 12px 12px 36px 2px rgba(0,0,0,0.54);
+  -moz-box-shadow: 12px 12px 36px 2px rgba(0,0,0,0.54);
+  box-shadow: 12px 12px 36px 2px rgba(0,0,0,0.54);
+  margin-bottom: 40px;
+  padding-bottom: 10px;
+  padding-top: 5px;
+}
+
+.curtains {
+  padding-right: 10px;
+  width: 45px;
+}
+
+.flat-button {
+  margin: 10px;
+  font-size: 1.2em;
+  width: 100%;
+}
+
 .categories-bar {
   padding-top: 20px;
   padding-bottom: 100%;
@@ -333,6 +366,18 @@ body {
 .toppad
 {
   margin-top:20px;
+}
+
+/*Contact Component*/
+#contacts-title {
+  font-family: 'Montserrat', sans-serif;
+  font-size: 3em;
+}
+/* MODALS ------------------------------------------------ */
+
+
+.modal-input {
+  margin-left: 10px;
 }
 
 /* Footer
