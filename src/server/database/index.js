@@ -120,11 +120,28 @@ function getFlatByName (name) {
 }
 
 function addTenancy (userId, flatId) {
+  return getTenancy(userId, flatId)
+    .then(tenancy => {
+      if (tenancy) {
+        return Promise.resolve(tenancy.id)
+      } else {
+        return knex('tenancies')
+          .insert({
+            user_id: userId,
+            flat_id: flatId
+          }, 'id')
+          .then(inserted => {
+            return inserted[0]
+          })
+      }
+    })
+}
+
+function getTenancy (userId, flatId) {
   return knex('tenancies')
-    .insert({
-      user_id: userId,
-      flat_id: flatId
-    }, 'id')
+    .where('user_id', userId)
+    .where('flat_id', flatId)
+    .first()
 }
 
 function getFlatmates (flatId) {
@@ -232,6 +249,7 @@ module.exports = {
   getFlatsByUserId,
   getFlatByName,
   getJoinRequests,
+  getTenancy,
   getUserById,
   getUserByEmail,
   comparePassword,
