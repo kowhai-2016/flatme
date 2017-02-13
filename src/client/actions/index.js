@@ -105,9 +105,30 @@ export const fetchNotes = flatId => {
       })
       .catch(error => {
         return dispatch({
-          id,
           message: error.message,
           type: 'FETCH_NOTES_FAILURE'
+        })
+      })
+  }
+}
+
+export const addNote = note => {
+  return dispatch => {
+    dispatch({
+      note,
+      type: 'ADD_NOTE_PENDING'
+    })
+    return getAxios().post(`/v1/flats/${note.flat_id}/notes`, note)
+      .then(res => {
+        return dispatch({
+          type: 'ADD_NOTE_SUCCESS',
+          note: res.data
+        })
+      })
+      .catch(error => {
+        return dispatch({
+          message: error.message,
+          type: 'ADD_NOTE_FAILURE'
         })
       })
   }
