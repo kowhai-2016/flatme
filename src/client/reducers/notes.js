@@ -5,6 +5,9 @@ export default (state = {}, action) => {
 
     case 'ADD_NOTE_SUCCESS':
       return action.notes
+        .reduce((newState, id) => {
+          newState[id] = state[id]
+        })
 
     case 'DELETE_NOTE_SUCCESS':
      return (Object.keys(state)
