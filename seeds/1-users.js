@@ -4,6 +4,7 @@ exports.seed = knex => {
     .then(() => {
       return Promise.all([
         knex('users').insert({
+          id: 99901,
           first_name: 'Alice',
           last_name: 'Rosier',
           email: 'alice@bar.com',
@@ -11,6 +12,7 @@ exports.seed = knex => {
           hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
+          id: 99902,
           first_name: 'Amanda',
           last_name: 'Hogan',
           email: 'amanda@bar.com',
@@ -18,6 +20,7 @@ exports.seed = knex => {
           hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
+          id: 99903,
           first_name: 'Anna',
           last_name: 'Jackson',
           email: 'annaj@bar.com',
@@ -25,6 +28,7 @@ exports.seed = knex => {
           hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
+          id: 99904,
           first_name: 'Anna',
           last_name: 'Ulyanova',
           email: 'annau@bar.com',
@@ -32,6 +36,7 @@ exports.seed = knex => {
           hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
+          id: 99905,
           first_name: 'David',
           last_name: 'Christie',
           email: 'david@bar.com',
@@ -39,6 +44,7 @@ exports.seed = knex => {
           hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
+          id: 99906,
           first_name: 'Jessica',
           last_name: 'Neary',
           email: 'jessica@bar.com',
@@ -46,6 +52,7 @@ exports.seed = knex => {
           hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
+          id: 99907,
           first_name: 'Thibaud',
           last_name: 'Bretin',
           email: 'thibaud@bar.com',
@@ -53,6 +60,7 @@ exports.seed = knex => {
           hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
+          id: 99908,
           first_name: 'Quinn',
           last_name: 'Hu',
           email: 'quinn@bar.com',
@@ -60,6 +68,7 @@ exports.seed = knex => {
           hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
+          id: 99909,
           first_name: 'Rich',
           last_name: 'Churcher',
           email: 'rich@bar.com',
@@ -67,6 +76,7 @@ exports.seed = knex => {
           hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
+          id: 99910,
           first_name: 'Daisy',
           last_name: 'Rich',
           email: 'daisy@bar.com',
@@ -74,6 +84,7 @@ exports.seed = knex => {
           hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
+          id: 99911,
           first_name: 'Don',
           last_name: 'Smith',
           email: 'don@bar.com',
@@ -81,6 +92,7 @@ exports.seed = knex => {
           hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
+          id: 99912,
           first_name: 'Esther',
           last_name: 'Smith',
           email: 'esther@bar.com',
@@ -88,6 +100,7 @@ exports.seed = knex => {
           hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
+          id: 99913,
           first_name: 'Christy',
           last_name: 'Joy',
           email: 'christy@bar.com',
