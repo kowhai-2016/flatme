@@ -26,6 +26,17 @@ function addUser (user) {
     })
 }
 
+function updateUser (id) {
+  return knex('user')
+  .select('id', 'first_name', 'last_name', 'email', 'phone_number')
+  .where('id', id)
+  .update(user => {
+    return {
+      phone_number: user.phoneNumber
+    }
+  })
+}
+
 function getUserByEmail (email) {
   return knex('users')
     .where('email', email.toLowerCase())
@@ -252,6 +263,7 @@ module.exports = {
   addJoinRequest,
   addTenancy,
   addUser,
+  updateUser,
   getFlatById,
   getFlatsByUserId,
   getFlatByName,
