@@ -26,15 +26,11 @@ function addUser (user) {
     })
 }
 
-function updateUser (id) {
-  return knex('user')
-  .select('id', 'first_name', 'last_name', 'email', 'phone_number')
-  .where('id', id)
-  .update(user => {
-    return {
-      phone_number: user.phoneNumber
-    }
-  })
+function updateUser (id, fields) {
+  console.log(id, fields)
+  return knex('users')
+    .where('id', id)
+    .update(fields)
 }
 
 function getUserByEmail (email) {

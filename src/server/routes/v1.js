@@ -39,7 +39,7 @@ router.use('/flats', flats)
 
 router.put('/users/:id', (req, res) => {
   const id = req.params.id
-  db.updateUser(id)
+  db.updateUser(id, req.body)
     .then(user => {
       res.json(user)
     })
@@ -125,7 +125,6 @@ router.get('/flats/:id/notes', (req, res) => {
       return res.status(500).send(error.message)
     })
 })
-
 
 router.post('/flats/:id/notes', (req, res) => {
   db.addNote(req.body)
