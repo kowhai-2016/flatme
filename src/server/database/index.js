@@ -14,7 +14,7 @@ function addUser (user) {
         .insert({
           first_name: user.firstName,
           last_name: user.lastName,
-          email: user.email,
+          email: user.email.toLowerCase(),
           phone_number: user.phoneNumber,
           hash: hash
         }, 'id')
@@ -28,7 +28,7 @@ function addUser (user) {
 
 function getUserByEmail (email) {
   return knex('users')
-    .where('email', email)
+    .where('email', email.toLowerCase())
     .first()
 }
 
