@@ -1,0 +1,13 @@
+.Footer .git-logo{
+  margin-top: 8px;
+  width:20px;
+}
+
+.Footer .signature h6{
+  margin-top: 17px;
+  text-align: center;
+  color: lightgrey;
+  font-size: 10px;
+  margin-bottom: -25px;
+  margin-left: -15px;
+}
