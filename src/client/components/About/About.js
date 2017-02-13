@@ -23,7 +23,7 @@ const About = props => {
       </div>
       <div className='container'>
         <div className='row'>
-          <div className='col-sm-7'>
+          <div className='col-sm-8'>
             <h2>What We Do</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
             sagittis ultrices dolor rhoncus eu.
@@ -31,6 +31,21 @@ const About = props => {
             <p>Excepteur sint occaecat cupidatat non proident,
             sunt in culpa qui officia deserunt mollit anim id est laborum
             </p>
+          </div>
+          <div className='col-sm-4'>
+            <h2>Contact Us</h2>
+            <address>
+              <strong>
+                Enspiral Dev Academy
+              </strong>
+              <br />
+                19 Ruru St,
+              <br />
+                Eden Terrace, Auckland 1021
+            </address>
+            <address>
+              <abbr title='Phone'>Phone:</abbr> (022) 368-6338
+            </address>
           </div>
         </div>
       </div>
