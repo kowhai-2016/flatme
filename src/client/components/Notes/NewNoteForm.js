@@ -10,7 +10,7 @@ const NewNoteForm = props => {
       </Modal.Header>
       <Modal.Body>
         <div className='newNoteForm'>
-          <Control.text className='newNoteField' model='.content' />
+          <Control.textarea className='newNoteField' model='.content' />
         </div>
         <Errors model='forms.newNote' />
       </Modal.Body>
