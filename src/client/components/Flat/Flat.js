@@ -3,6 +3,7 @@ import { Row, Col } from 'react-bootstrap'
 
 import Categories from './Categories'
 import JoinRequests from './JoinRequests'
+import LeaveFlat from './LeaveFlat'
 
 import './style.css'
 
@@ -10,6 +11,11 @@ const Flat = React.createClass({
   componentDidMount () {
     this.props.fetchFlat()
   },
+
+  leaveFlat () {
+    this.props.leaveFlat(this.props.userId, this.props.flat.id)
+  },
+
   render () {
     const flat = this.props.flat
     const flatName = flat ? flat.flatName : null
@@ -23,13 +29,14 @@ const Flat = React.createClass({
             <Categories id={this.props.params.id} />
           </Col>
           <Col md={7} className='popout'>
-            <h1 className='text-center'>{flatName}</h1>
+            <h1 className='text-center flat-name'>{flatName}</h1>
             {this.props.children && React.cloneElement(this.props.children, {
               flat
             }
           )}
           </Col>
-          <Col md={2}>
+          <Col md={3}>
+            <LeaveFlat leaveFlat={this.leaveFlat} />
             <JoinRequests
               acceptJoinRequest={acceptJoinRequest}
               ignoreJoinRequest={ignoreJoinRequest}

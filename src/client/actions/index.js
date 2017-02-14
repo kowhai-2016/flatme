@@ -167,6 +167,7 @@ export const login = (email, password) => {
         const user = response.data
         window.localStorage.clear()
         window.localStorage.setItem('login', JSON.stringify(user))
+        history.push('/')
         return dispatch({
           type: 'LOGIN_SUCCESS',
           user
@@ -321,6 +322,7 @@ export const leaveFlat = (userId, flatId) => {
     dispatch({
       type: 'LEAVE_FLAT_PENDING'
     })
+
     return getAxios().delete(`/v1/flats/${flatId}/${userId}`)
      .then(response => {
        dispatch({
