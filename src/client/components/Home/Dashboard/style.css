@@ -33,6 +33,18 @@
   width: 100%;
 }
 
+.Dashboard .buttons-container {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  position: relative;
+  left: -10px;
+}
+
+.Dashboard .create-flat {
+  padding-right: 25px;
+}
+
 .CreateFlatModal .modal-input {
   margin-left: 20px;
 }
