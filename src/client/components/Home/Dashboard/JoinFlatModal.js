@@ -15,7 +15,7 @@ const JoinFlatModal = props => {
         </Modal.Header>
         <Modal.Body>
           <div>
-            <div>
+            <div className='NameInput'>
               <label>Search by Flat Name: </label>
               <Control model='.joinFlatName' className='modal-input' />
             </div>
