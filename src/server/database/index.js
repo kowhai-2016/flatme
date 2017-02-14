@@ -211,6 +211,19 @@ function updateJoinRequestStatus (requestId, status) {
   return knex('join-requests')
     .where('id', requestId)
     .update('status', status)
+    .then(result => {
+      if (status === 'accepted') {
+        return knex('join-requests')
+          .where('id', requestId)
+          .select('join-requests.flat_id as flatId', 'join-requests.user_id as userId')
+          .first()
+          .then(record => {
+            return addTenancy(record.userId, record.flatId)
+          })
+      } else {
+        return result
+      }
+    })
 }
 
 function addNote (note) {

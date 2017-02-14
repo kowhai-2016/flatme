@@ -52,12 +52,10 @@ const Dashboard = React.createClass({
     const flats = this.props.user.flats ? this.props.user.flats : []
     return (
       <div className='Dashboard container'>
-        <div className='row'>
-          <div className='col-md-3'>
+        <div className='row buttons-container'>
+          <div className='col-md-3 create-flat'>
             <CreateANewFlat open={this.openCreate} />
           </div>
-        </div>
-        <div className='row'>
           <div className='col-md-3'>
             <JoinAFlat open={this.openJoin} />
           </div>

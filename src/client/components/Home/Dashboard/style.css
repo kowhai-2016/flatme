@@ -33,10 +33,32 @@
   width: 100%;
 }
 
+.Dashboard .buttons-container {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  position: relative;
+  left: -10px;
+}
+
+.Dashboard .create-flat {
+  padding-right: 25px;
+}
+
 .CreateFlatModal .modal-input {
-  margin-left: 10px;
+  margin-left: 20px;
+}
+
+.CreateFlatModal .NameInput {
+  text-align: center;
+  font-size: 2em;
 }
 
 .JoinFlatModal .modal-input {
   margin-left: 10px;
+}
+
+.JoinFlatModal .NameInput {
+  text-align: center;
+  font-size: 2em;
 }

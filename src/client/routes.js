@@ -3,6 +3,7 @@ import React from 'react'
 import { IndexRoute, Route } from 'react-router'
 
 import App from './components/App'
+import Calendar from './components/Calendar'
 import Contacts from './components/Contacts'
 import Documents from './containers/Documents'
 import Flat from './containers/Flat'
@@ -74,6 +75,7 @@ export default (
       <IndexRoute component={Contacts} />
       <Route path='documents' component={Documents} />
       <Route path='notes' component={Notes} />
+      <Route path='calendar' component={Calendar} />
     </Route>
     <Route path='*' component={PageNotFound} />
   </Route>

@@ -1,0 +1,10 @@
+exports[`test Contacts renders correctly 1`] = `
+<div
+  className="Contacts">
+  <h1
+    id="contacts-title">
+    Flatmates
+  </h1>
+  <ul />
+</div>
+`;

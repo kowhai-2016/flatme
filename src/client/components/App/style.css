@@ -35,11 +35,11 @@
 
 /* Login Modal
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.App .loginForm{
+.loginForm{
   display: flex;
   justify-content: space-between;
 }
 
-.App .loginForm label {
+.loginForm label {
   padding-right: 10px;
 }

@@ -14,28 +14,22 @@ const Flat = React.createClass({
     const flat = this.props.flat
     const flatName = flat ? flat.flatName : null
     const joinRequests = flat ? flat.requests : []
-    const acceptJoinRequest = requestId => {
-      this.props.acceptJoinRequest(requestId)
-      this.props.fetchFlat()
-    }
-    const ignoreJoinRequest = requestId => {
-      this.props.ignoreJoinRequest(requestId)
-      this.props.fetchFlat()
-    }
+    const acceptJoinRequest = requestId => this.props.acceptJoinRequest(requestId)
+    const ignoreJoinRequest = requestId => this.props.ignoreJoinRequest(requestId)
     return (
       <div className='Flat container-fluid plain-background flat'>
         <Row>
-          <Col mdOffset={1} md={3}>
+          <Col md={3}>
             <Categories id={this.props.params.id} />
           </Col>
-          <Col md={5} className='popout'>
+          <Col md={7} className='popout'>
             <h1 className='text-center'>{flatName}</h1>
             {this.props.children && React.cloneElement(this.props.children, {
               flat
             }
           )}
           </Col>
-          <Col md={3}>
+          <Col md={2}>
             <JoinRequests
               acceptJoinRequest={acceptJoinRequest}
               ignoreJoinRequest={ignoreJoinRequest}
