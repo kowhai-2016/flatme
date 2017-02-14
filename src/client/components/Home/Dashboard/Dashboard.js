@@ -51,27 +51,31 @@ const Dashboard = React.createClass({
   render () {
     const flats = this.props.user.flats ? this.props.user.flats : []
     return (
-      <div className='Dashboard container'>
-        <div className='row buttons-container'>
-          <div className='col-md-3 create-flat'>
-            <CreateANewFlat open={this.openCreate} />
-          </div>
-          <div className='col-md-3'>
-            <JoinAFlat open={this.openJoin} />
+      <div className='Dashboard container-fluid'>
+        <div className='col-md-12 bg-flat'>
+          <div className='container containerFlat'>
+            <div className='row buttons-container'>
+              <div className='col-md-3 create-flat'>
+                <CreateANewFlat open={this.openCreate} />
+              </div>
+              <div className='col-md-3'>
+                <JoinAFlat open={this.openJoin} />
+              </div>
+            </div>
+            <DashboardHeader />
+            <FlatCard flats={flats} />
+            <CreateFlatModal
+              close={this.closeCreate}
+              onSubmit={this.handleSubmit}
+              show={this.state.showCreate}
+              />
+            <JoinFlatModal
+              close={this.closeJoin}
+              onSubmit={this.props.joinFlat}
+              show={this.state.showJoin}
+              />
           </div>
         </div>
-        <DashboardHeader />
-        <FlatCard flats={flats} />
-        <CreateFlatModal
-          close={this.closeCreate}
-          onSubmit={this.handleSubmit}
-          show={this.state.showCreate}
-          />
-        <JoinFlatModal
-          close={this.closeJoin}
-          onSubmit={this.props.joinFlat}
-          show={this.state.showJoin}
-          />
       </div>
     )
   }

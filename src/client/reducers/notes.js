@@ -10,12 +10,12 @@ export default (state = {}, action) => {
       }
 
     case 'DELETE_NOTE_SUCCESS':
-      return (Object.keys(state)
+      return Object.keys(state)
         .filter(id => id !== action.id)
         .reduce((newState, id) => {
           newState[id] = state[id]
           return newState
-        }, {}))
+        }, {})
 
     default:
       return state
