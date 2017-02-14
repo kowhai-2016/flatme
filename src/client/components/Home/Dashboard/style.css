@@ -3,14 +3,21 @@
 .Dashboard #myflats {
   text-align: center;
   font-weight: bolder;
+  padding-bottom: 20px;
 }
 
 .Dashboard .flat-card {
-  margin: 10px;
+  margin: 20px;
 }
 
 .Dashboard .flat-card ul {
   list-style-type: none;
+}
+
+.Dashboard .flat-card h3 {
+  font-family: 'Cabin Sketch', cursive;
+  font-weight: bolder;
+  color: #204159;
 }
 
 .Dashboard .main-flat-card {
@@ -61,4 +68,15 @@
 .JoinFlatModal .NameInput {
   text-align: center;
   font-size: 2em;
+}
+
+.Dashboard .bg-flat{
+  background-image: url('/images/table.jpg');
+  background-size:100%;
+  min-height: 800px;
+  background-repeat: no-repeat;
+}
+
+.Dashboard .panel-group .main-flat-card {
+  background-color: #fff;
 }

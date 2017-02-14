@@ -23,7 +23,7 @@ const Flat = React.createClass({
             <Categories id={this.props.params.id} />
           </Col>
           <Col md={7} className='popout'>
-            <h1 className='text-center'>{flatName}</h1>
+            <h1 className='text-center flat-name'>{flatName}</h1>
             {this.props.children && React.cloneElement(this.props.children, {
               flat
             }

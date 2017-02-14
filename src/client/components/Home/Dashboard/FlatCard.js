@@ -14,7 +14,7 @@ const FlatCard = React.createClass({
                   <ul>
                     <li>
                       <Link to={`/flat/${flat.id}`}>
-                        <h4><img src='/images/livingroom-window-with-curtains.svg' className='curtains' />{flat.flatName}</h4>
+                        <h3><img src='/images/livingroom-window-with-curtains.svg' className='curtains' />{flat.flatName}</h3>
                       </Link>
                     </li>
                   </ul>
