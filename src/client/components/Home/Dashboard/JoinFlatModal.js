@@ -3,9 +3,13 @@ import { Modal, Button } from 'react-bootstrap'
 import { Control, Errors, Form } from 'react-redux-form'
 
 const JoinFlatModal = props => {
+  const onSubmit = values => {
+    props.onSubmit(values)
+    props.close()
+  }
   return (
     <Modal class='JoinFlatModal' show={props.show} onHide={props.close}>
-      <Form model='forms.joinFlat' onSubmit={props.onSubmit}>
+      <Form model='forms.joinFlat' onSubmit={onSubmit}>
         <Modal.Header closeButton>
           <Modal.Title>Join a Flat</Modal.Title>
         </Modal.Header>

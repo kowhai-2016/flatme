@@ -14,7 +14,7 @@ function addUser (user) {
         .insert({
           first_name: user.firstName,
           last_name: user.lastName,
-          email: user.email,
+          email: user.email.toLowerCase(),
           phone_number: user.phoneNumber,
           hash: hash
         }, 'id')
@@ -28,7 +28,7 @@ function addUser (user) {
 
 function getUserByEmail (email) {
   return knex('users')
-    .where('email', email)
+    .where('email', email.toLowerCase())
     .first()
 }
 
@@ -200,6 +200,19 @@ function updateJoinRequestStatus (requestId, status) {
   return knex('join-requests')
     .where('id', requestId)
     .update('status', status)
+    .then(result => {
+      if (status === 'accepted') {
+        return knex('join-requests')
+          .where('id', requestId)
+          .select('join-requests.flat_id as flatId', 'join-requests.user_id as userId')
+          .first()
+          .then(record => {
+            return addTenancy(record.userId, record.flatId)
+          })
+      } else {
+        return result
+      }
+    })
 }
 
 function addNote (note) {

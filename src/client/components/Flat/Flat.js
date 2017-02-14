@@ -14,14 +14,8 @@ const Flat = React.createClass({
     const flat = this.props.flat
     const flatName = flat ? flat.flatName : null
     const joinRequests = flat ? flat.requests : []
-    const acceptJoinRequest = requestId => {
-      this.props.acceptJoinRequest(requestId)
-      this.props.fetchFlat()
-    }
-    const ignoreJoinRequest = requestId => {
-      this.props.ignoreJoinRequest(requestId)
-      this.props.fetchFlat()
-    }
+    const acceptJoinRequest = requestId => this.props.acceptJoinRequest(requestId)
+    const ignoreJoinRequest = requestId => this.props.ignoreJoinRequest(requestId)
     return (
       <div className='Flat container-fluid plain-background flat'>
         <Row>
