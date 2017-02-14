@@ -1,0 +1,23 @@
+exports[`test JoinRequest renders correctly 1`] = `
+<li>
+  <a
+    onClick={[Function]}
+    style={Object {}}>
+    First
+     
+    Last
+  </a>
+  <div>
+    <button
+      className="btn btn-success glyphicon glyphicon-ok"
+      onClick={[Function]}>
+      Accept
+    </button>
+    <button
+      className="btn btn-danger glyphicon glyphicon-remove"
+      onClick={[Function]}>
+      Ignore
+    </button>
+  </div>
+</li>
+`;

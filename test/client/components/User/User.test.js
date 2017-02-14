@@ -3,11 +3,12 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Categories from '../../../../src/client/components/Flat/Categories'
+import User from '../../../../src/client/components/User'
 
-test('Categories renders correctly', () => {
+test('User renders logout correctly', () => {
+  const fetchUser = () => {}
   const tree = renderer.create(
-    <Categories />
+    <User fetchUser={fetchUser} />
   ).toJSON()
   expect(tree).toMatchSnapshot()
 })
