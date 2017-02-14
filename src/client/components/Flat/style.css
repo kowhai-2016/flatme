@@ -1,5 +1,11 @@
 /* Flat Dashboard page
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.Flat .flat-name {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 5em;
+  font-weight: bolder;
+}
+
 .Flat .categories-bar {
   margin-top: 20px;
   padding-top: 20px;
