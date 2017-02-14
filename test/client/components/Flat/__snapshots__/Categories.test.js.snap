@@ -44,6 +44,18 @@ exports[`test Categories renders correctly 1`] = `
         </span>
       </a>
     </div>
+    <div>
+      <a
+        onClick={[Function]}
+        style={Object {}}>
+        <img
+          src="/images/alarm.svg"
+          width="25px" />
+        <span>
+          Calendar
+        </span>
+      </a>
+    </div>
   </div>
 </nav>
 `;

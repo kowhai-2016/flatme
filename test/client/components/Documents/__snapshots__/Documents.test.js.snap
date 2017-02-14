@@ -3,16 +3,5 @@ exports[`test Documents renders correctly 1`] = `
   <h1>
     Documents
   </h1>
-  <form
-    action="/v1/flats/1/documents"
-    encType="multipart/form-data"
-    method="post">
-    <input
-      name="image"
-      type="file" />
-    <input
-      type="submit" />
-  </form>
-  <div />
 </div>
 `;

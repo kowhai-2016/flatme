@@ -25,6 +25,15 @@ export default (state = {}, action) => {
     case 'LOGOUT_SUCCESS':
       return {}
 
+    case 'UPDATE_USER_SUCCESS':
+      return {
+        user: Object.assign(
+          {},
+          state.user,
+          action.fields
+        )
+      }
+
     default:
       return state
   }

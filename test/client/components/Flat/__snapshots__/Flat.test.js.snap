@@ -4,7 +4,7 @@ exports[`test Flat renders correctly 1`] = `
   <div
     className="row">
     <div
-      className="col-md-3 col-md-offset-1">
+      className="col-md-3">
       <nav
         className="categories-bar navbar navbar-default"
         style={
@@ -50,16 +50,28 @@ exports[`test Flat renders correctly 1`] = `
               </span>
             </a>
           </div>
+          <div>
+            <a
+              onClick={[Function]}
+              style={Object {}}>
+              <img
+                src="/images/alarm.svg"
+                width="25px" />
+              <span>
+                Calendar
+              </span>
+            </a>
+          </div>
         </div>
       </nav>
     </div>
     <div
-      className="popout col-md-5">
+      className="popout col-md-7">
       <h1
         className="text-center" />
     </div>
     <div
-      className="col-md-3">
+      className="col-md-2">
       <div>
         <h2>
           Join Requests
