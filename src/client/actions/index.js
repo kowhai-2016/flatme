@@ -190,6 +190,7 @@ export const login = (email, password) => {
         const user = response.data
         window.localStorage.clear()
         window.localStorage.setItem('login', JSON.stringify(user))
+        history.push('/')
         return dispatch({
           type: 'LOGIN_SUCCESS',
           user
