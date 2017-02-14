@@ -22,6 +22,9 @@ router.post('/users', (req, res) => {
     })
 })
 
+// Routes under this middleware require a valid token to access
+router.use(jwtMiddleware)
+
 router.get('/flats/:id/documents/sign-s3', (req, res) => {
   const s3 = new aws.S3()
   const fileName = req.query['file-name']
@@ -50,9 +53,6 @@ router.get('/flats/:id/documents/sign-s3', (req, res) => {
 router.post('/flats/:id/documents', (req, res) => {
   res.redirect(`/flat/${req.params.id}/documents`)
 })
-
-// Routes under this middleware require a valid token to access
-router.use(jwtMiddleware)
 
 router.get('/users/:id/flats', (req, res) => {
   const id = req.params.id
@@ -181,6 +181,19 @@ router.put('/notes/:id', (req, res) => {
   db.updateNote(req.body)
     .then(content => {
       return res.json(content)
+    })
+    .catch(error => {
+      return res.status(500).send(error.message)
+    })
+})
+
+router.delete('/flats/:flatId/:userId', (req, res) => {
+  const flatId = req.params.flatId
+  const userId = req.params.userId
+  console.log(req.body)
+  db.leaveFlat(userId, flatId)
+    .then(id => {
+      res.send(200)
     })
     .catch(error => {
       return res.status(500).send(error.message)

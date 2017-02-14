@@ -1,0 +1,38 @@
+.AboutUs {
+  padding-top: 20px;
+}
+
+.AboutUs .title {
+  padding-bottom: 230px;
+  padding-left: 15px;
+  font-weight: bolder;
+}
+
+.AboutUs .body {
+  padding-left: 80px;
+}
+
+.AboutUs .body .who {
+  padding-right: 50px;
+  border-left: 1px solid black;
+}
+
+.AboutUs .body .contact {
+  padding-left: 20px;
+  border-left: 1px solid black;
+}
+
+.AboutUs .teamTitle {
+  padding-top: 30px;
+  padding-bottom: 40px;
+}
+
+.AboutUs .team {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.AboutUs h2 {
+  color: lightseagreen;
+}

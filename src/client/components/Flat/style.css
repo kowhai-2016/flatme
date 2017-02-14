@@ -1,5 +1,11 @@
 /* Flat Dashboard page
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.Flat .flat-name {
+  font-family: 'Cabin Sketch', cursive;
+  font-size: 5em;
+  font-weight: bolder;
+}
+
 .Flat .categories-bar {
   margin-top: 20px;
   padding-top: 20px;
@@ -37,4 +43,13 @@
   border-right-width:medium;
   border-left-color: lightseagreen;
   border-left-width: medium;
+}
+
+.LeaveFlat {
+  padding-top: 30px;
+  padding-left: 20px;
+}
+
+.LeaveFlat .LeaveButton Button {
+  font-size: 1.3em;
 }
