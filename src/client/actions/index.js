@@ -37,7 +37,7 @@ export const fetchFlat = id => {
   }
 }
 
-export const updateUsers = fields => {
+export const updateUser = fields => {
   return (dispatch, getState) => {
     const userId = getState().account.user.id
     dispatch({
@@ -48,7 +48,7 @@ export const updateUsers = fields => {
       .then(res => {
         return dispatch({
           type: 'UPDATE_USER_SUCCESS',
-          fields: res.data
+          fields
         })
       })
       .catch(error => {
