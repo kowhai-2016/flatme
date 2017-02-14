@@ -3,6 +3,7 @@ import { Row, Col } from 'react-bootstrap'
 
 import Categories from './Categories'
 import JoinRequests from './JoinRequests'
+import LeaveFlat from './LeaveFlat'
 
 import './style.css'
 
@@ -10,6 +11,11 @@ const Flat = React.createClass({
   componentDidMount () {
     this.props.fetchFlat()
   },
+
+  leaveFlat() {
+    this.props.leaveFlat(this.props.userId, this.props.flat.id)
+  },
+
   render () {
     const flat = this.props.flat
     const flatName = flat ? flat.flatName : null
@@ -35,6 +41,7 @@ const Flat = React.createClass({
               ignoreJoinRequest={ignoreJoinRequest}
               requests={joinRequests}
               />
+            <LeaveFlat onClick={this.leaveFlat} />
           </Col>
         </Row>
       </div>

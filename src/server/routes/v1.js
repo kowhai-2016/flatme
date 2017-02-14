@@ -20,7 +20,7 @@ router.post('/users', (req, res) => {
 })
 
 // Routes under this middleware require a valid token to access
-router.use(jwtMiddleware)
+//router.use(jwtMiddleware)
 
 router.get('/users/:id/flats', (req, res) => {
   const id = req.params.id
@@ -137,6 +137,19 @@ router.put('/notes/:id', (req, res) => {
   db.updateNote(req.body)
     .then(content => {
       return res.json(content)
+    })
+    .catch(error => {
+      return res.status(500).send(error.message)
+    })
+})
+
+router.delete('/flat/:flatId/:userId', (req, res) => {
+  const flatId = req.params.flatId
+  const userId = req.params.userId
+  console.log(req.body)
+  db.leaveFlat(userId, flatId)
+    .then(id => {
+      res.send(200)
     })
     .catch(error => {
       return res.status(500).send(error.message)
