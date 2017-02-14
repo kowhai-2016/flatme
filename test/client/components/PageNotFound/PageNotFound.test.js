@@ -3,11 +3,11 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Home from '../../../../src/client/components/Home'
+import PageNotFound from '../../../../src/client/components/PageNotFound'
 
-test('Home renders logout correctly', () => {
+test('PageNotFound renders logout correctly', () => {
   const tree = renderer.create(
-    <Home account={{}} />
+    <PageNotFound />
   ).toJSON()
   expect(tree).toMatchSnapshot()
 })

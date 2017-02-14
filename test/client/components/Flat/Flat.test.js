@@ -1,8 +1,8 @@
 /* eslint-env jest */
 
 import React from 'react'
-import renderer from 'react-test-renderer'
 import { Provider } from 'react-redux'
+import renderer from 'react-test-renderer'
 import configureStore from 'redux-mock-store'
 
 import Flat from '../../../../src/client/components/Flat'

@@ -3,11 +3,11 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Home from '../../../../src/client/components/Home'
+import Contacts from '../../../../src/client/components/Contacts'
 
-test('Home renders logout correctly', () => {
+test('Contacts renders correctly', () => {
   const tree = renderer.create(
-    <Home account={{}} />
+    <Contacts />
   ).toJSON()
   expect(tree).toMatchSnapshot()
 })
