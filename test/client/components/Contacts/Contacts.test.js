@@ -3,11 +3,11 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Categories from '../../../../src/client/components/Flat/Categories'
+import Contacts from '../../../../src/client/components/Contacts'
 
-test('Categories renders correctly', () => {
+test('Contacts renders correctly', () => {
   const tree = renderer.create(
-    <Categories />
+    <Contacts />
   ).toJSON()
   expect(tree).toMatchSnapshot()
 })

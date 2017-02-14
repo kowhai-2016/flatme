@@ -3,11 +3,11 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Categories from '../../../../src/client/components/Flat/Categories'
+import PageNotFound from '../../../../src/client/components/PageNotFound'
 
-test('Categories renders correctly', () => {
+test('PageNotFound renders logout correctly', () => {
   const tree = renderer.create(
-    <Categories />
+    <PageNotFound />
   ).toJSON()
   expect(tree).toMatchSnapshot()
 })

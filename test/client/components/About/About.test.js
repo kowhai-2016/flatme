@@ -3,11 +3,11 @@
 import React from 'react'
 import renderer from 'react-test-renderer'
 
-import Categories from '../../../../src/client/components/Flat/Categories'
+import About from '../../../../src/client/components/About'
 
-test('Categories renders correctly', () => {
+test('About renders correctly', () => {
   const tree = renderer.create(
-    <Categories />
+    <About />
   ).toJSON()
   expect(tree).toMatchSnapshot()
 })
