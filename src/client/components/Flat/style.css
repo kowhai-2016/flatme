@@ -44,3 +44,12 @@
   border-left-color: lightseagreen;
   border-left-width: medium;
 }
+
+.LeaveFlat {
+  padding-top: 30px;
+  padding-left: 20px;
+}
+
+.LeaveFlat .LeaveButton Button {
+  font-size: 1.3em;
+}
