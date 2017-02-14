@@ -7,9 +7,8 @@
     "dev": "webpack --progress --watch | nodemon src/server",
     "knex": "knex",
     "migrate": "knex migrate:latest",
-    "standard": "standard",
     "start": "node src/server",
-    "test": "jest",
+    "test": "standard && jest",
     "webpack": "webpack --progress",
     "postinstall": "webpack && npm run migrate"
   },
