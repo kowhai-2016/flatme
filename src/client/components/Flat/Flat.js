@@ -12,7 +12,7 @@ const Flat = React.createClass({
     this.props.fetchFlat()
   },
 
-  leaveFlat() {
+  leaveFlat () {
     this.props.leaveFlat(this.props.userId, this.props.flat.id)
   },
 
@@ -36,12 +36,12 @@ const Flat = React.createClass({
           )}
           </Col>
           <Col md={3}>
+            <LeaveFlat leaveFlat={this.leaveFlat} />
             <JoinRequests
               acceptJoinRequest={acceptJoinRequest}
               ignoreJoinRequest={ignoreJoinRequest}
               requests={joinRequests}
               />
-            <LeaveFlat leaveFlat={this.leaveFlat} />
           </Col>
         </Row>
       </div>
