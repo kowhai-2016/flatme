@@ -8,7 +8,7 @@ const JoinFlatModal = props => {
     props.close()
   }
   return (
-    <Modal class='JoinFlatModal' show={props.show} onHide={props.close}>
+    <Modal className='JoinFlatModal' show={props.show} onHide={props.close}>
       <Form model='forms.joinFlat' onSubmit={onSubmit}>
         <Modal.Header closeButton>
           <Modal.Title>Join a Flat</Modal.Title>

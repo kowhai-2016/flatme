@@ -34,7 +34,12 @@
 }
 
 .CreateFlatModal .modal-input {
-  margin-left: 10px;
+  margin-left: 20px;
+}
+
+.CreateFlatModal .NameInput {
+  text-align: center;
+  font-size: 2em;
 }
 
 .JoinFlatModal .modal-input {
