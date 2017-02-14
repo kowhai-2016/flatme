@@ -69,6 +69,18 @@ router.get('/users/:id/flats', (req, res) => {
 
 router.use('/flats', flats)
 
+router.put('/users/:id', (req, res) => {
+  const id = req.params.id
+  db.updateUser(id, req.body)
+    .then(user => {
+      res.json(user)
+    })
+    .catch(error => {
+      console.log(error)
+      res.status(500).send(error.message)
+    })
+})
+
 router.get('/users/:id', (req, res) => {
   const id = req.params.id
   db.getUserById(id)
