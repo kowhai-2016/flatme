@@ -43,7 +43,7 @@ const User = React.createClass({
                       </tbody>
                     </table>
                     <Link to='/' className='btn btn-primary'>To Dashboard</Link>
-                    <a href='#' className='btn btn-primary' style={{float: 'right'}}>Edit</a>
+                    <a href='/edit' className='btn btn-primary' style={{float: 'right'}}>Edit</a>
                   </div>
                 </div>
               </div>
