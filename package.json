@@ -7,8 +7,9 @@
     "dev": "webpack --progress --watch | nodemon src/server",
     "knex": "knex",
     "migrate": "knex migrate:latest",
+    "standard": "standard",
     "start": "node src/server",
-    "test": "standard && jest",
+    "test": "jest",
     "webpack": "webpack --progress",
     "postinstall": "webpack && npm run migrate"
   },
@@ -61,6 +62,8 @@
     "jest": "^18.1.0",
     "nodemon": "^1.11.0",
     "react-addons-test-utils": "^15.4.2",
+    "react-test-renderer": "^15.4.2",
+    "redux-mock-store": "^1.2.2",
     "standard": "^8.6.0",
     "supertest": "^3.0.0",
     "webpack-dev-server": "^2.3.0"

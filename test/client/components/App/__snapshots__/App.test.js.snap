@@ -1,0 +1,97 @@
+exports[`test App renders correctly 1`] = `
+<div
+  className="App">
+  <div
+    className="Navigation">
+    <nav
+      className="navbar navbar-inverse">
+      <div
+        className="container">
+        <div
+          className="navbar-header">
+          <a
+            className="navbar-brand"
+            href="/">
+            <img
+              src="/images/web.svg"
+              width="30px" />
+            <span>
+              goFlat
+            </span>
+          </a>
+          <button
+            className="navbar-toggle collapsed"
+            onClick={[Function]}
+            type="button">
+            <span
+              className="sr-only">
+              Toggle navigation
+            </span>
+            <span
+              className="icon-bar" />
+            <span
+              className="icon-bar" />
+            <span
+              className="icon-bar" />
+          </button>
+        </div>
+        <div
+          aria-expanded={null}
+          className="navbar-collapse collapse">
+          <ul
+            className="nav nav-pills navbar-nav navbar-right"
+            role={null}>
+            <li
+              className=""
+              role="presentation"
+              style={undefined}>
+              <a
+                action="push"
+                href="#"
+                onClick={[Function]}
+                role="button">
+                Sign Up
+              </a>
+            </li>
+            <li
+              className=""
+              role="presentation"
+              style={undefined}>
+              <a
+                href="#"
+                onClick={[Function]}
+                role="button">
+                Log in
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+  <div>
+    <nav
+      className="Footer navbar navbar-inverse navbar-bottom">
+      <div
+        className="container-fluid signature">
+        <div>
+          <h6>
+            <a
+              onClick={[Function]}
+              style={Object {}}>
+              Kowhai
+            </a>
+                 2017
+          </h6>
+        </div>
+        <a
+          href="https://github.com/kowhai-2016/flatme">
+          <img
+            className="git-logo center-block"
+            src="/images/GitHub-Mark-light-32px.png" />
+        </a>
+      </div>
+    </nav>
+  </div>
+</div>
+`;
