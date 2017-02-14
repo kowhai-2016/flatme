@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { PropTypes } from 'react'
 import { Control, Errors, Form } from 'react-redux-form'
 import { Col } from 'react-bootstrap'
 
@@ -218,5 +218,9 @@ const Join = React.createClass({
     )
   }
 })
+
+Join.propTypes = {
+  signUp: PropTypes.func.isRequired
+}
 
 export default Join

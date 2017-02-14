@@ -1,0 +1,115 @@
+exports[`test Home renders logout correctly 1`] = `
+<div>
+  <div
+    className="Landing">
+    <div
+      className="header">
+      <div
+        className="description1">
+        <h1
+          id="mainTitle">
+          goFlat
+        </h1>
+        <h3
+          id="subtitle">
+          resolves all your flatting issues
+        </h3>
+      </div>
+      <br />
+      <br />
+      <div
+        className="row description2">
+        <div
+          className="col-md-12">
+          <h2>
+            Make the Rules, Share the Load, Live the Dream!
+          </h2>
+          <h3>
+            creates transparency, accountability and harmony between flatmates to maintain ideal living conditions
+          </h3>
+        </div>
+      </div>
+    </div>
+    <div
+      className="height">
+      <div
+        className="container">
+        <div
+          className="row">
+          <div
+            className="col-md-3">
+            <img
+              src="/images/img1.jpg"
+              width="100%" />
+          </div>
+          <div
+            className="col-md-9 leads">
+            <h1>
+              \"Make the Rules\"
+            </h1>
+            <p>
+              leave notes for your flatmates, 
+              <br />
+               get the most of your sharing space
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="height share">
+      <div
+        className="container alternate">
+        <div
+          className="row">
+          <div
+            className="col-md-9">
+            <h1>
+              \"Share the Load\"
+            </h1>
+            <p>
+              split your bills, schedule the chores 
+              <br />
+               and manage your documents
+            </p>
+          </div>
+          <div
+            className="col-md-3 leads">
+            <img
+              className="landing-img"
+              src="/images/img2.jpg"
+              width="100%" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="height">
+      <div
+        className="container">
+        <div
+          className="row">
+          <div
+            className="col-md-3 leads">
+            <img
+              className="landing-img"
+              src="/images/img3.jpg"
+              width="100%" />
+          </div>
+          <div
+            className="col-md-9 leads">
+            <h1>
+              \"Live the Dream\"
+            </h1>
+            <p>
+              host a party, cook dinner, leaving for a long weekend, 
+              <br />
+               notify your flat
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
