@@ -2,9 +2,9 @@ exports[`test Dashboard renders correctly 1`] = `
 <div
   className="Dashboard container">
   <div
-    className="row">
+    className="row buttons-container">
     <div
-      className="col-md-3">
+      className="col-md-3 create-flat">
       <div
         className="row">
         <button
@@ -14,9 +14,6 @@ exports[`test Dashboard renders correctly 1`] = `
         </button>
       </div>
     </div>
-  </div>
-  <div
-    className="row">
     <div
       className="col-md-3">
       <div
