@@ -23,9 +23,11 @@ router.post('/users', (req, res) => {
 })
 
 router.get('/flats/:id/documents/sign-s3', (req, res) => {
+  const flatId = req.params.id
   const s3 = new aws.S3()
   const fileName = req.query['file-name']
   const fileType = req.query['file-type']
+  const documentName = req.query.name
   const s3Params = {
     Bucket: S3_BUCKET,
     Key: fileName,
@@ -35,15 +37,20 @@ router.get('/flats/:id/documents/sign-s3', (req, res) => {
   }
   s3.getSignedUrl('putObject', s3Params, (err, data) => {
     if (err) {
-      console.log(err)
-      return res.end()
+      res.status(500).send(err.message)
     }
     const returnData = {
       signedRequest: data,
       url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
     }
-    res.write(JSON.stringify(returnData))
-    res.end()
+    db.addDocument(flatId, returnData.url, documentName)
+      .then(() => {
+        res.write(JSON.stringify(returnData))
+        res.end()
+      })
+      .catch(err => {
+        res.status(500).send(err.message)
+      })
   })
 })
 
