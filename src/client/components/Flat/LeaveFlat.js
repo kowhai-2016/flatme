@@ -1,12 +1,32 @@
 import React from 'react'
-import { Button } from 'react-bootstrap'
+import { Button, Modal } from 'react-bootstrap'
 
-const LeaveFlat = props => {
-  return (
-    <div>
-      <Button onClick={props.onClick}>Leave this flat</Button>
-    </div>
-  )
-}
-
-export default LeaveFlat
+export default React.createClass({
+  getInitialState () {
+    return {show: false}
+  },
+  open () {
+    this.setState({show: true})
+  },
+  close () {
+    this.setState({show: false})
+  },
+  render () {
+    return (
+      <div>
+        <div>
+          <Button onClick={this.open}>Leave this flat</Button>
+        </div>
+        <Modal className='CreateFlatModal' show={this.state.show} onHide={this.close}>
+          <Modal.Header closeButton>
+            <Modal.Title>Are you sure you want to leave this flat?</Modal.Title>
+          </Modal.Header>
+          <Modal.Footer>
+            <Button onClick={this.props.leaveFlat}>Yes, I am sure</Button>
+            <Button onClick={this.close}>Opps! No, don't remove me!</Button>
+          </Modal.Footer>
+        </Modal>
+      </div>
+    )
+  }
+})

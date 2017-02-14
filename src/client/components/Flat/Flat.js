@@ -41,7 +41,7 @@ const Flat = React.createClass({
               ignoreJoinRequest={ignoreJoinRequest}
               requests={joinRequests}
               />
-            <LeaveFlat onClick={this.leaveFlat} />
+            <LeaveFlat leaveFlat={this.leaveFlat} />
           </Col>
         </Row>
       </div>
