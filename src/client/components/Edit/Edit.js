@@ -1,9 +1,8 @@
 import React from 'react'
-import { track, Control, Form, Errors } from 'react-redux-form'
+import { Control, Form, Errors } from 'react-redux-form'
 
 import './style.css'
 const maxLength = length => val => val && val.length <= length
-const isNumber = val => !isNaN(Number(val))
 
 const Edit = React.createClass({
   onSubmit (values) {
@@ -62,9 +61,6 @@ const Edit = React.createClass({
           <label>Phone number:</label>
             <Control.text
               model='.phoneNumber'
-              validators={{
-                isNumber
-                }}
             />
             <Errors
               className='errors'
