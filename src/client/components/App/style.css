@@ -16,6 +16,9 @@
   text-decoration: none;
   color: lightgrey;
 }
+.Footer .signature .link:hover {
+  color: lightseagreen;
+}
 
 .Navigation .navbar {
   margin-bottom: 0px;
