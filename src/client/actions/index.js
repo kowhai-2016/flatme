@@ -190,6 +190,7 @@ export const login = (email, password) => {
         const user = response.data
         window.localStorage.clear()
         window.localStorage.setItem('login', JSON.stringify(user))
+        history.push('/')
         return dispatch({
           type: 'LOGIN_SUCCESS',
           user
@@ -336,5 +337,27 @@ export const ignoreJoinRequest = requestId => {
           type: 'IGNORE_JOIN_REQUEST_FAILURE'
         })
       })
+  }
+}
+
+export const leaveFlat = (userId, flatId) => {
+  return dispatch => {
+    dispatch({
+      type: 'LEAVE_FLAT_PENDING'
+    })
+    return getAxios().delete(`/v1/flat/${flatId}/${userId}`)
+     .then(response => {
+       dispatch({
+         userId,
+         flatId,
+         type: 'LEAVE_FLAT_SUCCESS'
+       })
+     })
+     .catch(error => {
+       dispatch({
+         message: error.message,
+         type: 'LEAVE_FLAT_FAILED'
+       })
+     })
   }
 }
