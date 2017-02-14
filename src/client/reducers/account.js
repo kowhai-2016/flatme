@@ -12,7 +12,7 @@ export default (state = {}, action) => {
       }
 
     case 'LEAVE_FLAT_SUCCESS':
-      const flats = state.user.flats
+      let flats = state.user.flats
         .filter(flat => flat.id === action.flatId)
       return {
         ...state,

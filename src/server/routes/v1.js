@@ -52,7 +52,7 @@ router.post('/flats/:id/documents', (req, res) => {
 })
 
 // Routes under this middleware require a valid token to access
-//router.use(jwtMiddleware)
+router.use(jwtMiddleware)
 
 router.get('/users/:id/flats', (req, res) => {
   const id = req.params.id
