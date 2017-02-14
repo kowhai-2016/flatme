@@ -45,6 +45,7 @@ export default combineReducers({
   flats,
   notes,
   forms: combineForms({
+    account,
     edit,
     loginCredentials,
     newNote,
