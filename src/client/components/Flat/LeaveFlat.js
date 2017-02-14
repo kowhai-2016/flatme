@@ -13,8 +13,8 @@ export default React.createClass({
   },
   render () {
     return (
-      <div>
-        <div>
+      <div className='LeaveFlat'>
+        <div className='LeaveButton'>
           <Button onClick={this.open}>Leave this flat</Button>
         </div>
         <Modal className='CreateFlatModal' show={this.state.show} onHide={this.close}>
@@ -22,8 +22,8 @@ export default React.createClass({
             <Modal.Title>Are you sure you want to leave this flat?</Modal.Title>
           </Modal.Header>
           <Modal.Footer>
-            <Button onClick={this.props.leaveFlat}>Yes, I am sure</Button>
-            <Button onClick={this.close}>Opps! No, don't remove me!</Button>
+            <Button className='Yes' onClick={this.props.leaveFlat}>Yes, I am sure</Button>
+            <Button className='No' onClick={this.close}>Opps! No, don't remove me!</Button>
           </Modal.Footer>
         </Modal>
       </div>
