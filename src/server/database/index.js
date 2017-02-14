@@ -158,6 +158,13 @@ function getTenancy (userId, flatId) {
     .first()
 }
 
+function leaveFlat (userId, flatId) {
+  return knex('tenancies')
+  .where('user_id', userId)
+  .where('flat_id', flatId)
+  .del()
+}
+
 function getFlatmates (flatId) {
   return knex('tenancies')
     .join('users', 'tenancies.user_id', '=', 'users.id')
@@ -294,5 +301,6 @@ module.exports = {
   addNote,
   deleteNote,
   editNote,
+  leaveFlat,
   updateJoinRequestStatus
 }

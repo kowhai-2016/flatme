@@ -338,3 +338,25 @@ export const ignoreJoinRequest = requestId => {
       })
   }
 }
+
+export const leaveFlat = (userId, flatId) => {
+  return dispatch => {
+    dispatch({
+      type: 'LEAVE_FLAT_PENDING'
+    })
+    return getAxios().delete(`/v1/flat/${flatId}/${userId}`)
+     .then(response => {
+       dispatch({
+         userId,
+         flatId,
+         type: 'LEAVE_FLAT_SUCCESS'
+       })
+     })
+     .catch(error => {
+       dispatch({
+         message: error.message,
+         type: 'LEAVE_FLAT_FAILED'
+       })
+     })
+  }
+}
