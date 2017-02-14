@@ -17,7 +17,8 @@ function addUser (user) {
           email: user.email.toLowerCase(),
           phone_number: user.phoneNumber,
           hash: hash
-        }, 'id')
+        })
+        .returning('id')
         .then(inserted => {
           const id = inserted[0]
           return id
@@ -52,7 +53,8 @@ function addFlat (flat) {
   return knex('flats')
     .insert({
       flat_name: flat.flatName
-    }, 'id')
+    })
+    .returning('id')
     .then(inserted => {
       const id = inserted[0]
       return {id}
@@ -93,11 +95,11 @@ function getFlatsByUserId (userId) {
     .join('flats', 'tenancies.flat_id', '=', 'flats.id')
     .select('users.id as userId', 'flats.id as flatId', 'flats.flat_name as flatName')
     .where('userId', userId)
-    .then(flatInfos => {
-      return flatInfos.map(flatInfo => {
+    .then(records => {
+      return records.map(record => {
         return {
-          id: flatInfo.flatId,
-          flatName: flatInfo.flatName
+          id: record.flatId,
+          flatName: record.flatName
         }
       })
     })
