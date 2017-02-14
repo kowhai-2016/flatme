@@ -43,9 +43,9 @@ export default React.createClass({
           <NewNoteForm onSubmit={this.handleSubmit} />
         </Modal>
 
-        <Col className="NotesContainer box">
-        {Object.keys(notes).map(noteId => {
-          return (
+        <Col className='NotesContainer box'>
+          {Object.keys(notes).map(noteId => {
+            return (
               <div className='NoteFull' key={noteId}>
                 <button className='NoteDelete' onClick={() => this.delete(noteId)}>
                   <img src='/images/delete-cross.svg' width='15px' />
@@ -53,8 +53,8 @@ export default React.createClass({
                 <div className='NoteContent'>{notes[noteId].content}</div>
                 <div className='NoteAuthor'> - {notes[noteId].author}</div>
               </div>
-          )
-        })}
+            )
+          })}
         </Col>
       </div>
     )
