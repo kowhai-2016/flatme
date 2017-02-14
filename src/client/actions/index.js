@@ -37,29 +37,6 @@ export const fetchFlat = id => {
   }
 }
 
-export const updateUser = fields => {
-  return (dispatch, getState) => {
-    const userId = getState().account.user.id
-    dispatch({
-      userId,
-      type: 'UPDATE_USER_PENDING'
-    })
-    return getAxios().put(`/v1/users/${userId}`, fields)
-      .then(res => {
-        return dispatch({
-          type: 'UPDATE_USER_SUCCESS',
-          fields
-        })
-      })
-      .catch(error => {
-        return dispatch({
-          message: error.message,
-          type: 'UPDATE_USER_FAILURE'
-        })
-      })
-  }
-}
-
 export const fetchUserFlats = id => {
   return dispatch => {
     dispatch({
@@ -336,5 +313,27 @@ export const ignoreJoinRequest = requestId => {
           type: 'IGNORE_JOIN_REQUEST_FAILURE'
         })
       })
+  }
+}
+
+export const leaveFlat = (userId, flatId) => {
+  return dispatch => {
+    dispatch({
+      type: 'LEAVE_FLAT_PENDING'
+    })
+    return getAxios().delete(`/v1/flats/${flatId}/${userId}`)
+     .then(response => {
+       dispatch({
+         userId,
+         flatId,
+         type: 'LEAVE_FLAT_SUCCESS'
+       })
+     })
+     .catch(error => {
+       dispatch({
+         message: error.message,
+         type: 'LEAVE_FLAT_FAILED'
+       })
+     })
   }
 }
