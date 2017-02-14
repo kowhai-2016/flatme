@@ -11,6 +11,7 @@ import Join from './containers/Join'
 import Notes from './containers/Notes'
 import PageNotFound from './components/PageNotFound'
 import About from './components/About'
+import Edit from './containers/Edit'
 import User from './containers/User'
 import store from './store'
 
@@ -59,6 +60,7 @@ export default (
     <IndexRoute component={Home} />
     <Route path='join' component={Join} />
     <Route path='about' component={About} />
+    <Route path='edit' component={Edit} />
     <Route
       path='user/:id'
       component={User}

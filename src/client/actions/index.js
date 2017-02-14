@@ -37,6 +37,29 @@ export const fetchFlat = id => {
   }
 }
 
+export const updateUsers = fields => {
+  return (dispatch, getState) => {
+    const userId = getState().account.user.id
+    dispatch({
+      userId,
+      type: 'UPDATE_USER_PENDING'
+    })
+    return getAxios().put(`/v1/users/${userId}`, fields)
+      .then(res => {
+        return dispatch({
+          type: 'UPDATE_USER_SUCCESS',
+          fields: res.data
+        })
+      })
+      .catch(error => {
+        return dispatch({
+          message: error.message,
+          type: 'UPDATE_USER_FAILURE'
+        })
+      })
+  }
+}
+
 export const fetchUserFlats = id => {
   return dispatch => {
     dispatch({
