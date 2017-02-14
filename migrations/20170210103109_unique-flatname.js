@@ -6,5 +6,7 @@ exports.up = knex => {
 }
 
 exports.down = knex => {
-  return knex.schema.dropUnique('flat_name')
+  return knex.schema.alterTable('flats', function (t) {
+    t.dropUnique('flat_name')
+  })
 }

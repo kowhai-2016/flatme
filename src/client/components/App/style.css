@@ -12,6 +12,11 @@
   margin-left: -15px;
 }
 
+.Footer .signature .link {
+  text-decoration: none;
+  color: lightgrey;
+}
+
 .Navigation .navbar {
   margin-bottom: 0px;
   font-family: 'Cabin Sketch', cursive;

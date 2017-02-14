@@ -17,7 +17,8 @@ function addUser (user) {
           email: user.email.toLowerCase(),
           phone_number: user.phoneNumber,
           hash: hash
-        }, 'id')
+        })
+        .returning('id')
         .then(inserted => {
           const id = inserted[0]
           return id
@@ -63,7 +64,8 @@ function addFlat (flat) {
   return knex('flats')
     .insert({
       flat_name: flat.flatName
-    }, 'id')
+    })
+    .returning('id')
     .then(inserted => {
       const id = inserted[0]
       return {id}
@@ -102,13 +104,13 @@ function getFlatsByUserId (userId) {
   return knex('tenancies')
     .join('users', 'tenancies.user_id', '=', 'users.id')
     .join('flats', 'tenancies.flat_id', '=', 'flats.id')
-    .select('users.id as userId', 'flats.id as flatId', 'flats.flat_name as flatName')
-    .where('userId', userId)
-    .then(flatInfos => {
-      return flatInfos.map(flatInfo => {
+    .select('users.id', 'flats.id as flatId', 'flats.flat_name as flatName')
+    .where('users.id', userId)
+    .then(records => {
+      return records.map(record => {
         return {
-          id: flatInfo.flatId,
-          flatName: flatInfo.flatName
+          id: record.flatId,
+          flatName: record.flatName
         }
       })
     })
@@ -140,7 +142,8 @@ function addTenancy (userId, flatId) {
           .insert({
             user_id: userId,
             flat_id: flatId
-          }, 'id')
+          })
+          .returning('id')
           .then(inserted => {
             return inserted[0]
           })
@@ -153,6 +156,13 @@ function getTenancy (userId, flatId) {
     .where('user_id', userId)
     .where('flat_id', flatId)
     .first()
+}
+
+function leaveFlat (userId, flatId) {
+  return knex('tenancies')
+  .where('user_id', userId)
+  .where('flat_id', flatId)
+  .del()
 }
 
 function getFlatmates (flatId) {
@@ -181,6 +191,7 @@ function addJoinRequest (userId, flatId) {
       user_id: userId,
       status: 'pending'
     })
+    .returning('id')
 }
 
 function getJoinRequests (flatId) {
@@ -232,7 +243,8 @@ function addNote (note) {
       flat_id: note.flat_id,
       content: note.content,
       author: note.author
-    }, 'id')
+    })
+    .returning('id')
     .then(noteId => {
       return getNoteById(noteId[0])
     })
@@ -289,5 +301,6 @@ module.exports = {
   addNote,
   deleteNote,
   editNote,
+  leaveFlat,
   updateJoinRequestStatus
 }

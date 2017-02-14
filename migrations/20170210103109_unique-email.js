@@ -6,5 +6,7 @@ exports.up = knex => {
 }
 
 exports.down = knex => {
-  return knex.schema.dropUnique('email')
+  return knex.schema.alterTable('users', function (table) {
+    table.dropUnique('email')
+  })
 }
