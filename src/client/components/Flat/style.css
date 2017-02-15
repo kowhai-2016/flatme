@@ -51,7 +51,7 @@
   padding-top: 30px;
   padding-left: 20px;
 }
-
+``
 .LeaveFlat .LeaveButton Button {
   font-size: 1.3em;
 }
@@ -59,27 +59,27 @@
 /* Join Requests Component
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
 .JoinRequests {
-  padding-top: 50px;
+  padding-top: 40px;
   padding-right: 10px;
   text-align: center;
-  position: relative;
 }
 
 .JoinRequests h2 {
   color: black;
 }
 
+.ReqList {
+  padding: 10px;
+}
+
 .Request {
   list-style-type: none;
   padding: 8px 120px;
   margin-bottom: 30px;
-  margin-right: 120px;
   border: 2px solid lightseagreen;
   border-radius: 5px;
   background-color: white;
   box-sizing: border-box;
-  position: relative;
-  left: -40px;
 }
 
 .Request .userLink {
@@ -103,8 +103,23 @@
   flex-grow: 2;
 }
 
-@media (max-width: 1608px) {
+/*@media (max-width: 1608px) {
   .Request {
     padding: 8px 100px;
+  }
+}*/
+
+@media (max-width: 1199px) {
+  .JoinRequests {
+    padding-top: 0px;
+  }
+  .Request {
+    width: 25%;
+    display: inline-block;
+    margin: 10px;
+  }
+  .ReqList {
+    width: 100%;
+    justify-content: center;
   }
 }
