@@ -6,7 +6,6 @@ const maxLength = length => val => val && val.length <= length
 
 const Edit = React.createClass({
   onSubmit (values) {
-    console.log(values)
     this.props.updateUser(values)
     window.alert('Change successful applied')
   },
@@ -61,7 +60,11 @@ const Edit = React.createClass({
                 <label>Phone number:</label>
                 <Control.text
                   model='.phoneNumber'
-                  />
+                  validators={{
+                    // Temporary: fix this!
+                    isNumber: val => val.length > 0
+                  }}
+                />
                 <Errors
                   className='errors'
                   model='.phoneNumber'
@@ -69,7 +72,7 @@ const Edit = React.createClass({
                   messages={{
                     isNumber: 'Must be Number'
                   }}
-                  />
+                />
               </div>
 
               <div className='field'>
