@@ -3,6 +3,29 @@ const bcrypt = require('bcrypt')
 
 const saltRounds = 10
 
+function addDocument (flatId, url, name) {
+  return knex('documents')
+    .insert({
+      flat_id: flatId,
+      url,
+      name
+    })
+}
+
+function getDocuments (flatId) {
+  return knex('documents')
+    .where('flat_id', flatId)
+    .then(records => {
+      return records.map(record => {
+        return {
+          id: record.id,
+          url: record.url,
+          name: record.name
+        }
+      })
+    })
+}
+
 function comparePassword (password, hash) {
   return bcrypt.compare(password, hash)
 }
@@ -95,6 +118,13 @@ function getFlatById (id) {
           flat.requests = requests.filter(request => {
             return request.status === 'pending'
           })
+          return flat
+        })
+    })
+    .then(flat => {
+      return getDocuments(flat.id)
+        .then(documents => {
+          flat.documents = documents
           return flat
         })
     })
@@ -284,6 +314,7 @@ function getNotesByFlatId (flatId) {
 }
 
 module.exports = {
+  addDocument,
   addFlat,
   addJoinRequest,
   addTenancy,
