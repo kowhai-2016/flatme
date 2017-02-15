@@ -27,7 +27,7 @@ exports.seed = knex => {
           last_name: 'Jackson',
           email: 'annaj@bar.com',
           phone_number: '021 130 6700',
-          avatar:'https://avatars1.githubusercontent.com/u/22289088?v=3&s=460',
+          avatar: 'https://avatars1.githubusercontent.com/u/22289088?v=3&s=460',
           hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
@@ -54,7 +54,7 @@ exports.seed = knex => {
           last_name: 'Neary',
           email: 'jessica@bar.com',
           phone_number: '021 900 9876',
-          avatar:'http://localhost:3000/images/displaypics/Jess.jpeg',
+          avatar: 'http://localhost:3000/images/displaypics/Jess.jpeg',
           hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
@@ -81,7 +81,7 @@ exports.seed = knex => {
           last_name: 'Churcher',
           email: 'rich@bar.com',
           phone_number: '027 987 0912',
-          avatar:'https://avatars3.githubusercontent.com/u/171905?v=3&s=460',
+          avatar: 'https://avatars3.githubusercontent.com/u/171905?v=3&s=460',
           hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
@@ -90,7 +90,7 @@ exports.seed = knex => {
           last_name: 'Rich',
           email: 'daisy@bar.com',
           phone_number: '09 555 1388',
-          avatar:'',
+          avatar: '',
           hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
@@ -99,7 +99,7 @@ exports.seed = knex => {
           last_name: 'Smith',
           email: 'don@bar.com',
           phone_number: '021 390 4572',
-          avatar:'https://avatars0.githubusercontent.com/u/228761?v=3&s=460',
+          avatar: 'https://avatars0.githubusercontent.com/u/228761?v=3&s=460',
           hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
@@ -108,7 +108,7 @@ exports.seed = knex => {
           last_name: 'Smith',
           email: 'esther@bar.com',
           phone_number: '021 390 4571',
-          avatar:'',
+          avatar: '',
           hash: '$2a$10$fyrFvFQMYX8SkMeP1By8muQ6BWM7EtuXRS0c0u7tfykTVO8gIdvh2'
         }),
         knex('users').insert({
