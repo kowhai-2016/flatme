@@ -4,10 +4,16 @@ import { updateUser } from '../actions'
 
 import Edit from '../components/Edit'
 
-const mapDispatchToProps = dispatch => {
+const mapStateToProps = (state, ownProps) => {
   return {
-    updateUser: values => { return dispatch(updateUser(values)) }
+    user: state.user
   }
 }
 
-export default connect(null, mapDispatchToProps)(Edit)
+const mapDispatchToProps = dispatch => {
+  return {
+    updateUser: values => dispatch(updateUser(values))
+  }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(Edit)
