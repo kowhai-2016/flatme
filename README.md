@@ -1,6 +1,6 @@
-# FlatMe
+# goFlat
 
-A flatmate management app
+A goFlat management app
 
 # Features
 
@@ -11,29 +11,29 @@ A flatmate management app
 2. Notes
   - housework
   - maintainence
-  
+
 3. Calendar
   - events
   - inspections
   - bills due
   - housework
-  
+
 4. Contacts
   - flatmates
   - landlord
   - emergency contacts
-  
+
 5. Contract generator
 
 6. Leave a reference
-  
+
 7. WebRTC
   - flat meetings
-  
+
 # MVP
 - Home
 - Join
-- User 
+- User
   - Settings
 - Flat (Component inside home?)
 
@@ -61,3 +61,34 @@ A flatmate management app
 - Knex
 - React-bootstrap
 - Axios
+
+## Setup
+
+After cloning this repo:
+
+```sh
+npm install
+```
+
+To run the app:
+
+```sh
+npm run dev
+```
+
+To run tests:
+
+```sh
+npm run test
+```
+
+To run the server only:
+
+```sh
+npm start
+```
+
+
+# License
+
+MIT
