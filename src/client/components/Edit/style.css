@@ -69,3 +69,11 @@
     font-size: 0.8rem;
   }
 }
+
+.Edit .text-center {
+  margin-top: 100px;
+}
+
+.Edit .btnUpdate {
+  margin-bottom: 280px;
+}
