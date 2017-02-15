@@ -51,9 +51,10 @@ const ImageForm = React.createClass({
     }
     return (
       <div className='uploadBox'>
-        <input type='file' id='file-input' />
+        <input className='uploadFile' type='file' id='file-input' />
+        <label htmlFor='file-input'>Choose a file</label>
         <p id='status'>Please select a file</p>
-        <img id='preview' value='/images/notebook.png' onError={defaultImage} />
+        <img id='preview' value='/images/notebook.png' onError={defaultImage} style={{maxWidth: '100%', height: 'auto'}} />
         <form method='POST' action={`/v1/flats/${this.props.flatId}/documents`}>
           <input type='hidden' id='avatar-url' name='avatar-url' value='/images/notebook.png' />
           <input type='submit' value='Upload Document' />
