@@ -4,7 +4,7 @@ import JoinRequest from './JoinRequest'
 
 const JoinRequests = props => {
   return (
-    <div>
+    <div className='JoinRequests'>
       <h2>Join Requests</h2>
       <ul>
         {props.requests.map((request, index) => {

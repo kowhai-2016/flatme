@@ -260,6 +260,7 @@ export const createNewFlat = (flat, user) => {
       })
       .then()
       .catch(error => {
+        window.alert(`Sorry, flat ${flat.flatName} already exists. Please select another name.`)
         dispatch({
           message: error.message,
           type: 'CREATE_FLAT_FAILURE'

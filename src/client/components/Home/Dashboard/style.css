@@ -69,10 +69,11 @@
 }
 
 .Dashboard .bg-flat{
-  background-image: url('/images/table.jpg');
-  background-size:100%;
+  background-image: url('/images/full-light-low.jpg');
   min-height: 800px;
   background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 .Dashboard .panel-group .main-flat-card {

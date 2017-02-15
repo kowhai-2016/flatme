@@ -66,13 +66,27 @@ exports[`test Flat renders correctly 1`] = `
       </nav>
     </div>
     <div
-      className="popout col-md-7">
+      className="popout col-lg-7 col-md-8">
       <h1
-        className="text-center" />
+        className="text-center flat-name" />
     </div>
     <div
-      className="col-md-2">
-      <div>
+      className="col-lg-2 col-md-3">
+      <div
+        className="LeaveFlat">
+        <div
+          className="LeaveButton">
+          <button
+            className="btn btn-default"
+            disabled={false}
+            onClick={[Function]}
+            type="button">
+            Leave this flat
+          </button>
+        </div>
+      </div>
+      <div
+        className="JoinRequests">
         <h2>
           Join Requests
         </h2>

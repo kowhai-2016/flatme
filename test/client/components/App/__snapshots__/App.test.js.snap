@@ -74,6 +74,7 @@ exports[`test App renders login correctly 1`] = `
         <div>
           <h6>
             <a
+              className="link"
               onClick={[Function]}
               style={Object {}}>
               Kowhai
@@ -85,7 +86,7 @@ exports[`test App renders login correctly 1`] = `
           href="https://github.com/kowhai-2016/flatme">
           <img
             className="git-logo center-block"
-            src="/images/GitHub-Mark-light-32px.png" />
+            src="/images/GitHub-Mark-Light-32px.png" />
         </a>
       </div>
     </nav>
@@ -172,6 +173,7 @@ exports[`test App renders logout correctly 1`] = `
         <div>
           <h6>
             <a
+              className="link"
               onClick={[Function]}
               style={Object {}}>
               Kowhai
@@ -183,7 +185,7 @@ exports[`test App renders logout correctly 1`] = `
           href="https://github.com/kowhai-2016/flatme">
           <img
             className="git-logo center-block"
-            src="/images/GitHub-Mark-light-32px.png" />
+            src="/images/GitHub-Mark-Light-32px.png" />
         </a>
       </div>
     </nav>
