@@ -16,13 +16,6 @@ const join = {
   confirmPassword: ''
 }
 
-const edit = {
-  firstName: '',
-  lastName: '',
-  phoneNumber: '',
-  email: ''
-}
-
 const newNote = {
   content: ''
 }
@@ -45,7 +38,7 @@ export default combineReducers({
   flats,
   notes,
   forms: combineForms({
-    edit,
+    account,
     loginCredentials,
     newNote,
     join,
