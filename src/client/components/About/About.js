@@ -44,7 +44,7 @@ const About = props => {
       <div className='container'>
         <div className='team'>
           <div className='card col-md-2'>
-            <img className='card-img-top' src='/images/displaypics/Ti.jpeg' height='150' width='150' alt='Card image cap' />
+            <img className='card-img-top circle' src='/images/displaypics/Ti.jpeg' height='150' width='150' alt='Card image cap' />
             <div className='card-block'>
               <h4 className='card-title'>Thibaud Bretin</h4>
               <a href='https://github.com/Ti-Bretin'><p className='card-text'>Click here for my Github
@@ -54,7 +54,7 @@ const About = props => {
             </div>
           </div>
           <div className='card col-md-2'>
-            <img className='card-img-top' src='/images/displaypics/David.jpeg' height='150' width='150' alt='Card image cap' />
+            <img className='card-img-top circle' src='/images/displaypics/David.jpeg' height='150' width='150' alt='Card image cap' />
             <div className='card-block'>
               <h4 className='card-title'>David Christie</h4>
               <a href='https://github.com/davidchristie'><p className='card-text'>Click here for my Github
@@ -64,7 +64,7 @@ const About = props => {
             </div>
           </div>
           <div className='card col-md-2'>
-            <img className='card-img-top' src='/images/displaypics/Amanda.png' height='150' width='150' alt='Card image cap' />
+            <img className='card-img-top circle' src='/images/displaypics/Amanda.png' height='150' width='150' alt='Card image cap' />
             <div className='card-block'>
               <h4 className='card-title'>Amanda Hogan</h4>
               <a href='https://github.com/amandahogan'><p className='card-text'>Click here for my Github
@@ -74,17 +74,16 @@ const About = props => {
             </div>
           </div>
           <div className='card col-md-2'>
-            <img className='card-img-top' src='/images/displaypics/Quinn.jpeg' height='150' width='150' alt='Card image cap' />
+            <img className='card-img-top circle' src='/images/displaypics/Quinn.jpeg' height='150' width='150' alt='Card image cap' />
             <div className='card-block'>
               <h4 className='card-title'>Quinn Hu</h4>
               <a href='https://github.com/Quinn-H'><p className='card-text'>Click here for my Github
               </p></a>
-              <p className='card-text'>Or email me at:
-              </p>
+              <p className='card-text' />Or email me at:
             </div>
           </div>
           <div className='card col-md-2'>
-            <img className='card-img-top' src='/images/displaypics/Jess.jpeg' height='150' width='150' alt='Card image cap' />
+            <img className='card-img-top circle' src='/images/displaypics/Jess.jpeg' height='150' width='150' alt='Card image cap' />
             <div className='card-block'>
               <h4 className='card-title'>Jessica Neary</h4>
               <a href='https://github.com/JessicaNeary'><p className='card-text'>Click here for my Github
@@ -94,7 +93,7 @@ const About = props => {
             </div>
           </div>
           <div className='card col-md-2'>
-            <img className='card-img-top' src='/images/displaypics/Anna.jpeg' height='150' width='150' alt='Card image cap' />
+            <img className='card-img-top circle' src='/images/displaypics/Anna.jpeg' height='150' width='150' alt='Card image cap' />
             <div className='card-block'>
               <h4 className='card-title'>Anna Ulyanova</h4>
               <a href='https://github.com/AnnaUlyanova'><p className='card-text'>Click here for my Github

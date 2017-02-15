@@ -5,17 +5,17 @@ exports.seed = function (knex, Promise) {
       return Promise.all([
         // Inserts seed entries
         knex('notes').insert({
-          id: 1,
+          id: 66601,
           flat_id: 88804,
           content: 'Flat inspection this thursday!',
           author: 'Jessica'}),
         knex('notes').insert({
-          id: 2,
+          id: 66602,
           flat_id: 88804,
           content: 'Recycling goes out on Tuesday nights',
           author: 'Jessica'}),
         knex('notes').insert({
-          id: 3,
+          id: 66603,
           flat_id: 88801,
           content: 'Bathroom tap leaks',
           author: 'Jessica'})
