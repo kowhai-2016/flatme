@@ -1,5 +1,12 @@
 /* Flat Dashboard page
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.Flat {
+  background-image: url('/images/wall.jpg');
+  background-position: center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
 .Flat .flat-name {
   font-family: 'Cabin Sketch', cursive;
   font-size: 5em;
@@ -110,9 +117,6 @@
 }*/
 
 @media (max-width: 1199px) {
-  .Flat .popout {
-    /*border: 3px solid lightseagreen;*/
-  }
   .JoinRequests {
     padding-top: 0px;
   }
