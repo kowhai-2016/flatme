@@ -194,15 +194,15 @@ const Join = React.createClass({
                           maxLength: ' Must be 15 characters or less'
                         }}
                       />
+
+                      <Errors
+                        model='forms.join'
+                        messages={{
+                          passwordMatch: 'Password need to match'
+                        }}
+                    />
                     </Col>
                   </div>
-
-                  <Errors
-                    model='forms.join'
-                    messages={{
-                      passwordMatch: 'Password need to match'
-                    }}
-                    />
                   <div>
                     <Col sm={12} >
                       <button className='submitJoinBtn btn btn-default dropdown-toggle' type='submit'>Add</button>
