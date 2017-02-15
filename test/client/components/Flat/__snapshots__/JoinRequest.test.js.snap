@@ -1,21 +1,29 @@
 exports[`test JoinRequest renders correctly 1`] = `
-<li>
-  <a
-    onClick={[Function]}
-    style={Object {}}>
-    First
-     
-    Last
-  </a>
-  <div>
+<li
+  className="Request">
+  <div
+    className="row">
+    <a
+      className="userLink"
+      onClick={[Function]}
+      style={Object {}}>
+      First Last
+    </a>
+  </div>
+  <div
+    className="buttons row">
     <button
-      className="btn btn-success glyphicon glyphicon-ok"
-      onClick={[Function]}>
+      className="btn btn-success glyphicon glyphicon-ok btn btn-default"
+      disabled={false}
+      onClick={[Function]}
+      type="button">
       Accept
     </button>
     <button
-      className="btn btn-danger glyphicon glyphicon-remove"
-      onClick={[Function]}>
+      className="btn btn-danger glyphicon glyphicon-remove btn btn-default"
+      disabled={false}
+      onClick={[Function]}
+      type="button">
       Ignore
     </button>
   </div>
