@@ -16,11 +16,9 @@ const About = props => {
         <div className='row'>
           <div className='col-sm-8 who'>
             <h2>Who We Are</h2>
-            <br>
-            </br>
-            <h4>This application was created by a team of students from Enspiral Dev Academy
-            </h4>
-            <h4>in Auckland. It was built in one week as our final project for the course.
+            <br />
+            <h4>This application was created by a team of students from Enspiral Dev Academy in Auckland. </h4>
+            <h4>It was built in one week as our final project for the course.
             </h4>
           </div>
           <div className='col-sm-4 contact'>
