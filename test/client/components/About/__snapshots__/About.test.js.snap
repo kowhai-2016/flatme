@@ -1,48 +1,37 @@
 exports[`test About renders correctly 1`] = `
 <div
-  className="header">
+  className="AboutUs header">
   <div
     className="container">
     <div
       className="row">
       <div
-        className="text-center">
+        className="text-center title">
         <h1>
-          About us
+          About Us
         </h1>
       </div>
     </div>
   </div>
   <div
-    className="container">
+    className="container body">
     <div
       className="row">
       <div
-        className="text-center">
+        className="col-sm-8 who">
         <h2>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris cursus metus est, sagittis ultrices dolor rhoncus eu. Donec at fringilla ligula cusrsus metus est.
+          Who We Are
         </h2>
-      </div>
-    </div>
-  </div>
-  <div
-    className="container">
-    <div
-      className="row">
-      <div
-        className="col-sm-8">
-        <h2>
-          What We Do
-        </h2>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. sagittis ultrices dolor rhoncus eu.
-        </p>
-        <p>
-          Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum
-        </p>
+        <br />
+        <h4>
+          This application was created by a team of students from Enspiral Dev Academy in Auckland. 
+        </h4>
+        <h4>
+          It was built in one week as our final project for the course.
+        </h4>
       </div>
       <div
-        className="col-sm-4">
+        className="col-sm-4 contact">
         <h2>
           Contact Us
         </h2>
@@ -66,28 +55,37 @@ exports[`test About renders correctly 1`] = `
     </div>
   </div>
   <h2
-    className="text-center">
+    className="text-center teamTitle">
     Our team
   </h2>
   <div
     className="container">
     <div
-      className="card-deck">
+      className="team">
       <div
         className="card col-md-2">
         <img
           alt="Card image cap"
           className="card-img-top"
-          src="http://placehold.it/150x150" />
+          height="150"
+          src="/images/displaypics/Ti.jpeg"
+          width="150" />
         <div
           className="card-block">
           <h4
             className="card-title">
-            Card title
+            Thibaud Bretin
           </h4>
+          <a
+            href="https://github.com/Ti-Bretin">
+            <p
+              className="card-text">
+              Click here for my Github
+            </p>
+          </a>
           <p
             className="card-text">
-            This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+            Or email me at:
           </p>
         </div>
       </div>
@@ -96,16 +94,25 @@ exports[`test About renders correctly 1`] = `
         <img
           alt="Card image cap"
           className="card-img-top"
-          src="http://placehold.it/150x150" />
+          height="150"
+          src="/images/displaypics/David.jpeg"
+          width="150" />
         <div
           className="card-block">
           <h4
             className="card-title">
-            Card title
+            David Christie
           </h4>
+          <a
+            href="https://github.com/davidchristie">
+            <p
+              className="card-text">
+              Click here for my Github
+            </p>
+          </a>
           <p
             className="card-text">
-            This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+            Or email me at:
           </p>
         </div>
       </div>
@@ -114,16 +121,25 @@ exports[`test About renders correctly 1`] = `
         <img
           alt="Card image cap"
           className="card-img-top"
-          src="http://placehold.it/150x150" />
+          height="150"
+          src="/images/displaypics/Amanda.png"
+          width="150" />
         <div
           className="card-block">
           <h4
             className="card-title">
-            Card title
+            Amanda Hogan
           </h4>
+          <a
+            href="https://github.com/amandahogan">
+            <p
+              className="card-text">
+              Click here for my Github
+            </p>
+          </a>
           <p
             className="card-text">
-            This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+            Or email me at:
           </p>
         </div>
       </div>
@@ -132,16 +148,25 @@ exports[`test About renders correctly 1`] = `
         <img
           alt="Card image cap"
           className="card-img-top"
-          src="http://placehold.it/150x150" />
+          height="150"
+          src="/images/displaypics/Quinn.jpeg"
+          width="150" />
         <div
           className="card-block">
           <h4
             className="card-title">
-            Card title
+            Quinn Hu
           </h4>
+          <a
+            href="https://github.com/Quinn-H">
+            <p
+              className="card-text">
+              Click here for my Github
+            </p>
+          </a>
           <p
             className="card-text">
-            This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+            Or email me at:
           </p>
         </div>
       </div>
@@ -150,16 +175,25 @@ exports[`test About renders correctly 1`] = `
         <img
           alt="Card image cap"
           className="card-img-top"
-          src="http://placehold.it/150x150" />
+          height="150"
+          src="/images/displaypics/Jess.jpeg"
+          width="150" />
         <div
           className="card-block">
           <h4
             className="card-title">
-            Card title
+            Jessica Neary
           </h4>
+          <a
+            href="https://github.com/JessicaNeary">
+            <p
+              className="card-text">
+              Click here for my Github
+            </p>
+          </a>
           <p
             className="card-text">
-            This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+            Or email me at:
           </p>
         </div>
       </div>
@@ -168,16 +202,25 @@ exports[`test About renders correctly 1`] = `
         <img
           alt="Card image cap"
           className="card-img-top"
-          src="http://placehold.it/150x150" />
+          height="150"
+          src="/images/displaypics/Anna.jpeg"
+          width="150" />
         <div
           className="card-block">
           <h4
             className="card-title">
-            Card title
+            Anna Ulyanova
           </h4>
+          <a
+            href="https://github.com/AnnaUlyanova">
+            <p
+              className="card-text">
+              Click here for my Github
+            </p>
+          </a>
           <p
             className="card-text">
-            This is a longer card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.
+            Or email me at:
           </p>
         </div>
       </div>

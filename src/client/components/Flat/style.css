@@ -45,6 +45,8 @@
   border-left-width: medium;
 }
 
+/* Leave Flat Button
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
 .LeaveFlat {
   padding-top: 30px;
   padding-left: 20px;
@@ -52,4 +54,57 @@
 
 .LeaveFlat .LeaveButton Button {
   font-size: 1.3em;
+}
+
+/* Join Requests Component
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.JoinRequests {
+  padding-top: 50px;
+  padding-right: 10px;
+  text-align: center;
+  position: relative;
+}
+
+.JoinRequests h2 {
+  color: black;
+}
+
+.Request {
+  list-style-type: none;
+  padding: 8px 120px;
+  margin-bottom: 30px;
+  margin-right: 120px;
+  border: 2px solid lightseagreen;
+  border-radius: 5px;
+  background-color: white;
+  box-sizing: border-box;
+  position: relative;
+  left: -40px;
+}
+
+.Request .userLink {
+  font-size: 2em;
+  font-style: italic;
+  color: lightseagreen;
+  text-align: center;
+  text-transform: uppercase;
+  display: flex;
+  justify-content: center;
+}
+
+.Request .buttons{
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.Request Button {
+  font-size: 1.3em;
+  flex-grow: 2;
+}
+
+@media (max-width: 1608px) {
+  .Request {
+    padding: 8px 100px;
+  }
 }

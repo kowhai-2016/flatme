@@ -1,38 +1,27 @@
 import React from 'react'
 
+import './style.css'
+
 const About = props => {
   return (
-    <div className='header'>
+    <div className='AboutUs header'>
       <div className='container'>
         <div className='row'>
-          <div className='text-center'>
-            <h1>About us</h1>
+          <div className='text-center title'>
+            <h1>About Us</h1>
           </div>
         </div>
       </div>
-      <div className='container'>
+      <div className='container body'>
         <div className='row'>
-          <div className='text-center'>
-            <h2>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-               Mauris cursus metus est, sagittis ultrices dolor rhoncus eu.
-               Donec at fringilla ligula cusrsus metus est.
-            </h2>
+          <div className='col-sm-8 who'>
+            <h2>Who We Are</h2>
+            <br />
+            <h4>This application was created by a team of students from Enspiral Dev Academy in Auckland. </h4>
+            <h4>It was built in one week as our final project for the course.
+            </h4>
           </div>
-        </div>
-      </div>
-      <div className='container'>
-        <div className='row'>
-          <div className='col-sm-8'>
-            <h2>What We Do</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-            sagittis ultrices dolor rhoncus eu.
-            </p>
-            <p>Excepteur sint occaecat cupidatat non proident,
-            sunt in culpa qui officia deserunt mollit anim id est laborum
-            </p>
-          </div>
-          <div className='col-sm-4'>
+          <div className='col-sm-4 contact'>
             <h2>Contact Us</h2>
             <address>
               <strong>
@@ -49,62 +38,68 @@ const About = props => {
           </div>
         </div>
       </div>
-      <h2 className='text-center'>
+      <h2 className='text-center teamTitle'>
         Our team
       </h2>
       <div className='container'>
-        <div className='card-deck'>
+        <div className='team'>
           <div className='card col-md-2'>
-            <img className='card-img-top' src='http://placehold.it/150x150' alt='Card image cap' />
+            <img className='card-img-top' src='/images/displaypics/Ti.jpeg' height='150' width='150' alt='Card image cap' />
             <div className='card-block'>
-              <h4 className='card-title'>Card title</h4>
-              <p className='card-text'>This is a longer card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit longer.
+              <h4 className='card-title'>Thibaud Bretin</h4>
+              <a href='https://github.com/Ti-Bretin'><p className='card-text'>Click here for my Github
+              </p></a>
+              <p className='card-text'>Or email me at:
               </p>
             </div>
           </div>
           <div className='card col-md-2'>
-            <img className='card-img-top' src='http://placehold.it/150x150' alt='Card image cap' />
+            <img className='card-img-top' src='/images/displaypics/David.jpeg' height='150' width='150' alt='Card image cap' />
             <div className='card-block'>
-              <h4 className='card-title'>Card title</h4>
-              <p className='card-text'>This is a longer card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit longer.
+              <h4 className='card-title'>David Christie</h4>
+              <a href='https://github.com/davidchristie'><p className='card-text'>Click here for my Github
+              </p></a>
+              <p className='card-text'>Or email me at:
               </p>
             </div>
           </div>
           <div className='card col-md-2'>
-            <img className='card-img-top' src='http://placehold.it/150x150' alt='Card image cap' />
+            <img className='card-img-top' src='/images/displaypics/Amanda.png' height='150' width='150' alt='Card image cap' />
             <div className='card-block'>
-              <h4 className='card-title'>Card title</h4>
-              <p className='card-text'>This is a longer card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit longer.
+              <h4 className='card-title'>Amanda Hogan</h4>
+              <a href='https://github.com/amandahogan'><p className='card-text'>Click here for my Github
+              </p></a>
+              <p className='card-text'>Or email me at:
               </p>
             </div>
           </div>
           <div className='card col-md-2'>
-            <img className='card-img-top' src='http://placehold.it/150x150' alt='Card image cap' />
+            <img className='card-img-top' src='/images/displaypics/Quinn.jpeg' height='150' width='150' alt='Card image cap' />
             <div className='card-block'>
-              <h4 className='card-title'>Card title</h4>
-              <p className='card-text'>This is a longer card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit longer.
+              <h4 className='card-title'>Quinn Hu</h4>
+              <a href='https://github.com/Quinn-H'><p className='card-text'>Click here for my Github
+              </p></a>
+              <p className='card-text'>Or email me at:
               </p>
             </div>
           </div>
           <div className='card col-md-2'>
-            <img className='card-img-top' src='http://placehold.it/150x150' alt='Card image cap' />
+            <img className='card-img-top' src='/images/displaypics/Jess.jpeg' height='150' width='150' alt='Card image cap' />
             <div className='card-block'>
-              <h4 className='card-title'>Card title</h4>
-              <p className='card-text'>This is a longer card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit longer.
+              <h4 className='card-title'>Jessica Neary</h4>
+              <a href='https://github.com/JessicaNeary'><p className='card-text'>Click here for my Github
+              </p></a>
+              <p className='card-text'>Or email me at:
               </p>
             </div>
           </div>
           <div className='card col-md-2'>
-            <img className='card-img-top' src='http://placehold.it/150x150' alt='Card image cap' />
+            <img className='card-img-top' src='/images/displaypics/Anna.jpeg' height='150' width='150' alt='Card image cap' />
             <div className='card-block'>
-              <h4 className='card-title'>Card title</h4>
-              <p className='card-text'>This is a longer card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit longer.
+              <h4 className='card-title'>Anna Ulyanova</h4>
+              <a href='https://github.com/AnnaUlyanova'><p className='card-text'>Click here for my Github
+              </p></a>
+              <p className='card-text'>Or email me at:
               </p>
             </div>
           </div>
