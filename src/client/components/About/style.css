@@ -1,5 +1,5 @@
 .AboutUs {
-  padding-top: 20px;
+  padding-top: 30px;
 }
 
 .AboutUs .title {
@@ -13,7 +13,7 @@
 }
 
 .AboutUs .body .who {
-  padding-right: 50px;
+  padding-right: 30px;
   border-left: 1px solid black;
 }
 
@@ -23,7 +23,7 @@
 }
 
 .AboutUs .teamTitle {
-  padding-top: 10px;
+  padding-top: 40px;
   padding-bottom: 40px;
 }
 
@@ -35,6 +35,10 @@
 
 .AboutUs h2 {
   color: lightseagreen;
+}
+
+.card {
+  margin-bottom: 80px;
 }
 
 .AboutUs .circle {
