@@ -110,6 +110,9 @@
 }*/
 
 @media (max-width: 1199px) {
+  .Flat .popout {
+    /*border: 3px solid lightseagreen;*/
+  }
   .JoinRequests {
     padding-top: 0px;
   }
@@ -121,5 +124,11 @@
   .ReqList {
     width: 100%;
     justify-content: center;
+  }
+}
+
+@media (max-width: 991px) {
+  .Flat .popout {
+    border: 3px solid lightseagreen;
   }
 }
