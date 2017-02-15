@@ -45,18 +45,18 @@ export const updateUser = fields => {
       type: 'UPDATE_USER_PENDING'
     })
     return getAxios().put(`/v1/users/${userId}`, fields)
-      .then(res => {
-        return dispatch({
-          type: 'UPDATE_USER_SUCCESS',
-          fields
-        })
-      })
-      .catch(error => {
-        return dispatch({
-          message: error.message,
-          type: 'UPDATE_USER_FAILURE'
-        })
-      })
+     .then(res => {
+       return dispatch({
+         type: 'UPDATE_USER_SUCCESS',
+         fields
+       })
+     })
+     .catch(error => {
+       return dispatch({
+         message: error.message,
+         type: 'UPDATE_USER_FAILURE'
+       })
+     })
   }
 }
 
@@ -260,6 +260,7 @@ export const createNewFlat = (flat, user) => {
       })
       .then()
       .catch(error => {
+        window.alert(`Sorry, flat ${flat.flatName} already exists. Please select another name.`)
         dispatch({
           message: error.message,
           type: 'CREATE_FLAT_FAILURE'
@@ -345,7 +346,7 @@ export const leaveFlat = (userId, flatId) => {
     dispatch({
       type: 'LEAVE_FLAT_PENDING'
     })
-    return getAxios().delete(`/v1/flat/${flatId}/${userId}`)
+    return getAxios().delete(`/v1/flats/${flatId}/${userId}`)
      .then(response => {
        dispatch({
          userId,
