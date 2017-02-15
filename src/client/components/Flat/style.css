@@ -66,12 +66,13 @@
 }
 
 .JoinRequests h2 {
-  color: lightseagreen;
+  color: black;
 }
 
 .Request {
   list-style-type: none;
   padding: 8px 120px;
+  margin-bottom: 30px;
   margin-right: 120px;
   border: 2px solid lightseagreen;
   border-radius: 5px;
@@ -84,7 +85,7 @@
 .Request .userLink {
   font-size: 2em;
   font-style: italic;
-  color: black;
+  color: lightseagreen;
   text-align: center;
   text-transform: uppercase;
   display: flex;
