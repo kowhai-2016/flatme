@@ -50,7 +50,7 @@ const ImageForm = React.createClass({
       event.target.src = '/images/list-verification.svg'
     }
     return (
-      <div>
+      <div className='uploadBox'>
         <input type='file' id='file-input' />
         <p id='status'>Please select a file</p>
         <img id='preview' value='/images/notebook.png' onError={defaultImage} />
