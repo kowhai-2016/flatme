@@ -1,0 +1,38 @@
+.Document .uploadBox {
+  border-color: lightseagreen;
+  border-style: outset;
+}
+
+.Document h1 {
+  color: lightseagreen;
+}
+
+.Document input {
+  border-color: lightseagreen;
+  background-color: rgba(255,255,255,0);
+}
+
+.Document .uploadFile {
+  width: 0.1px;
+  height: 0.1px;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
+
+.Document .uploadFile + label {
+  text-align: center;
+  font-size: 1.25em;
+  font-weight: 700;
+  color: black;
+  background-color: white;
+  display: inline-block;
+  border-style: solid;
+  border-color: lightseagreen;
+  cursor: pointer;
+}
+
+.Document .uploadFile:focus + label, .uploadFile + label:hover {
+  background-color: lightseagreen;
+}
