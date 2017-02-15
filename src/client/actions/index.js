@@ -283,6 +283,9 @@ export const joinFlat = flatName => {
         })
       })
       .catch(error => {
+        window.alert(
+          `${flatName} does not exist. Please find another house.`
+        )
         dispatch({
           message: error.message,
           type: 'JOIN_FLAT_FAILURE'

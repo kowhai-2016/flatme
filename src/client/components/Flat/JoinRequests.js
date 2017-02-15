@@ -6,7 +6,7 @@ const JoinRequests = props => {
   return (
     <div className='JoinRequests'>
       <h2>Join Requests</h2>
-      <ul>
+      <ul className='ReqList'>
         {props.requests.map((request, index) => {
           return (
             <JoinRequest
