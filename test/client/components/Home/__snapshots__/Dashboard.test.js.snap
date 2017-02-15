@@ -1,41 +1,47 @@
 exports[`test Dashboard renders correctly 1`] = `
 <div
-  className="Dashboard container">
+  className="Dashboard container-fluid">
   <div
-    className="row buttons-container">
+    className="col-md-12 bg-flat">
     <div
-      className="col-md-3 create-flat">
+      className="container containerFlat">
+      <div
+        className="row buttons-container">
+        <div
+          className="col-md-3 create-flat">
+          <div
+            className="row">
+            <button
+              className="btn btn-default glyphicon glyphicon-plus flat-button"
+              onClick={[Function]}>
+               create a new flat
+            </button>
+          </div>
+        </div>
+        <div
+          className="col-md-3">
+          <div
+            className="row">
+            <button
+              className="btn btn-default glyphicon glyphicon-ok flat-button"
+              onClick={[Function]}>
+               join a flat
+            </button>
+          </div>
+        </div>
+      </div>
       <div
         className="row">
-        <button
-          className="btn btn-default glyphicon glyphicon-plus flat-button"
-          onClick={[Function]}>
-           create a new flat
-        </button>
+        <div
+          className="col-md-12">
+          <h1
+            id="myflats">
+            My Flats
+          </h1>
+        </div>
       </div>
-    </div>
-    <div
-      className="col-md-3">
-      <div
-        className="row">
-        <button
-          className="btn btn-default glyphicon glyphicon-ok flat-button"
-          onClick={[Function]}>
-           join a flat
-        </button>
-      </div>
+      <div />
     </div>
   </div>
-  <div
-    className="row">
-    <div
-      className="col-md-12">
-      <h1
-        id="myflats">
-        My Flats
-      </h1>
-    </div>
-  </div>
-  <div />
 </div>
 `;

@@ -61,7 +61,7 @@ exports[`test User renders logout correctly 1`] = `
               </a>
               <a
                 className="btn btn-primary"
-                href="#"
+                onClick={[Function]}
                 style={
                   Object {
                     "float": "right",

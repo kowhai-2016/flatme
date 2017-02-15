@@ -8,7 +8,7 @@
     "knex": "knex",
     "migrate": "knex migrate:latest",
     "start": "node src/server",
-    "test": "standard && jest",
+    "test": "jest",
     "webpack": "webpack --progress",
     "postinstall": "webpack && npm run migrate"
   },
