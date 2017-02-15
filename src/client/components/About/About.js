@@ -49,9 +49,8 @@ const About = props => {
               <h4 className='card-title'>Thibaud Bretin</h4>
               <a href='https://github.com/Ti-Bretin'><p className='card-text'>Click here for my Github
               </p></a>
-              <p className='card-text'>Or email me at:
-                <a href='mailto:email'>thibaudtd@gmail.com</a>
-              </p>
+            <p className='card-text'>Or email me at:</p>
+                <p><a href='mailto:email'>thibaudtd@gmail.com</a></p>
             </div>
           </div>
           <div className='card col-md-2'>
@@ -60,9 +59,8 @@ const About = props => {
               <h4 className='card-title'>David Christie</h4>
               <a href='https://github.com/davidchristie'><p className='card-text'>Click here for my Github
               </p></a>
-              <p className='card-text'>Or email me at:
-                <a href='mailto:email'>davidchristie.nz@gmail.com</a>
-              </p>
+              <p className='card-text'>Or email me at:</p>
+              <p><a href='mailto:email'>davidchristie.nz@gmail.com</a></p>
             </div>
           </div>
           <div className='card col-md-2'>
@@ -71,9 +69,8 @@ const About = props => {
               <h4 className='card-title'>Amanda Hogan</h4>
               <a href='https://github.com/amandahogan'><p className='card-text'>Click here for my Github
               </p></a>
-              <p className='card-text'>Or email me at:
-                <a href='mailto:email'>hogan.ans@gmail.com</a>
-              </p>
+              <p className='card-text'>Or email me at:</p>
+              <p><a href='mailto:email'>hogan.ans@gmail.com</a></p>
             </div>
           </div>
           <div className='card col-md-2'>
@@ -82,9 +79,8 @@ const About = props => {
               <h4 className='card-title'>Quinn Hu</h4>
               <a href='https://github.com/Quinn-H'><p className='card-text'>Click here for my Github
               </p></a>
-              <p className='card-text'>Or email me at:
-                <a href='mailto:email'>quinn.hu618@gmail.com</a>
-              </p>
+              <p className='card-text'>Or email me at:</p>
+              <p><a href='mailto:email'>quinn.hu618@gmail.com</a></p>
             </div>
           </div>
           <div className='card col-md-2'>
@@ -93,9 +89,8 @@ const About = props => {
               <h4 className='card-title'>Jessica Neary</h4>
               <a href='https://github.com/JessicaNeary'><p className='card-text'>Click here for my Github
               </p></a>
-              <p className='card-text'>Or email me at:
-                <a href='mailto:email'>JessicaFNeary@gmail.com</a>
-              </p>
+              <p className='card-text'>Or email me at:</p>
+              <p><a href='mailto:email'>JessicaFNeary@gmail.com</a></p>
             </div>
           </div>
           <div className='card col-md-2'>
@@ -104,9 +99,8 @@ const About = props => {
               <h4 className='card-title'>Anna Ulyanova</h4>
               <a href='https://github.com/AnnaUlyanova'><p className='card-text'>Click here for my Github
               </p></a>
-              <p className='card-text'>Or email me at:
-                <a href='mailto:email'>a.ulyanova89@gmail.com</a>
-              </p>
+              <p className='card-text'>Or email me at:</p>
+              <p><a href='mailto:email'>a.ulyanova89@gmail.com</a></p>
             </div>
           </div>
         </div>

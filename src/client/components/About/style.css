@@ -55,3 +55,7 @@
   border: 5px solid #eee;
   box-shadow: 0 3px 2px rgba(0, 0, 0, 0.3);
 }
+
+.AboutUs .team .card p a {
+  font-size: 12px;
+}
