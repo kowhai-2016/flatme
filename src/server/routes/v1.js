@@ -27,7 +27,6 @@ router.get('/flats/:id/documents/sign-s3', (req, res) => {
   const s3 = new aws.S3()
   const fileName = req.query['file-name']
   const fileType = req.query['file-type']
-  const documentName = req.query.name
   const s3Params = {
     Bucket: S3_BUCKET,
     Key: fileName,
@@ -43,7 +42,7 @@ router.get('/flats/:id/documents/sign-s3', (req, res) => {
       signedRequest: data,
       url: `https://${S3_BUCKET}.s3.amazonaws.com/${fileName}`
     }
-    db.addDocument(flatId, returnData.url, documentName)
+    db.addDocument(flatId, returnData.url, fileName)
       .then(() => {
         res.write(JSON.stringify(returnData))
         res.end()

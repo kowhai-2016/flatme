@@ -18,7 +18,7 @@ function uploadFile (file, signedRequest, url, flatId) {
 
 function getSignedRequest (file, flatId, name) {
   const xhr = new window.XMLHttpRequest()
-  xhr.open('GET', `/v1/flats/${flatId}/documents/sign-s3?file-name=${file.name}&file-type=${file.type}&name=${name}`)
+  xhr.open('GET', `/v1/flats/${flatId}/documents/sign-s3?file-name=${file.name}&file-type=${file.type}`)
   xhr.onreadystatechange = () => {
     if (xhr.readyState === 4) {
       if (xhr.status === 200) {
@@ -42,19 +42,20 @@ const ImageForm = React.createClass({
       if (file == null) {
         window.alert('No file selected.')
       }
-      const name = document.getElementById('document-name').value
-      getSignedRequest(file, flatId, name)
+      getSignedRequest(file, flatId)
     }
   },
   render () {
+    const defaultImage = event => {
+      event.target.src = '/images/list-verification.svg'
+    }
     return (
       <div>
         <input type='file' id='file-input' />
         <p id='status'>Please select a file</p>
-        <img id='preview' />
+        <img id='preview' value='/images/notebook.png' onError={defaultImage} />
         <form method='POST' action={`/v1/flats/${this.props.flatId}/documents`}>
-          <input type='hidden' id='avatar-url' name='avatar-url' value='/images/default.jpg' />
-          <input type='text' id='document-name' name='document-name' placeholder='Document Name' /><br />
+          <input type='hidden' id='avatar-url' name='avatar-url' value='/images/notebook.png' />
           <input type='submit' value='Upload Document' />
         </form>
       </div>

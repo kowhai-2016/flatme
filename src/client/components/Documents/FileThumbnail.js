@@ -4,7 +4,7 @@ import { Thumbnail } from 'react-bootstrap'
 const FileThumbnail = props => {
   const { url, name } = props.document
   const showBackupImage = event => {
-    event.target.src = 'http://img.freepik.com/free-icon/document-file-hand-drawn-symbol_318-52062.jpg?size=338&ext=jpg'
+    event.target.src = '/images/notebook.png'
   }
   return (
     <Thumbnail href={url}>
