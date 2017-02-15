@@ -1,5 +1,6 @@
 import React, { PropTypes } from 'react'
 import { Link } from 'react-router'
+import { Button, Row } from 'react-bootstrap'
 
 const JoinRequest = props => {
   const request = props.request
@@ -8,24 +9,26 @@ const JoinRequest = props => {
   const accept = () => props.acceptJoinRequest(request.id)
   const ignore = () => props.ignoreJoinRequest(request.id)
   return (
-    <li>
-      <Link to={`/user/${userId}`}>
-        {firstName} {lastName}
-      </Link>
-      <div>
-        <button
+    <li className='Request'>
+      <Row>
+        <Link to={`/user/${userId}`} className='userLink'>
+          {`${firstName} ${lastName}`}
+        </Link>
+      </Row>
+      <Row className='buttons'>
+        <Button
           className='btn btn-success glyphicon glyphicon-ok'
           onClick={accept}
           >
           Accept
-        </button>
-        <button
+        </Button>
+        <Button
           className='btn btn-danger glyphicon glyphicon-remove'
           onClick={ignore}
           >
           Ignore
-        </button>
-      </div>
+        </Button>
+      </Row>
     </li>
   )
 }
