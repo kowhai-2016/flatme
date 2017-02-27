@@ -28,6 +28,20 @@ To run the server only:
 npm start
 ```
 
+# Technologies
+- React
+- Redux
+- React-router
+- React-router-redux
+- Webpack2
+- Jest
+- React-redux-forms
+- Express
+- SQLite3/Postgres
+- Knex
+- React-bootstrap
+- Axios
+
 
 # Current Features
 
