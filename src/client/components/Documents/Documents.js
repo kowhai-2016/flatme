@@ -1,30 +1,20 @@
 import React, { PropTypes } from 'react'
 
-import Images from './Images'
-import UploadImage from './UploadImage'
+import ImageForm from './ImageForm'
 
 const Documents = React.createClass({
   render () {
-    const images = this.props.documents.map(document => {
-      return {
-        url: document
-      }
-    })
     return (
       <div>
         <h1>Documents</h1>
-        <UploadImage flatId={Number(this.props.params.id)} />
-        <Images images={images} />
+        {this.props.flat ? <ImageForm flatId={this.props.flat.id} /> : null}
       </div>
     )
   }
 })
 
 Documents.propTypes = {
-  documents: PropTypes.arrayOf(PropTypes.string).isRequired,
-  params: PropTypes.shape({
-    id: PropTypes.string.isRequired
-  }).isRequired
+  flat: PropTypes.object
 }
 
 export default Documents

@@ -1,4 +1,7 @@
 import React, { PropTypes } from 'react'
+import { Link } from 'react-router'
+
+import './style.css'
 
 const User = React.createClass({
   componentDidMount () {
@@ -10,7 +13,7 @@ const User = React.createClass({
     const email = user ? `${user.email}` : null
     const phoneNumber = user ? `${user.phoneNumber}` : null
     return (
-      <div className='container'>
+      <div className='User container'>
         <div className='row'>
           <div className='col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad' >
             <div className='panel panel-info'>
@@ -20,7 +23,7 @@ const User = React.createClass({
               <div className='panel-body'>
                 <div className='row'>
                   <div className='col-md-3 col-lg-3 '>
-                    <img alt='User Pic' src='http://resources2.news.com.au/images/2013/12/06/1226777/420994-.jpg' className='img-circle img-responsive' />
+                    <img alt='User Pic' src='/images/profile.jpg' className='img-circle img-responsive' />
                   </div>
                   <div className=' col-md-9 col-lg-9 '>
                     <table className='table table-user-information'>
@@ -39,8 +42,8 @@ const User = React.createClass({
                         </tr>
                       </tbody>
                     </table>
-                    <a href='#' className='btn btn-primary'>To Dashboard</a>
-                    <a href='#' className='btn btn-primary' style={{float: 'right'}}>Edit</a>
+                    <Link to='/' className='btn btn-primary'>To Dashboard</Link>
+                    <Link to={'/edit'} className='btn btn-primary' style={{float: 'right'}}>Edit</Link>
                   </div>
                 </div>
               </div>

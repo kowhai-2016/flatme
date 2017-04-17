@@ -1,5 +1,7 @@
 import React from 'react'
-import { Modal } from 'react-bootstrap'
+import { Modal, Button, Col } from 'react-bootstrap'
+
+import './style.css'
 
 import NewNoteForm from './NewNoteForm'
 
@@ -22,27 +24,38 @@ export default React.createClass({
   delete (id) {
     this.props.deleteNote(id)
   },
-  add () {
-
+  handleSubmit () {
+    const note = {
+      flat_id: this.props.flat,
+      content: this.props.newNote,
+      author: this.props.user.firstName
+    }
+    this.props.addNote(note)
+    this.close()
   },
   render () {
     const {notes} = this.props
     return (
-      <div>
-        <h1>Notes</h1>
-        <button onClick={this.open}>Add new</button>
+      <div className='Notes'>
+        <h1 className='NoteTitle'>Notes</h1>
+        <Button className='NoteAdd' onClick={this.open}>Add new</Button>
         <Modal show={this.state.show} onHide={this.close}>
-          <NewNoteForm />
+          <NewNoteForm onSubmit={this.handleSubmit} />
         </Modal>
-        {Object.keys(notes).map(noteId => {
-          return (
-            <div key={noteId}>
-              <div>{notes[noteId].content}</div>
-              <div>{notes[noteId].author}</div>
-              <button onClick={() => this.delete(noteId)}>&#10060;</button>
-            </div>
-          )
-        })}
+
+        <Col className='NotesContainer box'>
+          {Object.keys(notes).map(noteId => {
+            return (
+              <div className='NoteFull' key={noteId}>
+                <button className='NoteDelete' onClick={() => this.delete(noteId)}>
+                  <img src='/images/delete-cross.svg' width='15px' />
+                </button>
+                <div className='NoteContent'>{notes[noteId].content}</div>
+                <div className='NoteAuthor'> - {notes[noteId].author}</div>
+              </div>
+            )
+          })}
+        </Col>
       </div>
     )
   }

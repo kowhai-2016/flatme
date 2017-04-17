@@ -1,0 +1,57 @@
+@import url('http://fonts.googleapis.com/css?family=Bad+Script');
+
+.NoteTitle {
+  color: lightseagreen;
+}
+
+.NotesContainer {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  font-family: 'Bad Script', Helvetica, Sans-serif;
+}
+
+.NoteFull {
+  width: 45%;
+  margin-right: 20px;
+  margin-top: 20px;
+  background-color: #e2fffa;
+  box-shadow: 1px 4px 2px;
+  position: relative;
+}
+
+.NoteContent{
+  padding: 10px;
+  font-size: 2em;
+}
+
+.NoteAuthor {
+  padding: 10px;
+  text-align: right;
+  padding-top: 25px;
+  font-style: italic;
+  font-size: 1.5em;
+}
+
+.NoteDelete {
+  background-color: transparent;
+  outline: none;
+  border: none;
+  padding-top: 5px;
+}
+
+.NoteAdd {
+  font-size: 1.3em;
+}
+
+@media (max-width: 1085px) and (min-width: 992px) {
+  .NoteFull {
+    width: 100%;
+  }
+}
+
+@media (max-width: 500px) {
+  .NoteFull {
+    width: 100%;
+  }
+}

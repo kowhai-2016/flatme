@@ -1,0 +1,61 @@
+exports[`test Categories renders correctly 1`] = `
+<nav
+  className="categories-bar navbar navbar-default"
+  style={
+    Object {
+      "margin": "10%",
+    }
+  }>
+  <div
+    className="container">
+    <div>
+      <a
+        onClick={[Function]}
+        style={Object {}}>
+        <img
+          src="/images/phone.svg"
+          width="25px" />
+        <span>
+          Contacts
+        </span>
+      </a>
+    </div>
+    <div>
+      <a
+        onClick={[Function]}
+        style={Object {}}>
+        <img
+          src="/images/interface.svg"
+          width="25px" />
+        <span>
+          Documents
+        </span>
+      </a>
+    </div>
+    <div>
+      <a
+        onClick={[Function]}
+        style={Object {}}>
+        <img
+          src="/images/interface-1.svg"
+          width="25px" />
+        <span>
+          Notes
+        </span>
+      </a>
+    </div>
+    <div>
+      <a
+        onClick={[Function]}
+        style={Object {}}>
+        <img
+          src="/images/alarm.svg"
+          width="25px" />
+        <span>
+          Calendar
+        </span>
+      </a>
+    </div>
+  </div>
+</nav>
+`;

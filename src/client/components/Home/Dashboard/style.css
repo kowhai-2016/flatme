@@ -1,0 +1,80 @@
+/* Dashboard page
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.Dashboard #myflats {
+  text-align: center;
+  font-weight: bolder;
+  padding-bottom: 20px;
+}
+
+.Dashboard .flat-card {
+  margin: 20px 0 20px 0;
+}
+
+.Dashboard .flat-card ul {
+  list-style-type: none;
+}
+
+.Dashboard .flat-card h3 {
+  font-family: 'Cabin Sketch', cursive;
+  font-weight: bolder;
+  color: #204159;
+}
+
+.Dashboard .main-flat-card {
+  -webkit-box-shadow: 12px 12px 22px 6px rgba(0,0,0,0.75);
+  -moz-box-shadow: 12px 12px 22px 6px rgba(0,0,0,0.75);
+  box-shadow: 12px 12px 22px 6px rgba(0,0,0,0.75);
+  margin-bottom: 40px;
+}
+
+.Dashboard .curtains {
+  padding-right: 10px;
+  width: 45px;
+}
+
+.Dashboard .flat-button {
+  margin: 10px;
+  font-size: 1.2em;
+  width: 100%;
+}
+
+.Dashboard .buttons-container {
+  display: flex;
+  padding: 10px;
+  justify-content: center;
+  position: relative;
+  left: -10px;
+}
+
+.Dashboard .create-flat {
+  padding-right: 25px;
+}
+
+.CreateFlatModal .modal-input {
+  margin-left: 20px;
+}
+
+.CreateFlatModal .NameInput {
+  text-align: center;
+  font-size: 2em;
+}
+
+.JoinFlatModal .modal-input {
+  margin-left: 10px;
+}
+
+.JoinFlatModal .NameInput {
+  text-align: center;
+  font-size: 2em;
+}
+
+.Dashboard .bg-flat{
+  background-image: url('/images/table.jpg');
+  background-size:100%;
+  min-height: 800px;
+  background-repeat: no-repeat;
+}
+
+.Dashboard .panel-group .main-flat-card {
+  background-color: #fff;
+}

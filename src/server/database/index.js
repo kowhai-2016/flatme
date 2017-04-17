@@ -14,10 +14,11 @@ function addUser (user) {
         .insert({
           first_name: user.firstName,
           last_name: user.lastName,
-          email: user.email,
+          email: user.email.toLowerCase(),
           phone_number: user.phoneNumber,
           hash: hash
-        }, 'id')
+        })
+        .returning('id')
         .then(inserted => {
           const id = inserted[0]
           return id
@@ -26,9 +27,20 @@ function addUser (user) {
     })
 }
 
+function updateUser (id, fields) {
+  return knex('users')
+    .where('id', id)
+    .update({
+      first_name: fields.firstName,
+      last_name: fields.lastName,
+      phone_number: fields.phoneNumber,
+      email: fields.email ? fields.email.toLowerCase() : undefined
+    })
+}
+
 function getUserByEmail (email) {
   return knex('users')
-    .where('email', email)
+    .where('email', email.toLowerCase())
     .first()
 }
 
@@ -52,7 +64,8 @@ function addFlat (flat) {
   return knex('flats')
     .insert({
       flat_name: flat.flatName
-    }, 'id')
+    })
+    .returning('id')
     .then(inserted => {
       const id = inserted[0]
       return {id}
@@ -79,7 +92,9 @@ function getFlatById (id) {
     .then(flat => {
       return getJoinRequests(flat.id)
         .then(requests => {
-          flat.requests = requests
+          flat.requests = requests.filter(request => {
+            return request.status === 'pending'
+          })
           return flat
         })
     })
@@ -89,13 +104,13 @@ function getFlatsByUserId (userId) {
   return knex('tenancies')
     .join('users', 'tenancies.user_id', '=', 'users.id')
     .join('flats', 'tenancies.flat_id', '=', 'flats.id')
-    .select('users.id as userId', 'flats.id as flatId', 'flats.flat_name as flatName')
-    .where('userId', userId)
-    .then(flatInfos => {
-      return flatInfos.map(flatInfo => {
+    .select('users.id', 'flats.id as flatId', 'flats.flat_name as flatName')
+    .where('users.id', userId)
+    .then(records => {
+      return records.map(record => {
         return {
-          id: flatInfo.flatId,
-          flatName: flatInfo.flatName
+          id: record.flatId,
+          flatName: record.flatName
         }
       })
     })
@@ -118,11 +133,36 @@ function getFlatByName (name) {
 }
 
 function addTenancy (userId, flatId) {
+  return getTenancy(userId, flatId)
+    .then(tenancy => {
+      if (tenancy) {
+        return Promise.resolve(tenancy.id)
+      } else {
+        return knex('tenancies')
+          .insert({
+            user_id: userId,
+            flat_id: flatId
+          })
+          .returning('id')
+          .then(inserted => {
+            return inserted[0]
+          })
+      }
+    })
+}
+
+function getTenancy (userId, flatId) {
   return knex('tenancies')
-    .insert({
-      user_id: userId,
-      flat_id: flatId
-    }, 'id')
+    .where('user_id', userId)
+    .where('flat_id', flatId)
+    .first()
+}
+
+function leaveFlat (userId, flatId) {
+  return knex('tenancies')
+  .where('user_id', userId)
+  .where('flat_id', flatId)
+  .del()
 }
 
 function getFlatmates (flatId) {
@@ -148,20 +188,23 @@ function addJoinRequest (userId, flatId) {
   return knex('join-requests')
     .insert({
       flat_id: flatId,
-      user_id: userId
+      user_id: userId,
+      status: 'pending'
     })
+    .returning('id')
 }
 
 function getJoinRequests (flatId) {
   return knex('join-requests')
     .join('users', 'join-requests.user_id', '=', 'users.id')
     .join('flats', 'join-requests.flat_id', '=', 'flats.id')
-    .select('join-requests.id as id', 'flats.id as flatId', 'users.first_name as firstName', 'users.last_name as lastName', 'users.id as userId')
+    .select('join-requests.id as id', 'flats.id as flatId', 'users.first_name as firstName', 'users.last_name as lastName', 'users.id as userId', 'join-requests.status as status')
     .where('flat_id', flatId)
     .then(records => {
       return records.map(record => {
         return {
           id: record.id,
+          status: record.status,
           user: {
             id: record.userId,
             firstName: record.firstName,
@@ -175,6 +218,25 @@ function getJoinRequests (flatId) {
     })
 }
 
+function updateJoinRequestStatus (requestId, status) {
+  return knex('join-requests')
+    .where('id', requestId)
+    .update('status', status)
+    .then(result => {
+      if (status === 'accepted') {
+        return knex('join-requests')
+          .where('id', requestId)
+          .select('join-requests.flat_id as flatId', 'join-requests.user_id as userId')
+          .first()
+          .then(record => {
+            return addTenancy(record.userId, record.flatId)
+          })
+      } else {
+        return result
+      }
+    })
+}
+
 function addNote (note) {
   return knex('notes')
     .insert({
@@ -182,7 +244,10 @@ function addNote (note) {
       content: note.content,
       author: note.author
     })
-    .then(getNotesByFlatId(note.flat_id))
+    .returning('id')
+    .then(noteId => {
+      return getNoteById(noteId[0])
+    })
 }
 
 function editNote (note) {
@@ -197,6 +262,11 @@ function deleteNote (id) {
   return knex('notes')
     .where('id', id)
     .del()
+}
+
+function getNoteById (id) {
+  return knex('notes')
+    .where('id', id)
 }
 
 function getNotesByFlatId (flatId) {
@@ -218,15 +288,19 @@ module.exports = {
   addJoinRequest,
   addTenancy,
   addUser,
+  updateUser,
   getFlatById,
   getFlatsByUserId,
   getFlatByName,
   getJoinRequests,
+  getTenancy,
   getUserById,
   getUserByEmail,
   comparePassword,
   getNotesByFlatId,
   addNote,
   deleteNote,
-  editNote
+  editNote,
+  leaveFlat,
+  updateJoinRequestStatus
 }

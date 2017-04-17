@@ -10,13 +10,14 @@ const mapStateToProps = state => {
   }
 }
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch, state) => {
   return {
-    createNewFlat: flat => dispatch(createNewFlat(flat)),
+    createNewFlat: (flat, user) => dispatch(createNewFlat(flat, user)),
     fetchUserFlats: id => dispatch(fetchUserFlats(id)),
     joinFlat: ({ joinFlatName }) => dispatch(joinFlat(joinFlatName))
   }
 }
+
 export default connect(
   mapStateToProps,
   mapDispatchToProps

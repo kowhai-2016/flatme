@@ -1,0 +1,18 @@
+exports[`test Notes renders correctly 1`] = `
+<div
+  className="Notes">
+  <h1
+    className="NoteTitle">
+    Notes
+  </h1>
+  <button
+    className="NoteAdd btn btn-default"
+    disabled={false}
+    onClick={[Function]}
+    type="button">
+    Add new
+  </button>
+  <div
+    className="NotesContainer box " />
+</div>
+`;

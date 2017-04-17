@@ -1,0 +1,7 @@
+exports[`test Documents renders correctly 1`] = `
+<div>
+  <h1>
+    Documents
+  </h1>
+</div>
+`;

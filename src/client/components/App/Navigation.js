@@ -80,7 +80,7 @@ const Navigation = React.createClass({
       </Modal>
     )
     return (
-      <div>
+      <div className='Navigation'>
         <Navbar inverse collapseOnSelect>
           <Navbar.Header>
             <Navbar.Brand>
@@ -99,6 +99,9 @@ const Navigation = React.createClass({
 })
 
 Navigation.propTypes = {
+  account: PropTypes.shape({
+    user: PropTypes.object
+  }).isRequired,
   dispatch: PropTypes.func.isRequired,
   login: PropTypes.func.isRequired,
   logout: PropTypes.func.isRequired
